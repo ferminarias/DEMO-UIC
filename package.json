@@ -1,0 +1,26 @@
+{
+  "name": "demo-uic-voice-widget",
+  "version": "1.0.0",
+  "description": "DEMO-UIC con Voice Widget integrado (ElevenLabs)",
+  "main": "index.html",
+  "scripts": {
+    "dev": "vercel dev",
+    "build": "echo 'No build required for static site'",
+    "deploy": "vercel --prod"
+  },
+  "keywords": [
+    "voice",
+    "widget",
+    "elevenlabs",
+    "uic",
+    "ulinea"
+  ],
+  "author": "UIC",
+  "license": "MIT",
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
