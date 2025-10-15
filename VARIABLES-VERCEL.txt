@@ -1,0 +1,81 @@
+================================================================================
+VARIABLES DE ENTORNO PARA VERCEL - VOICE WIDGET DEMO-UIC
+================================================================================
+
+Copia estas variables en Vercel → Project Settings → Environment Variables
+
+================================================================================
+SOLO 2 VARIABLES OBLIGATORIAS
+================================================================================
+
+1. ELEVENLABS_API_KEY
+   Tipo: Secret
+   Valor: tu_api_key_de_elevenlabs
+   Obtener en: https://elevenlabs.io/app/settings/api-keys
+
+2. ELEVENLABS_AGENT_ID
+   Tipo: Plain Text
+   Valor: tu_agent_id_de_elevenlabs
+   Obtener en: https://elevenlabs.io/app/conversational-ai
+
+¡Eso es todo! Solo necesitas estas 2 variables.
+
+
+================================================================================
+FORMATO PARA COPIAR Y PEGAR
+================================================================================
+
+Key: ELEVENLABS_API_KEY
+Value: [PEGA_TU_API_KEY_AQUI]
+Environments: ✓ Production ✓ Preview ✓ Development
+
+---
+
+Key: ELEVENLABS_AGENT_ID
+Value: [PEGA_TU_AGENT_ID_AQUI]
+Environments: ✓ Production ✓ Preview ✓ Development
+
+
+================================================================================
+EJEMPLO COMPLETO
+================================================================================
+
+ELEVENLABS_API_KEY=sk_1234567890abcdefghijklmnopqrstuvwxyz
+ELEVENLABS_AGENT_ID=agent_abc123xyz456
+
+
+================================================================================
+VERIFICAR CONFIGURACIÓN
+================================================================================
+
+Después de agregar las variables:
+
+1. Redeploy el proyecto en Vercel
+2. Visita: https://tu-dominio.vercel.app/api/elevenlabs/check-config
+3. Deberías ver:
+   {
+     "configured": true,
+     "details": {
+       "hasApiKey": true,
+       "hasAgentId": true,
+       "missing": []
+     }
+   }
+
+Si ves "configured": false, verifica que las variables estén correctamente
+configuradas en Vercel.
+
+
+================================================================================
+LINKS ÚTILES
+================================================================================
+
+ElevenLabs Dashboard: https://elevenlabs.io/app
+API Keys: https://elevenlabs.io/app/settings/api-keys
+Conversational AI: https://elevenlabs.io/app/conversational-ai
+Vercel Dashboard: https://vercel.com/dashboard
+
+Documentación completa: Ver VERCEL-ENV-VARIABLES.md
+
+
+================================================================================
