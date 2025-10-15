@@ -371,6 +371,10 @@ class VoiceWidgetCore {
         this.refs.session.conversation.setMicMuted(this.refs.isMuted);
         console.log('[VoiceWidget] Microphone', this.refs.isMuted ? 'muted' : 'unmuted');
       }
+      // Notificar a la UI sobre el cambio
+      if (this.onMuteChangeCallback) {
+        this.onMuteChangeCallback(this.refs.isMuted);
+      }
     } catch (error) {
       console.error('[VoiceWidget] Error toggling mute:', error);
     }

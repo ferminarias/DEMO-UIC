@@ -86,6 +86,18 @@ class VoiceWidget {
       });
     }
 
+    // Event listener para botón de llamada
+    const callBtn = document.getElementById('voice-widget-call-btn');
+    if (callBtn) {
+      callBtn.addEventListener('click', () => {
+        if (this.core.state.voiceStatus === 'connected') {
+          this.core.stopVoiceCall();
+        } else {
+          this.core.startVoiceCall();
+        }
+      });
+    }
+
     // Event listener para botón de mute
     const micBtn = document.getElementById('voice-widget-mic-btn');
     if (micBtn) {
@@ -96,6 +108,7 @@ class VoiceWidget {
       });
     }
 
+    // Event listeners principales
     this.ui.elements.fab.addEventListener('click', () => {
       this.core.state.isOpen = !this.core.state.isOpen;
       this.ui.togglePanel(this.core.state.isOpen);
@@ -108,37 +121,6 @@ class VoiceWidget {
       this.core.state.messages = [];
       this.ui.updateMessages([], false);
     });
-
-    this.ui.elements.callBtn.addEventListener('click', () => {
-      if (this.core.state.voiceStatus === 'connected') {
-        this.core.stopVoiceCall();
-      } else {
-        this.core.startVoiceCall();
-      }
-    });
-
-    this.ui.elements.muteBtn.addEventListener('click', () => {
-      this.core.toggleMute();
-    });
-
-    this.ui.elements.textField.addEventListener('keydown', (e) => {
-      if (e.key === 'Enter' && !e.shiftKey) {
-        e.preventDefault();
-        this.handleTextSubmit();
-      }
-    });
-
-    this.ui.elements.sendBtn.addEventListener('click', () => {
-      this.handleTextSubmit();
-    });
-  }
-
-  handleTextSubmit() {
-    const text = this.ui.elements.textField.value.trim();
-    if (text) {
-      this.core.sendTextMessage(text);
-      this.ui.clearTextInput();
-    }
   }
 }
 

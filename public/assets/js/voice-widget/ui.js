@@ -13,16 +13,17 @@ class VoiceWidgetUI {
     const widgetHTML = `
       <div id="voice-widget-container" class="voice-widget-container">
         <button id="voice-widget-fab" class="voice-widget-fab" aria-label="Abrir asistente de voz">
-          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25">
-            <path d="M3 18v-6a9 9 0 0 1 18 0v6"></path>
-            <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3zM3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"></path>
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 18v-6a9 9 0 0 1 18 0v6"/>
+            <path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/>
+            <path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/>
           </svg>
         </button>
 
         <div id="voice-widget-panel" class="voice-widget-panel voice-widget-hidden">
-          <div class="voice-widget-content">
-            <div class="voice-widget-header">
-              <div>
+          <div class="voice-widget-header">
+            <div class="voice-widget-header-content">
+              <div class="voice-widget-header-text">
                 <h3>Asistente UIC</h3>
                 <p>Elige como quieres comunicarte</p>
               </div>
@@ -32,57 +33,61 @@ class VoiceWidgetUI {
               </div>
               <button id="voice-widget-close" class="voice-widget-close-btn" aria-label="Cerrar">×</button>
             </div>
+          </div>
 
-            <div id="voice-widget-messages" class="voice-widget-messages"></div>
+          <div id="voice-widget-messages" class="voice-widget-messages"></div>
 
-            <!-- Input de texto para conversación -->
-            <div id="voice-widget-text-input" class="voice-widget-text-input voice-widget-hidden">
-              <div class="voice-widget-input-container">
-                <input
-                  type="text"
-                  id="voice-widget-input-field"
-                  placeholder="Escribe tu mensaje..."
-                  class="voice-widget-input"
-                />
-                <button id="voice-widget-send-btn" class="voice-widget-send-btn" disabled>
-                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
-                  </svg>
-                </button>
-              </div>
+          <!-- Input de texto para conversación -->
+          <div id="voice-widget-text-input" class="voice-widget-text-input voice-widget-hidden">
+            <div class="voice-widget-input-container">
+              <input
+                type="text"
+                id="voice-widget-input-field"
+                placeholder="Escribe tu mensaje..."
+                class="voice-widget-input"
+              />
+              <button id="voice-widget-send-btn" class="voice-widget-send-btn" disabled>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                </svg>
+              </button>
             </div>
+          </div>
 
-            <div class="voice-widget-controls">
-              <div class="voice-widget-controls-card">
-                <div class="voice-widget-controls-content">
+          <div class="voice-widget-controls">
+            <div class="voice-widget-controls-card">
+              <div class="voice-widget-controls-content">
+                <div class="voice-widget-controls-info">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
+                    <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
+                    <line x1="12" x2="12" y1="19" y2="22"></line>
+                  </svg>
+                  <div>
+                    <p class="voice-widget-controls-title">Conversación por voz</p>
+                    <p class="voice-widget-controls-subtitle">Habla directamente con el asistente IA</p>
+                  </div>
+                </div>
+                <div class="voice-widget-controls-buttons">
                   <button id="voice-widget-mic-btn" class="voice-widget-control-btn voice-widget-mic-btn">
-                    <svg id="voice-widget-mic-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                       <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
                       <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                       <line x1="12" x2="12" y1="19" y2="22"></line>
                     </svg>
                   </button>
-                  <p class="voice-widget-controls-title">Conversación por voz</p>
-                  <p class="voice-widget-controls-subtitle">Habla directamente con el asistente IA</p>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
-                        <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
-                        <line x1="12" x2="12" y1="19" y2="22"></line>
-                      </svg>
-                    </button>
-                    <button id="voice-widget-call-btn" class="voice-widget-call-btn">
-                      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
-                      </svg>
-                      <span>Iniciar llamada</span>
-                    </button>
-                  </div>
-                </div>
-                <div id="voice-widget-no-config-msg" class="voice-widget-no-config voice-widget-hidden">
-                  El asistente de voz estará disponible en breve. Mientras tanto puedes usar el chat de texto, WhatsApp o el formulario de contacto.
+                  <button id="voice-widget-call-btn" class="voice-widget-call-btn">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                      <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                    </svg>
+                    <span>Iniciar llamada</span>
+                  </button>
                 </div>
               </div>
             </div>
+          </div>
+          <div id="voice-widget-no-config-msg" class="voice-widget-no-config voice-widget-hidden">
+            El asistente de voz estará disponible en breve. Mientras tanto puedes usar el chat de texto, WhatsApp o el formulario de contacto.
           </div>
         </div>
 
@@ -110,10 +115,10 @@ class VoiceWidgetUI {
       closeBtn: document.getElementById('voice-widget-close'),
       messages: document.getElementById('voice-widget-messages'),
       textInput: document.getElementById('voice-widget-text-input'),
-      textField: document.getElementById('voice-widget-text-field'),
+      textField: document.getElementById('voice-widget-input-field'),
       sendBtn: document.getElementById('voice-widget-send-btn'),
       callBtn: document.getElementById('voice-widget-call-btn'),
-      muteBtn: document.getElementById('voice-widget-mute-btn'),
+      muteBtn: document.getElementById('voice-widget-mic-btn'),
       statusDot: document.querySelector('.voice-widget-status-dot'),
       statusText: document.querySelector('.voice-widget-status-text'),
       noConfigMsg: document.getElementById('voice-widget-no-config-msg'),
@@ -126,8 +131,10 @@ class VoiceWidgetUI {
   togglePanel(isOpen) {
     if (isOpen) {
       this.elements.panel.classList.remove('voice-widget-hidden');
+      this.elements.panel.classList.add('voice-widget-open');
     } else {
       this.elements.panel.classList.add('voice-widget-hidden');
+      this.elements.panel.classList.remove('voice-widget-open');
     }
   }
 
@@ -165,52 +172,71 @@ class VoiceWidgetUI {
   }
 
   updateStatus(status, hasConfig) {
-    this.elements.statusDot.className = 'voice-widget-status-dot';
-    
-    if (status === 'connected') {
-      this.elements.statusDot.classList.add('voice-widget-status-connected');
-    } else if (status === 'connecting' || status === 'getting-token') {
-      this.elements.statusDot.classList.add('voice-widget-status-connecting');
-    } else if (status === 'error') {
-      this.elements.statusDot.classList.add('voice-widget-status-error');
+    const statusDot = this.elements.statusDot;
+    const statusText = this.elements.statusText;
+    const callBtn = document.getElementById('voice-widget-call-btn');
+    const micBtn = document.getElementById('voice-widget-mic-btn');
+    const noConfigMsg = document.getElementById('voice-widget-no-config-msg');
+
+    if (statusDot && statusText) {
+      switch (status) {
+        case 'connected':
+          statusDot.style.background = '#10b981'; // verde
+          statusText.textContent = 'Conversación activa';
+          if (callBtn) {
+            callBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>Terminar</span>';
+            callBtn.classList.add('voice-widget-call-btn-active');
+          }
+          if (micBtn) micBtn.style.display = 'flex';
+          break;
+        case 'connecting':
+        case 'getting-token':
+          statusDot.style.background = '#f59e0b'; // amarillo
+          statusText.textContent = status === 'connecting' ? 'Conectando...' : 'Obteniendo token...';
+          if (callBtn) {
+            callBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>Conectando...</span>';
+            callBtn.classList.remove('voice-widget-call-btn-active');
+          }
+          if (micBtn) micBtn.style.display = 'none';
+          break;
+        case 'error':
+          statusDot.style.background = '#ef4444'; // rojo
+          statusText.textContent = 'Error de conexión';
+          if (callBtn) {
+            callBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>Iniciar llamada</span>';
+            callBtn.classList.remove('voice-widget-call-btn-active');
+          }
+          if (micBtn) micBtn.style.display = 'none';
+          break;
+        default:
+          statusDot.style.background = '#6b7280'; // gris
+          statusText.textContent = hasConfig ? 'Listo para conversar' : 'Configuración pendiente';
+          if (callBtn) {
+            callBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>Iniciar llamada</span>';
+            callBtn.classList.remove('voice-widget-call-btn-active');
+          }
+          if (micBtn) micBtn.style.display = 'none';
+      }
     }
 
-    const statusTexts = {
-      'connected': 'Conversación activa',
-      'connecting': 'Conectando con ElevenLabs...',
-      'getting-token': 'Obteniendo token...',
-      'asking-mic': 'Solicitando permisos...',
-      'error': 'Error de conexión',
-      'idle': hasConfig ? 'Listo para conversar' : 'Configuración pendiente'
-    };
-    this.elements.statusText.textContent = statusTexts[status] || 'Listo';
-
-    // Update call button
-    if (status === 'connected') {
-      this.elements.callBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>Terminar</span>';
-      this.elements.callBtn.classList.add('voice-widget-call-btn-active');
-      this.elements.muteBtn.classList.remove('voice-widget-hidden');
-    } else {
-      this.elements.callBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>Iniciar llamada</span>';
-      this.elements.callBtn.classList.remove('voice-widget-call-btn-active');
-      this.elements.muteBtn.classList.add('voice-widget-hidden');
-    }
-
-    const isBusy = ['asking-mic', 'getting-token', 'connecting'].includes(status);
-    this.elements.callBtn.disabled = (!hasConfig && status !== 'connected') || isBusy;
-
-    if (!hasConfig && status === 'idle') {
-      this.elements.noConfigMsg.classList.remove('voice-widget-hidden');
-    } else {
-      this.elements.noConfigMsg.classList.add('voice-widget-hidden');
+    // Mostrar/ocultar mensaje de no configuración
+    if (noConfigMsg) {
+      if (!hasConfig && status !== 'connected') {
+        noConfigMsg.classList.remove('voice-widget-hidden');
+      } else {
+        noConfigMsg.classList.add('voice-widget-hidden');
+      }
     }
   }
 
   updateMuteButton(isMuted) {
-    if (isMuted) {
-      this.elements.muteBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="1" y1="1" x2="23" y2="23"></line><path d="M9 9v3a3 3 0 0 0 5.12 2.12M15 9.34V4a3 3 0 0 0-5.94-.6"></path><path d="M17 16.95A7 7 0 0 1 5 12v-2m14 0v2a7 7 0 0 1-.11 1.23"></path></svg>';
-    } else {
-      this.elements.muteBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="22"></line></svg>';
+    const micBtn = document.getElementById('voice-widget-mic-btn');
+    if (micBtn) {
+      if (isMuted) {
+        micBtn.classList.add('muted');
+      } else {
+        micBtn.classList.remove('muted');
+      }
     }
   }
 
