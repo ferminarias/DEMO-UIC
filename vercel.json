@@ -10,11 +10,5 @@
       "src": "/api/(.*)",
       "dest": "/api/$1"
     }
-  ],
-  "env": {
-    "ELEVENLABS_API_KEY": "@elevenlabs_api_key",
-    "ELEVENLABS_AGENT_ID": "@elevenlabs_agent_id",
-    "ELEVENLABS_WEBHOOK_SECRET": "@elevenlabs_webhook_secret",
-    "ALLOWED_EMBED_DOMAINS": "@allowed_embed_domains"
-  }
+  ]
 }
