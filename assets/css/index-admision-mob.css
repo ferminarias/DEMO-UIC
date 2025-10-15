@@ -1,0 +1,478 @@
+
+.presentacion {
+	width: 100%;
+	height: 620px;
+	margin: 0 0 0 0;
+	padding: 0 12% 0 12%;
+}
+.webp .presentacion {
+	background:linear-gradient( rgba(34,34,34,0.90) 100%, rgba(34,34,34,0.90)100%),url("https://educacionenlinea.uic.mx/images/admision/admision-universidad-intercontinental-en-linea.webp") no-repeat top center;
+	background-size: cover;
+}
+.no-webp .presentacion {
+	background:linear-gradient( rgba(34,34,34,0.90) 100%, rgba(34,34,34,0.90)100%),url("https://educacionenlinea.uic.mx/images/admision/admision-universidad-intercontinental-en-linea.jpg") no-repeat top center;
+	background-size: cover;
+}
+.textopres {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 160px 0 0 0;
+	padding: 0 0 0 0;
+}
+.textopres h2 {
+	font-size: 1.7em;
+	color: #36945F;
+	line-height: 1.1em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+}
+.textopres h1 {
+	font-size: 1.7em;
+	color: #fff;
+	line-height: 1.1em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+}
+.textopres p {
+	font-size: 0.9em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+@media screen and (min-width: 767px) {
+	.presentacion {
+		height: 950px;
+		margin: 0 0 0 0;
+		padding: 0 10% 0 10%;
+	}
+	.textopres {
+		width: 80%;
+		margin: 450px 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h2 {
+		font-size: 2em;
+		margin: 0 0 5px 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h1 {
+		font-size: 2em;
+		margin: 0 0 15px 0;
+		padding: 0 0 0 0;
+	}
+	.textopres p {
+		font-size: 1em;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.textopres .break {
+		display: none;
+	}
+}
+/************************/
+.contactoyform {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.containeruno {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.barraverde {
+	float: left;
+	display: block;
+	width: 100%;
+	height: 40px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #36945F;
+}
+.datoscont {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 40px 0 0 0;
+	background: white;
+	border: 1px solid  rgba(0,0,0,0.1);
+}
+.textodatoscont {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 12% 40px 12%;
+}
+.textodatoscont h4 {
+	font-size: 1.3em;
+	line-height: 1.3em;
+	color: #36945F;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+}
+.textodatoscont p {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	color: #666;
+	margin: 0 0 20px 0;
+	padding: 0 0 0 0;
+}
+.textodatoscont a {
+	display: block;
+	font-size: 1em;
+	color: #666;
+	text-decoration: none;
+	line-height: 1.4em;
+	margin: 2px 0 2px 0;
+	padding: 0 0 0 0;
+}
+.textodatoscont a span {
+	color: #36945F !important;
+}
+.procesosadmi {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 30px 12% 30px 12%;
+	background: white;
+	border: 1px solid  rgba(0,0,0,0.1);
+}
+.procesoa {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 5px 0 5px 0;
+	padding: 10px 0 10px 0;
+	text-decoration: none;
+	background: #36945F ;
+	color: white;
+	font-size: 1.1em;
+	text-align: center;
+	border-right: 1px solid #054A2E;
+	border-bottom: 1px solid #054A2E;
+}
+.formulario {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 35px 12% 35px 12%;
+	background: #ececec;
+}
+.formulario h5 {
+	color: #36945F;
+	font-size: 1.3em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.formulario h5 span {
+	color: #666;
+	font-size: 0.9em;
+}
+@media screen and (min-width: 767px) {
+	.textodatoscont {
+		width: 50%;
+		margin: 0 0 0 0;
+		padding: 0 5% 50px 10%;
+	}
+	.procesosadmi {
+		width: 50%;
+		margin: 0 0 0 0;
+		padding: 20px 10% 30px 5%;
+		border: none;
+	}
+	.procesoa {
+		font-size: 1em;
+		text-align: center;
+	}
+	.formulario {
+		padding: 40px 10% 40px 10%;
+		background: #ececec;
+	}
+}
+/************************/
+.barra {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.barraverdefuerte {
+	display: block;
+	width: 100%;
+	height: 50px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #054A2E;
+}
+.barraverdeclara {
+	display: none;
+	background: #36945F;
+}
+/************************/
+.procesoinsc {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 40px 0 30px 0;
+}
+.textoprocesoadm {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 20px 0;
+	padding: 0 12% 0 12%;
+}
+.textoprocesoadm h3 {
+	font-size: 1.8em;
+	line-height: 1em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.textoprocesoadm h3 span {
+	font-size: 0.7em;
+	color: #666;
+}
+.proceso {
+	float: left;
+	display: block;
+	width: 98%;
+	margin: 1%;
+	padding: 40px 12% 40px 12%;
+	background: white;
+	border-right: 1px solid  rgba(0,0,0,0.1);
+	border-bottom: 1px solid  rgba(0,0,0,0.1);
+}
+.proceso h5 {
+	font-size: 1.2em;
+	line-height: 1.3em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.proceso p {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+}
+.proceso p a {
+	color: #36945F;
+}
+@media screen and (min-width: 767px) {
+	.procesoinsc {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 60px 10% 60px 10%;
+	}
+	.textoprocesoadm {
+		margin: 0 0 40px 0;
+		padding: 0 0 0 0;
+	}
+	.proceso {
+		width: 100%;
+		margin: 0 0 3% 0;
+		padding: 40px 5% 40px 5%;
+	}
+}
+/************************/
+.calendario {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 60px 0 60px 0;
+	background: #36945F;
+}
+.textocal {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 40px 0;
+	padding: 0 12% 0 12%;
+}
+.textocal h4 {
+	font-size: 1.3em;
+	line-height: 1.3em;
+	color: white;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+}
+.textocal p {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	color: white;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.fechas {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 12% 0 12%;
+}
+.fecha {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 20px 0;
+	padding: 0 0 0 0;
+}
+.cuadrito {
+	float: left;
+	display: block;
+	background: #36945F;
+	margin: 0 25px 0 0;
+	padding: 10px;
+	text-align: center;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.cuadrito span {
+	font-size: 2.3em;
+	color: white;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.cuadrito p {
+	font-size: 0.9em;
+	color: white;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.fecha p.te {
+	font-size: 1em;
+	color: white;
+	margin: 25px 0 0 0;
+	padding: 0 0 0 0;
+}
+
+/************************/
+.iniciopago {
+	position: fixed;
+	display: block;
+	top: 0;
+	left: 0;
+	z-index: 8888;
+	background: white;
+	width: 100%;
+	height: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 90px 0;
+	overflow: scroll;
+	border-bottom: 5px solid #054A2E;
+	-webkit-transform: translate(0,-200%);
+	-moz-transform: translate(0,-200%);
+	-ms-transform: translate(0,-200%);
+	-o-transform: translate(0,-200%);
+	transform: translate(0,-200%);
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+.iniciopago.isOpen {
+	-webkit-transform: translate(0,0);
+	-moz-transform: translate(0,0);
+	-ms-transform: translate(0,0);
+	-o-transform: translate(0,0);
+	transform: translate(0,0);
+	-webkit-transition: all 0.4s ease-in-out;
+	-moz-transition: all 0.4s ease-in-out;
+	-ms-transition: all 0.4s ease-in-out;
+	-o-transition: all 0.4s ease-in-out;
+	transition: all 0.4s ease-in-out;
+}
+p.close {
+	float: right;
+	display: block;
+	font-size: 1em;
+	color: #36945F;
+	margin: 10% 10% 0 0;
+	padding: 0 0 0 0;
+}
+.textoinicia {
+	float: left;
+	display: block;
+	width: 80%;
+	margin: 20px 10% 0 10%;
+	padding: 0 0 0 0;
+}
+.textoinicia h5 {
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	font-size: 1.8em;
+	color: #0A6342;
+	line-height: 1em;
+}
+.textoinicia h5 span {
+	font-size: 0.6em;
+	color: #666;
+}
+.textoinicia p {
+	font-size: 0.9em;
+	color: #666;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.linksprogramas {
+	float: left;
+	display: block;
+	width: 80%;
+	margin: 30px 10% 0 10%;
+	padding: 0 0 0 0;
+}
+.linksprogramas h6 {
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	font-size: 1.1em;
+	color: #36945F;
+}
+.linkinsc {
+	display: block;
+	font-size: 0.85em;
+	color: #666;
+	text-decoration: none;
+	margin: 0 0 8px 0;
+	padding: 0 0 0 0;
+	line-height: 1.3em;
+}
+.linkinsc span {
+	opacity: 0.5;
+}
+@media screen and (min-width: 500px) {
+	.linkinsc {
+		font-size: 0.95em;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

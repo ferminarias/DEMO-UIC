@@ -1,0 +1,942 @@
+.presentacion {
+	width: 100%;
+	height: 620px;
+	margin: 0 0 0 0;
+	padding: 0 10% 0 10%;
+}
+.textopres {
+	float: left;
+	display: block;
+	width: 60%;
+	margin: 180px 0 0 0;
+	padding: 0 0 0 0;
+}
+.textopres h2 {
+	font-size: 2em;
+	color: #36945F;
+	line-height: 1.1em;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+}
+.textopres h1 {
+	font-size: 2em;
+	color: #fff;
+	line-height: 1.1em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+}
+.textopres p {
+	font-size: 1em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.break {
+	display: none;
+}
+@media screen and (min-width: 1365px) {
+	.textopres {
+		width: 50%;
+		margin: 180px 0 0 0;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 1199px) {
+	body {
+		background: #222;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.presentacion {
+		height: 700px;
+		padding: 0 15% 0 15%;
+	}
+	.textopres {
+		width: 40%;
+		margin: 210px 0 0 0;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 2000px) {
+	.textopres {
+		width: 50%;
+		margin: 180px 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h2 {
+		font-size: 2.5em;
+	}
+	.textopres h1 {
+		font-size: 2.5em;
+	}
+	.textopres p {
+		font-size: 1.2em;
+	}
+}
+/************************/
+.contrprog {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.containerpaso1 {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #36945F;
+}
+.verdeclaro {
+	float: left;
+	display: block;
+	width: 3%;
+	height: 240px;	
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.contcaract {
+	float: left;
+	display: block;
+	width: 97%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.caracteristica {
+	float: left;
+	display: block;
+	width: 50%;
+	height: 120px;
+	margin: 0 0 0 0;
+	padding: 20px 3% 20px 3%;
+	border: 1px solid #ececec;
+	background: white;
+	position: relative;
+}
+.caracteristica span {
+	position: absolute;
+	right: 0;
+	font-size: 6em;
+	color:#36945F;
+	opacity: 0.1;
+	margin: -8px 10px 0 0;
+	padding: 0 0 0 0;
+}
+.caracteristica h3 {
+	font-size: 1.2em;
+	line-height: 1.3em;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.caracteristica p {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0 ;
+	padding: 0 0 0 0 ;
+	color: #666;
+}
+.containerpaso2 {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #054A2E;
+}
+.verdefuerte {
+	float: left;
+	display: block;
+	width: 97%;
+	height: 40px;
+	margin: 0 0 0 3%;
+	padding: 0 0 0 0;
+	background: #36945F;
+}
+@media screen and (min-width: 1199px) {
+	.verdeclaro {
+		height: 240px;	
+	}
+	.caracteristica {
+		height: 120px;
+		margin: 0 0 0 0;
+		padding: 20px 4% 20px 4%;
+	}
+}
+@media screen and (min-width: 1249px) {
+	.verdeclaro {
+		height: 140px;	
+	}
+	.caracteristica {
+		width: 24.96%;
+		height: 140px;
+		margin: 0 0 0 0;
+		padding: 20px 2% 20px 2%;
+		border: 1px solid #ececec;
+		background: white;
+		position: relative;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.containerpaso1 {
+		width: 90%;
+		margin: -40px 5% 0 5%;
+		padding: 0 0 0 0;
+	}
+	.containerpaso2 {
+		width: 90%;
+		margin: 0 5% 0 5%;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.containerpaso1 {
+		width: 70%;
+		margin: -40px 15% 0 15%;
+		padding: 0 0 0 0;
+	}
+	.containerpaso2 {
+		width: 70%;
+		margin: 0 15% 0 15%;
+	}
+}
+@media screen and (min-width: 2000px) {
+	.caracteristica {
+		height: 140px;
+		margin: 0 0 0 0;
+		padding: 20px 3% 20px 3%;
+	}
+	.caracteristica h3 {
+		font-size: 1.3em;
+		margin: 0 0 5px 0;
+	}
+	.caracteristica p {
+		font-size: 1em;
+		line-height: 1.4em;
+	}
+}
+/***********************/
+.perfilegreso {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 70px 10% 50px 10%;
+	background: white;
+}
+.textoper {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 45px 0;
+	padding: 0 0 0 0;
+}
+.textoper h2 {
+	color: #004A2E;
+	font-size: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.textoper p {
+	font-size: 1.1em;
+	line-height: 1.4em;
+	margin: 0 0 0 0 ;
+	padding: 0 0 0 0 ;
+	color: #666;
+}
+.containercompetencias {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.competencia {
+	float: left;
+	display: block;
+	width: 47%;
+	height: 120px;
+	margin: 0 3% 35px 0;
+	padding: 0 0 15px 25px;
+	border-left: 1px solid #ddd;
+}
+.competencia p.rc400 {
+	color: #36945F;
+	font-size: 1.3em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+}
+.competencia p.r400 {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+@media screen and (min-width: 1199px) {
+	.perfilegreso {
+		margin: 0 0 0 0;
+		padding: 70px 8% 50px 8%;
+	}
+	.competencia {
+		width: 30%;
+		height: 130px;
+		margin: 0 3% 35px 0;
+		padding: 0 0 15px 25px;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.perfilegreso {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 70px 5% 50px 5%;
+	}
+	.competencia {
+		width: 22%;
+		height: 180px;
+		margin: 0 3% 35px 0;
+		padding: 0 0 15px 25px;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.perfilegreso {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 70px 3% 50px 3%;
+	}
+}
+/***********************/
+.beneficiosuic {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 35px 10% 45px 10%;
+	background:#36945F;
+	text-align: left;
+}
+.beneficiosuic h4 {
+	font-size: 1.5em;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+	color: #004A2E;
+}
+.beneficiosuic p {
+	float: left;
+	display: block;
+	width: 45%;
+	font-size: 1em;
+	margin: 3px 5% 0 0;
+	padding: 8px 0 8px 0;
+	line-height: 1.4em;
+	color: white;
+	letter-spacing: 1px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+@media screen and (min-width: 1365px) {
+	.beneficiosuic {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 35px 5% 45px 5%;
+		background:#36945F;
+		text-align: left;
+	}
+	.beneficiosuic p {
+		width: 23%;
+		margin: 3px 2% 0 0;
+		padding: 8px 0 8px 0;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.beneficiosuic {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 35px 3% 45px 3%;
+		background:#36945F;
+		text-align: left;
+	}
+}
+/***********************/
+.banner1 {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 10px 10% 50px 10%;
+	background: #36945F;
+}
+.textbann1 {
+	float: left;
+	display: block;
+	width: 60%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.banner1 h5 {
+	font-size: 1.2em;
+	color: #fff;
+	margin: 0 0 8px 0;
+	padding: 0 0 0 0;
+}
+.banner1 p {
+	font-size: 1em;
+	color: #fff;
+	opacity: 0.8;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.banner1 a {
+	float: left;
+	display: block;
+	width: 40%;
+	background: #f5ab40;
+	color: white;
+	color: 1em;
+	text-decoration: none;
+	text-align: center;
+	margin: 40px 0 0 0;
+	padding: 13px 0 13px 0;
+}
+@media screen and (min-width: 1365px) {
+	.banner1 {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 10px 5% 50px 5%;
+		background: #36945F;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.banner1 {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 10px 5% 50px 5%;
+		background: #36945F;
+	}
+}
+
+/***********************/
+.perfilingreso {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 90px 0 130px 0;
+	background: #ececec;
+	position: relative;
+	overflow: hidden;
+}
+.fotoperfil {
+	position: absolute;
+	display: block;
+	width: 600px;
+	margin: 0 0 -8px -50px;
+	padding: 0 0 0 0;
+	bottom: 0;
+	left: 0;
+}
+.fotoperfil img {
+	width: 100%;
+}
+.textoini {
+	float: left;
+	display: block;
+	width: 50%;
+	margin: 0 10% 0 30%;
+	padding: 0 0 0 0;
+}
+.textoini h3 {
+	color: #004A2E;
+	font-size: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.textoini p.rc400 {
+	font-size: 1.1em;
+	line-height: 1.4em;
+	margin: 0 0 0 0 ;
+	padding: 0 0 0 0 ;
+	color: #36945F;
+}
+.textoini p.r400 {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0 ;
+	padding: 0 0 0 0 ;
+	color: #666;
+}
+@media screen and (min-width: 1199px) {
+	.perfilingreso {
+		padding: 90px 0 160px 0;
+	}
+	.fotoperfil {
+		width: 700px;
+		margin: 0 0 -10px 0;
+		padding: 0 0 0 0;
+		bottom: 0;
+		left: 0;
+	}
+	.textoini {
+		width: 40%;
+		margin: 0 20% 0 38%;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.perfilingreso {
+		width: 90%;
+		margin: 0 5% 0 5%;
+	}
+	.fotoperfil {
+		width: 700px;
+		margin: 0 0 -10px 80px;
+		padding: 0 0 0 0;
+		bottom: 0;
+		left: 0;
+	}
+	.textoini {
+		width: 40%;
+		margin: 0 20% 0 40%;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.perfilingreso {
+		width: 70%;
+		margin: 0 15% 0 15%;
+	}
+}
+/***********************/
+.planest {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 50px 10% 50px 10%;
+	background: #36945F;
+}
+.planest p {
+	float: left;
+	display: block;
+	width: 50%;
+	font-size: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	text-align: right;
+	color: white;
+}
+.planest a {
+	float: left;
+	display: block;
+	width: 34%;
+	margin: 5px 8% 0 8% ;
+	padding: 13px 0 13px 0;
+	background: #f5ab40;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.2em;
+}
+@media screen and (min-width: 1199px) {
+	.planest {
+		padding: 50px 15% 50px 15%;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.planest {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 50px 15% 50px 15%;
+	}
+}
+@media screen and (min-width: 1550px) {
+	.planest {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 50px 20% 50px 20%;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.planest {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 50px 20% 50px 20%;
+	}
+}
+/***********************/
+.campolaboral {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 70px 10% 70px 10% ;
+	background: white;
+}
+.textocampolab {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+}
+.textocampolab h3 {
+	color: #004A2E;
+	font-size: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.textocampolab p {
+	font-size: 1.1em;
+	line-height: 1.4em;
+	margin: 0 0 0 0 ;
+	padding: 0 0 0 0 ;
+	color: #666;
+}
+.containercampolab {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.containercampolab p {
+	float: left;
+	display: block;
+	width: 47%;
+	margin: 0 3% 3px 0;
+	padding: 0 0 0 0;
+	background: white;
+	color: #666;
+	text-align: left;
+}
+.containercampolab p span {
+	color: #36945F;
+}
+@media screen and (min-width: 1199px) {
+	.campolaboral {
+		padding: 80px 8% 80px 8% ;
+	}
+	.containercampolab p {
+		width: 30%;
+		margin: 0 3% 5px 0;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.campolaboral {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 80px 5% 80px 5% ;
+	}
+}
+@media screen and (min-width: 1800px) {
+	.campolaboral {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 80px 3% 80px 3% ;
+	}
+}
+/***********************/
+.testimoniales {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 60px 10% 70px 10%;
+	background: #ececec;
+}
+.textotest {
+	float: left;
+	display: block;
+	width: 45%;
+	margin: 0 5% 0 0;
+	padding: 0 0 0 0;
+}
+.textotest h5 {
+	font-size: 1.3em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	color: #004A2E;
+}
+.textotest p {
+	font-size: 1em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+	line-height: 1.5em;
+}
+.video-responsive {
+	width: 50%;
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 26%;
+	padding-top: 30px;
+	position: relative;
+}
+.video-responsive iframe, .video-responsive object, .video-responsive embed {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+@media screen and (min-width: 1365px) {
+	.testimoniales {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 60px 5% 70px 5%;
+		background: #ececec;
+	}
+	.textotest {
+		width: 50%;
+		margin: 50px 5% 0 0;
+		padding: 0 0 0 0;
+	}
+	.video-responsive {
+		width: 45%;
+		padding-bottom: 26%;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.testimoniales {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 60px 5% 70px 5%;
+		background: #ececec;
+	}
+	.textotest h5 {
+		font-size: 1.5em;
+	}
+	.textotest p {
+		font-size: 1.1em;
+	}
+}
+/***********************/
+.modeduyuic {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #004A2E;
+}
+.containermodelo {
+	float: left;
+	display: block;
+	position: relative;
+	width: 80%;
+	margin: 0 20% 0 0;
+	padding: 80px 0 80px 0;
+	background: #36945F;
+}
+.contmodeloe {
+	float: left;
+	display: block;
+	width: 50%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 10%;
+	position: relative;
+}
+.contmodeloe h4 {
+	font-size: 1.7em;
+	color: #054A2E;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+}
+.uvptext {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 25px 0;
+	padding: 0 0 0 0;
+}
+.uvptext h5 {
+	font-size: 1.1em;
+	color: #fff;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.uvptext p {
+	font-size: 0.9em;
+	color: #fff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.fotomodedos {
+	display: block;
+	position: absolute;
+	width: 450px;
+	right: 0;
+	bottom: 0;
+	margin: 0 -40px -4px 0;
+	padding: 0 0 0 0;
+}
+.fotomodedos img {
+	width: 100%;
+}
+.containeruic {
+	float: left;
+	display: block;
+	width: 80%;
+	margin: 0 20% 0 0;
+	padding: 90px 0 90px 0;
+	background: #FFF;
+}
+.uic {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 10% 0 10%;
+	background: #FFF;
+}
+.sobrela {
+	float: left;
+	display: block;
+	width: 80%;
+	margin: 0 0 40px 0;
+	padding: 0 0 0 0;
+}
+.sobrela h3{
+	font-size: 1.7em;
+	color: #0A6342;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrela p {
+	font-size: 0.9em;
+	color: #666;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.sobrelauniv {
+	float: left;
+	display: block;
+	width: 45%;
+	height: 120px;
+	margin: 0 5% 30px 0;
+	padding: 0 0 0 0;
+}
+.sobrelauniv h5 {
+	color: #36945F;
+	font-size: 1em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrelauniv p {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.ctauniv {
+	float: left;
+	display: block;
+	width: 40%;
+	margin: 0 60% 0 0;
+	padding: 10px 0 10px 0;
+	border: 2px solid #36945F;
+	color: #36945F;
+	font-size: 1em;
+	text-decoration: none;
+	line-height: 1.2em;
+	text-align: center;
+}
+@media screen and (min-width: 1365px) {
+	.modeduyuic {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 0 0 0 0;
+	}
+	.containermodelo {
+		width: 70%;
+		margin: 0 30% 0 0;
+		padding: 80px 0 80px 0;
+		background: #36945F;
+	}
+	.containeruic {
+		width: 70%;
+		margin: 0 30% 0 0;
+		padding: 90px 0 90px 0;
+	}	
+}
+@media screen and (min-width: 1799px) {
+	.modeduyuic {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 0 0 0 0;
+	}	
+}
+@media screen and (min-width: 2000px) {
+	.contmodeloe h4 {
+		font-size: 2em;
+	}
+	.uvptext h5 {
+		font-size: 1.3em;
+	}
+	.uvptext p {
+		font-size: 1em;
+	}
+	.sobrela h3{
+		font-size: 2em;
+	}
+	.sobrela p {
+		font-size: 1em;
+	}
+	.sobrelauniv h5 {
+		font-size: 1.3em;
+	}
+	.sobrelauniv p {
+		font-size: 1em;
+	}
+	.ctauniv {
+		font-size: 1.1em;
+	}
+}
+/***********************/
+.formulario {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 60px 20% 80px 20%;
+	background: #ececec;
+}
+.formulario:focus {
+	outline: none;
+	border: none;
+}
+.formulario h5 {
+	color: #36945F;
+	font-size: 1.3em;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.formulario h5 span {
+	color: #666;
+	font-size: 0.9em;
+}
+.forma {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 3px 0;
+}
+@media screen and (min-width: 1365px) {
+	.formulario {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 60px 20% 80px 20%;
+		background: #ececec;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.formulario {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 60px 20% 80px 20%;
+		background: #ececec;
+	}
+}
+
+
+.comoestudiar {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	position: relative;
+	background: #36945F;
+}
+
+
+

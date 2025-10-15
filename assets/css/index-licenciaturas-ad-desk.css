@@ -1,0 +1,617 @@
+.presentacion {
+	width: 100%;
+	height: 530px;
+	margin: 0 0 0 0;
+	padding: 0 10% 0 10%;
+}
+.webp .presentacion {
+	background:linear-gradient( rgba(34,34,34,0.90) 100%, rgba(34,34,34,0.90)100%),url("https://educacionenlinea.uic.mx/assets/images/licenciaturas/licenciaturas-en-linea-uic.webp") no-repeat center center;
+	background-size: cover;
+	height: auto;
+	padding-bottom: 30px;
+}
+.no-webp .presentacion {
+	background:linear-gradient( rgba(34,34,34,0.90) 100%, rgba(34,34,34,0.90)100%),url("https://educacionenlinea.uic.mx/assets/images/licenciaturas/licenciaturas-en-linea-uic.jpg") no-repeat center center;
+	background-size: cover;
+}
+.textopres {
+	float: left;
+	display: block;
+	width: 50%;
+	margin: 130px 0 0 0;
+	padding: 0 0 0 0;
+}
+.textopres h2 {
+	font-size: 2em;
+	color: #36945F;
+	line-height: 1.1em;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+}
+.textopres h1 {
+	font-size: 2em;
+	color: #fff;
+	line-height: 1.1em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+}
+.textopres p {
+	font-size: 1em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.textopres a {
+	float: left;
+	display: block;
+	text-align: center;
+	width: 60%;
+	font-size: 0.9em;
+	color: white;
+	text-decoration: none;
+	background: #36945F;
+	margin: 0;
+	padding: 15px 0px 15px 0px;
+}
+.break {
+	display: none;
+}
+@media screen and (min-width: 1365px) {
+	.textopres {
+		width: 50%;
+		margin: 100px 0 0 0;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 1199px) {
+	body {
+		background: #222;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.presentacion {
+		height: 700px;
+		padding: 0 15% 0 15%;
+	}
+	.textopres {
+		width: 40%;
+		margin: 210px 0 0 0;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 2000px) {
+	.textopres {
+		width: 40%;
+		margin: 220px 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h2 {
+		font-size: 2.5em;
+	}
+	.textopres h1 {
+		font-size: 2.5em;
+	}
+	.textopres p {
+		font-size: 1.2em;
+	}
+}
+/************************/
+.estudiad {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.textestudia {
+	float: left;
+	display: block;
+	width: 100%;
+	background: #36945F;
+	margin: 0 0 0 0;
+	padding: 18px 12% 18px 12%;
+	text-align: center;
+}
+.textestudia h6 {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: white;
+	font-size: 1.2em;
+}
+.diferenciadores {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.diferenciador {
+	float: left;
+	display: block;
+	width: 49%;
+	margin: 0.5% 0 0 0.5%;
+	padding: 22px 4% 0 4%;
+	background: #ececec;
+	height: 110px;
+	border: 1px solid #ececec;
+}
+.diferenciador span {
+	float: left;
+	display: block;
+	font-size: 3em;
+	color: #ccc;
+	margin: 6px 15px 30px 0;
+	padding: 0 0 0 0;
+}
+.diferenciador h3 {
+	font-size: 1.1em;
+	color: #36945F;
+	line-height: 1em;
+	margin: 0 0 3px 0;
+	padding: 0 0 0 0;
+}
+.diferenciador p {
+	font-size: 1em;
+	color: #666;
+	line-height: 1.3em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	opacity: 0.9;
+}
+@media screen and (min-width: 1199px) {
+	.diferenciadores {
+		background: white;
+		
+	}
+	.diferenciador {
+		width: 49.6%;
+		margin: 0.3% 0 0 0.3%;
+		padding: 20px 3% 0 3%;
+		height: 110px;
+	}
+	.diferenciador span {
+		font-size: 3.3em;
+		margin: 6px 20px 30px 0;
+		padding: 0 0 0 0;
+	}
+	.diferenciador h3 {
+		font-size: 1.2em;
+		line-height: 1em;
+		margin: 0 0 3px 0;
+		padding: 0 0 0 0;
+	}
+	.diferenciador p {
+		font-size: 1em;
+		line-height: 1.3em;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		opacity: 0.9;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.estudiad {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 0 0 0 0;
+	}
+	.diferenciador {
+		width: 24.6%;
+		margin: 0.3% 0 0 0.3%;
+		padding: 22px 1.5% 0 1.5%;
+		height: 110px;
+	}
+	.diferenciador span {
+		font-size: 2.5em;
+		margin: 6px 12px 30px 0;
+		padding: 0 0 0 0;
+	}
+	.diferenciador h3 {
+		font-size: 1em;
+		line-height: 1em;
+		margin: 0 0 3px 0;
+		padding: 0 0 0 0;
+	}
+	.diferenciador p {
+		font-size: 0.85em;
+		line-height: 1.2em;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		opacity: 0.9;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.estudiad {
+		width: 70%;
+		margin: -60px 15% 0 15%;
+		padding: 0 0 0 0;
+	}
+}
+/************************/
+.lics {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.containerlic {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 5px 1% 25px 1%;
+	background: white;
+}
+.conoceoferta {
+	float: left;
+	display: block;
+	width: 100%;
+	background:#0A6342 ;
+	margin: 0 0 35px 0;
+	padding: 0 0 0 0;
+	color: white;
+	text-align: center;
+}
+.conoceoferta h3 {
+	font-size: 1.1em;
+}
+.licenciatura {
+	float: left;
+	display: block;
+	width: 48%;
+	height: 170px;
+	margin: 0 0 2% 2%;
+	padding: 28px 3% 0 3%;
+	background: #fff;
+	position: relative;
+	text-decoration: none;
+	border-right: 3px solid #ececec;
+	border-bottom: 3px solid #ececec;
+}
+.licenciatura h3 {
+	font-size: 1.2em;
+	line-height: 1.2em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.licenciatura span {
+	float: right;
+	display: block;
+	font-size: 1.4em;
+	color: #aaa;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.licenciatura p {
+	font-size: 0.95em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 8px 0;
+	color: #666;
+	background: white;
+}
+@media screen and (min-width: 1199px) {
+	.containerlic {
+		margin: 0 0 0 0;
+		padding: 5px 0 25px 0;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.lics {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.lics {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 0 0 0 0;
+	}
+}
+/***********************/
+.calltoaction1 {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.ctatxt1 {
+	float: left;
+	display: block;
+	width: 50%;
+	margin: 0 0 0 0;
+	padding:35px 4% 43px 10%;
+	background: #ececec;
+	text-align: right;
+}
+.ctatxt2 {
+	float: left;
+	display: block;
+	width: 50%;
+	margin: 0 0 0 0;
+	padding:40px 10% 40px 4%;
+	background: #36945F;
+	text-align: left;
+}
+.ctatxt1 h5 {
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #0A6342;
+	font-size: 1.8em;
+}
+.ctatxt1 p {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+	font-size: 1.2em;
+	line-height: 1.4em;
+} 
+.ctatxt2 p.rc400 {
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #FFF;
+	font-size: 1.8em;
+	line-height: 0.9em;
+}
+.ctatxt2 p.rc400 span {
+	font-size: 0.8em;
+	color: #0A6342;
+}
+.ctatxt2 p.r400 {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #FFF;
+	font-size: 0.8em;
+	line-height: 1.4em;
+}
+@media screen and (min-width: 1199px) {
+	.ctatxt1 {
+		margin: 0 0 0 0;
+		padding:35px 4% 52px 10%;
+	}
+	.ctatxt2 {
+		margin: 0 0 0 0;
+		padding:40px 10% 40px 4%;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.calltoaction1 {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.calltoaction1 {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 0 0 0 0;
+	}
+}
+/***********************/
+.modeduyuic {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #36945F;
+}
+.fotomodedos {
+	display: none;
+}
+.containeruic {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 30px 0 0 0;
+	padding: 70px 0 90px 0;
+	background: #FFF;
+}
+.uic {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 8% 0 8%;
+	background: #FFF;
+}
+.sobrela {
+	float: left;
+	display: block;
+	width: 70%;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+}
+.sobrela h3{
+	font-size: 1.7em;
+	color: #0A6342;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrela p {
+	font-size: 0.9em;
+	color: #666;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.sobrelauniv {
+	float: left;
+	display: block;
+	width: 45%;
+	margin: 0 5% 10px 0;
+	padding: 0 0 0 0;
+	height: 130px;
+}
+.sobrelauniv h5 {
+	color: #36945F;
+	font-size: 1em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrelauniv p {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.ctauniv {
+	float: left;
+	display: block;
+	width: 50%;
+	margin: 0 0 0 0;
+	padding: 12px 0 12px 0;
+	border: 2px solid #36945F;
+	color: #36945F;
+	font-size: 1em;
+	text-decoration: none;
+	line-height: 1.2em;
+	text-align: center;
+}
+@media screen and (min-width: 1199px) {
+	.containeruic {
+		position: relative;
+		display: block;
+		margin: 30px 0 0 0;
+		padding: 0 0 0 0;
+		background: #FFF;
+		overflow: hidden;
+	}
+	.uic {
+		width: 75%;
+		margin: 80px 0 80px 0;
+		padding: 0 0 0 7%;
+	}
+	.fotomodedos {
+		position: absolute;
+		display: inline-block;
+		right: -30px;
+		bottom: 0;
+		width: 33%;
+		margin: 0 0 -5px 0;
+		padding: 0 0 0 0;
+	}
+	.fotomodedos img {
+		width: 100%;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.modeduyuic {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.modeduyuic {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 0 0 0 0;
+	}
+}
+
+/************************/
+.formulario {
+	width: 90%;
+	margin: 0 0 0 30px;
+	padding: 40px 9% 40px 9%;
+	background: #ececec;
+}
+.formulario h5 {
+	color: #36945F;
+	font-size: 1.3em;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.formulario h5 span {
+	color: #666;
+	font-size: 0.9em;
+}
+.forma {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.forma iframe {
+	width: 100%;
+	height: 400px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	overflow: scroll;
+}
+@media screen and (min-width: 1199px) {
+	.formulario {
+		width: 80%;
+		margin: 0 0 0 0;
+		padding: 40px 8% 40px 8%;
+		background: #ececec;
+		float: right;
+        display: block;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.formulario {
+		height: 100%;
+        margin: 0 0 0 0;
+        padding: 48px;
+        background: #ececec;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.formulario {
+		padding: 60px 10% 90px 10%;
+		background: #ececec;
+	}
+
+    .hero-form .formulario {
+        max-width: 500px;
+        width: 100%;
+    }
+}
+
+.comoestudiar {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	position: relative;
+	background: #36945F;
+}
+.bar {
+	float: left;
+	display: block;
+	width: 3%;
+	height: 177px;
+	margin: 0 0 0 0;
+	padding: 20px 0 20px 0;
+	background: #36945F;
+	text-align: center;
+}
+.textobar {
+	float: left;
+	display: block;
+	width: 60%;
+	margin: 0 0 0 0;
+	padding: 35px 5% 35px 5%;
+	background: #FFF;
+	border: 1px solid #ececec;
+}
+.textobar p {
+	font-size: 0.95em;
+	line-height: 1.4em;
+	color: #666;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+/***********************/
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,769 @@
+
+.presentacion {
+	width: 100%;
+	height: 670px;
+	margin: 0 0 0 0;
+	padding: 0 12% 0 12%;
+}
+.textopres {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 160px 0 0 0;
+	padding: 0 0 0 0;
+}
+.textopres h2 {
+	font-size: 1.7em;
+	color: #36945F;
+	line-height: 1.1em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+}
+.textopres h1 {
+	font-size: 1.7em;
+	color: #fff;
+	line-height: 1.1em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+}
+.textopres p {
+	font-size: 0.9em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+@media screen and (min-width: 767px) {
+	.presentacion {
+		height: 950px;
+		margin: 0 0 0 0;
+		padding: 0 10% 0 10%;
+	}
+	.textopres {
+		width: 80%;
+		margin: 450px 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h2 {
+		font-size: 2em;
+		margin: 0 0 5px 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h1 {
+		font-size: 2em;
+		margin: 0 0 15px 0;
+		padding: 0 0 0 0;
+	}
+	.textopres p {
+		font-size: 1em;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+}
+/************************/
+.contrprog {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.containerpaso1 {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.verdeclaro {
+	float: left;
+	display: block;
+	width: 100%;
+	height: 40px;
+	background: #36945F;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.contcaract {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.caracteristica {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 30px 10% 30px 10%;
+	border: 1px solid #ececec;
+	position: relative;
+	overflow: hidden;
+}
+.caracteristica span {
+	position: absolute;
+	right: 0;
+	font-size: 6em;
+	color:#36945F;
+	opacity: 0.1;
+	margin: 0 15px 0 0;
+	padding: 0 0 0 0;
+}
+.caracteristica h3 {
+	font-size: 1.3em;
+	line-height: 1.3em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.caracteristica p {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0 ;
+	padding: 0 0 0 0 ;
+	color: #666;
+}
+.containerpaso2 {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #36945F;
+}
+.verdefuerte {
+	float: left;
+	display: block;
+	width: 100%;
+	height: 40px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #054A2E;
+}
+@media screen and (min-width: 768px) {
+	.caracteristica {
+		width: 50%;
+		margin: 0 0 0 0;
+		padding: 30px 5% 30px 5%;
+	}
+}
+/***********************/
+.perfilegreso {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 50px 12% 30px 12%;
+	background: white;
+}
+.textoper {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 45px 0;
+	padding: 0 0 0 0;
+}
+.textoper h2 {
+	color: #004A2E;
+	font-size: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.textoper p {
+	font-size: 1.1em;
+	line-height: 1.4em;
+	margin: 0 0 0 0 ;
+	padding: 0 0 0 0 ;
+	color: #666;
+}
+.containercompetencias {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.competencia {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 35px 0;
+	padding: 0 0 35px 0;
+	border-bottom: 1px solid #ddd;
+}
+.competencia p.rc400 {
+	color: #36945F;
+	font-size: 1.4em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+}
+.competencia p.r400 {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+@media screen and (min-width: 767px) {
+	.perfilegreso {
+		padding: 70px 10% 50px 10%;
+	}
+	.competencia {
+		width: 44%;
+		height: 170px;
+		margin: 0 6% 45px 0;
+		padding: 0 0 15px 25px;
+		border-left: 1px solid #ddd;
+		border-bottom: none;
+	}
+}
+/***********************/
+.beneficiosuic {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 40px 12% 40px 12%;
+	background:#36945F;
+	text-align: left;
+}
+.beneficiosuic h4 {
+	font-size: 1.5em;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+	color: #004A2E;
+}
+.beneficiosuic p {
+	float: left;
+	display: block;
+	width: 100%;
+	font-size: 1em;
+	margin: 3px 0 0 0;
+	padding: 8px 0 8px 0;
+	line-height: 1.4em;
+	color: white;
+	letter-spacing: 1px;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+@media screen and (min-width: 767px) {
+	.beneficiosuic {
+		padding: 40px 8% 50px 8%;
+	}
+	.beneficiosuic p {
+		width: 45%;
+		font-size: 1.1em;
+		margin: 3px 5% 0 0;
+		padding: 8px 0 8px 0;
+		border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+	}
+}
+/***********************/
+.banner1 {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 10px 12% 50px 12%;
+	background: #36945F;
+}
+.textbann1 {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.banner1 h5 {
+	font-size: 1.2em;
+	color: #fff;
+	margin: 0 0 8px 0;
+	padding: 0 0 0 0;
+}
+.banner1 p {
+	font-size: 1em;
+	color: #fff;
+	opacity: 0.8;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.banner1 a {
+	float: left;
+	display: block;
+	width: 100%;
+	background: #f5ab40;
+	color: white;
+	color: 1em;
+	text-decoration: none;
+	text-align: center;
+	margin: 20px 0 0 0;
+	padding: 13px 0 13px 0;
+}
+@media screen and (min-width: 767px) {
+	.banner1 {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 10px 8% 50px 8%;
+		background: #36945F;
+	}
+	.textbann1 {
+		width: 50%;
+	}
+	.banner1 a {
+		width: 50%;
+		margin: 30px 0 0 0;
+		padding: 13px 0 13px 0;
+	}
+}
+/***********************/
+.perfilingreso {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 70px 12% 70px 12%;
+	background: #ececec;
+}
+.fotoperfil {
+	display: none;
+}
+.textoini {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.textoini h3 {
+	color: #004A2E;
+	font-size: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.textoini p.rc400 {
+	font-size: 1.1em;
+	line-height: 1.4em;
+	margin: 0 0 0 0 ;
+	padding: 0 0 0 0 ;
+	color: #36945F;
+	line-height: 1.4em;
+}
+.textoini p.r400 {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0 ;
+	padding: 0 0 0 0 ;
+	color: #666;
+}
+@media screen and (min-width: 767px) {
+	.perfilingreso {
+		padding: 70px 0 120px 0;
+		position: relative;
+		overflow: hidden;
+	}
+	.fotoperfil {
+		position: absolute;
+		display: block;
+		width: 570px;
+		margin: 0 0 -8px -80px;
+		padding: 0 0 0 0;
+		bottom: 0;
+		left: 0;
+	}
+	.fotoperfil img {
+		width: 100%;
+	}
+	.textoini {
+		float: left;
+		display: block;
+		width: 60%;
+		margin: 0 10% 0 30%;
+		padding: 0 0 0 0;
+	}
+}
+/***********************/
+.planest {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 60px 12% 60px 12%;
+	background: #36945F;
+}
+.planest p {
+	color: white; 
+	font-size: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	text-align: center;
+}
+.planest a {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 25px 0 0 0 ;
+	padding: 13px 0 13px 0;
+	background: #f5ab40;
+	color: white;
+	text-decoration: none;
+	text-align: center;
+	font-size: 1.2em;
+}
+@media screen and (min-width: 767px) {
+	.planest {
+		margin: 0 0 0 0;
+		padding: 50px 9% 50px 5%;
+	}
+	.planest p {
+		float: left;
+		display: block;
+		width: 47%;
+		font-size: 1.4em;
+		margin: 0 3% 0 0;
+		padding: 0 0 0 0;
+		text-align: right;
+	}
+	.planest a {
+		float: left;
+		display: block;
+		width: 40%;
+		margin: 5px 5% 0 5% ;
+		padding: 13px 0 13px 0;
+		background: #004A2E;
+		color: white;
+		text-decoration: none;
+		text-align: center;
+		font-size: 1.2em;
+	}
+}
+/***********************/
+.campolaboral {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 60px 12% 60px 12% ;
+	background: white;
+}
+.textocampolab {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 35px 0;
+	padding: 0 0 0 0;
+}
+.textocampolab h3 {
+	color: #004A2E;
+	font-size: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.textocampolab p {
+	font-size: 1.1em;
+	line-height: 1.4em;
+	margin: 0 0 0 0 ;
+	padding: 0 0 0 0 ;
+	color: #666;
+}
+.containercampolab {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.containercampolab p {
+	float: left;
+	display: block;
+	font-size: 1em;
+	width: 100%;
+	margin: 0 0 3px 0;
+	padding: 0 0 0 0;
+	color: #666;
+	text-align: left;
+}
+.containercampolab p span {
+	color: #36945F;
+}
+@media screen and (min-width: 767px) {
+	.campolaboral {
+		padding: 70px 10% 70px 10% ;
+	}
+	.containercampolab p {
+		width: 47.5%;
+		margin: 0 2.5% 5px 0;
+		padding: 0px 0 0px 0;
+	}
+}
+/***********************/
+.testimoniales {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 60px 12% 70px 12%;
+	background: #ececec;
+}
+.textotest {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+}
+.textotest h5 {
+	font-size: 1.3em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	color: #004A2E;
+}
+.textotest p {
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+	line-height: 1.5em;
+}
+.video-responsive {
+	width: 100%;
+	height: 0;
+	overflow: hidden;
+	padding-bottom: 56.25%;
+	padding-top: 30px;
+	position: relative;
+}
+.video-responsive iframe, .video-responsive object, .video-responsive embed {
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+@media screen and (min-width: 767px) {
+	.testimoniales {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 60px 10% 70px 10%;
+		background: #ececec;
+	}
+	.textotest h5 {
+		font-size: 1.5em;
+		margin: 0 0 15px 0;
+	}
+	.textotest p {
+		font-size: 1em;
+	}
+}
+/***********************/
+.modeduyuic {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #004A2E;
+}
+.containermodelo {
+	float: left;
+	display: block;
+	position: relative;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 80px 0 80px 0;
+	background: #36945F;
+}
+.contmodeloe {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 12% 0 12%;
+	position: relative;
+}
+.contmodeloe h4 {
+	font-size: 1.7em;
+	color: #054A2E;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+}
+.uvptext {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 25px 0;
+	padding: 0 0 0 0;
+}
+.uvptext h5 {
+	font-size: 1.1em;
+	color: #fff;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.uvptext p {
+	font-size: 0.9em;
+	color: #fff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.fotomodedos {
+	display: none;
+}
+.fotomodedos img {
+	width: 100%;
+}
+.containeruic {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 30px 0 0 0;
+	padding: 80px 0 80px 0;
+	background: #FFF;
+}
+.uic {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 12% 0 12%;
+	background: #FFF;
+}
+.sobrela {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 40px 0;
+	padding: 0 0 0 0;
+}
+.sobrela h3{
+	font-size: 1.7em;
+	color: #0A6342;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrela p {
+	font-size: 0.9em;
+	color: #666;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.sobrelauniv {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+}
+.sobrelauniv h5 {
+	color: #36945F;
+	font-size: 1em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrelauniv p {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.ctauniv {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 20px 0 0 0;
+	padding: 10px 0 10px 0;
+	border: 2px solid #36945F;
+	color: #36945F;
+	font-size: 1em;
+	text-decoration: none;
+	line-height: 1.2em;
+	text-align: center;
+}
+
+@media screen and (min-width: 767px) {
+	.containermodelo {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.contmodeloe {
+		width: 50%;
+		margin: 0 0 0 0;
+		padding: 80px 0 70px 10%;
+		background: #36945F;
+	}
+	.fotomodedos {
+		display: block;
+		position: absolute;
+		width: 44%;
+		right: 0;
+		bottom: 0;
+		margin: 0 0 -5px 0;
+		padding: 0 0 0 0;
+	}
+	.containeruic {
+		margin: 40px 0 0 0;
+		padding: 80px 0 80px 0;
+		background: #FFF;
+	}
+	.uic {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 0 10% 0 10%;
+	}
+	.sobrela {
+		width: 80%;
+		margin: 0 20% 40px 0;
+		padding: 0 0 0 0;
+	}
+	.sobrelauniv {
+		width: 45%;
+		margin: 0 5% 0 0;
+		padding: 0 0 0 0;
+		height: 160px;
+	}
+	.ctauniv {
+		width: 50%;
+		margin: 0 50% 0 0;
+		padding: 15px 0 15px 0;
+	}
+}
+/***********************/
+.formulario {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 60px 12% 80px 12%;
+	background: #ececec;
+}
+.formulario:focus {
+	outline: none;
+	border: none;
+}
+.formulario h5 {
+	color: #36945F;
+	font-size: 1.3em;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.formulario h5 span {
+	color: #666;
+	font-size: 0.9em;
+}
+.forma {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 5px 0;
+}
+@media screen and (min-width: 768px) {
+	.formulario {
+		margin: 0 0 0 0;
+		padding: 60px 10% 60px 10%;
+	}
+}
+
+.comoestudiar {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	position: relative;
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,917 @@
+.presentacion {
+	width: 100%;
+	height: 620px;
+	margin: 0 0 0 0;
+	padding: 0 10% 0 10%;
+}
+.textopres {
+	float: left;
+	display: block;
+	width: 50%;
+	margin: 130px 0 0 0;
+	padding: 0 0 0 0;
+}
+.textopres h2 {
+	font-size: 2em;
+	color: #36945F;
+	line-height: 1.1em;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+}
+.textopres h1 {
+	font-size: 2em;
+	color: #fff;
+	line-height: 1.1em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+}
+.textopres p {
+	font-size: 1em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.break {
+	display: none;
+}
+@media screen and (min-width: 1365px) {
+	.textopres {
+		width: 50%;
+		margin: 100px 0 0 0;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 1199px) {
+	body {
+		background: #222;
+	}
+	.textobar {
+		width: 60%;
+		height: 160px;
+		margin: 0 0 0 0;
+		padding: 35px 8% 35px 5%;
+	}
+	.formulario {
+		width: 80%;
+		margin: 0 0 0 0;
+		padding: 40px 8% 40px 8%;
+		background: #ececec;
+		float: right;
+        display: block;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.presentacion {
+		height: 700px;
+		padding: 0 15% 0 15%;
+	}
+	.textopres {
+		width: 40%;
+		margin: 210px 0 0 0;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 2000px) {
+	.textopres {
+		width: 50%;
+		margin: 180px 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h2 {
+		font-size: 2.5em;
+	}
+	.textopres h1 {
+		font-size: 2.5em;
+	}
+	.textopres p {
+		font-size: 1.2em;
+	}
+}
+/************************/
+.contrprog {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.containerpaso1 {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #36945F;
+}
+.verdeclaro {
+	float: left;
+	display: block;
+	width: 3%;
+	height: 110px;	
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.contcaract {
+	float: left;
+	display: block;
+	width: 97%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.caracteristica {
+	float: left;
+	display: block;
+	width: 50%;
+	height: 110px;
+	margin: 0 0 0 0;
+	padding: 20px 3% 20px 3%;
+	border: 1px solid #ececec;
+	background: white;
+	position: relative;
+}
+.caracteristica span {
+	position: absolute;
+	right: 0;
+	font-size: 6em;
+	color:#36945F;
+	opacity: 0.1;
+	margin: -8px 10px 0 0;
+	padding: 0 0 0 0;
+}
+.caracteristica h3 {
+	font-size: 1.2em;
+	line-height: 1.3em;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.caracteristica p {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0 ;
+	padding: 0 0 0 0 ;
+	color: #666;
+}
+.containerpaso2 {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #054A2E;
+}
+.verdefuerte {
+	float: left;
+	display: block;
+	width: 3%;
+	height: 50px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #054A2E;
+}
+.objetivo {
+	float: left;
+	display: block;
+	width: 97%;
+	margin: 0 0 0 0;
+	padding: 40px 5% 40px 5%;
+	background: #36945F;
+}
+.objetivo h4 {
+	font-size: 1.3em;
+	line-height: 1.2em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #fff;
+}
+.objetivo p {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 40% 0 0;
+	color: #fff;
+}
+@media screen and (min-width: 1199px) {
+	.verdeclaro {
+		width: 3%;
+		height: 240px;	
+	}
+	.caracteristica {
+		height: 120px;
+		margin: 0 0 0 0;
+		padding: 20px 4% 20px 4%;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.containerpaso1 {
+		width: 90%;
+		margin: 0px 5% 0 5%;
+		padding: 0 0 0 0;
+	}
+	.containerpaso2 {
+		width: 90%;
+		margin: 0 5% 0 5%;
+	}
+	.verdeclaro {
+		width: 3%;
+		height: 120px;	
+	}
+	.caracteristica {
+		float: left;
+		display: block;
+		width: 25%;
+		height: 120px;
+		margin: 0 0 0 0;
+		padding: 20px 2% 20px 2%;
+	}
+	.caracteristica h3 {
+		font-size: 1.1em;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.containerpaso1 {
+		width: 70%;
+		margin: -40px 15% 0 15%;
+		padding: 0 0 0 0;
+	}
+	.containerpaso2 {
+		width: 70%;
+		margin: 0 15% 0 15%;
+	}
+}
+@media screen and (min-width: 2000px) {
+	.caracteristica {
+		height: 130px;
+		margin: 0 0 0 0;
+		padding: 20px 4% 20px 4%;
+	}
+	.caracteristica h3 {
+		font-size: 1.3em;
+		margin: 0 0 5px 0;
+	}
+	.caracteristica p {
+		font-size: 1em;
+		line-height: 1.4em;
+	}
+	.formulario {
+		width: 35%;
+		height: 600px;
+		margin: -340px 0 0 0;
+	}
+	.objetivo h4 {
+		font-size: 1.5em;
+	}
+	.objetivo p {
+		font-size: 1em;
+		padding: 0 40% 0 0;
+	}
+}
+/***********************/
+.numeralia {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 50px 2% 60px 2%;
+	background: white;
+}
+.cardnum {
+	float: left;
+	display: block;
+	width: 33%;
+	height: 190px;
+}
+.cardnum:nth-child(1) {
+	padding: 0 40px 0 40px;
+}
+.cardnum:nth-child(2) {
+	border-left: 2px solid #ccc;
+	padding: 0 40px 0 40px;
+}
+.cardnum:nth-child(3) {
+	border-left: 2px solid #ccc;
+	padding: 0 40px 0 40px;
+}
+.cardnum h5 {
+	font-size: 1.3em;
+	line-height: 1.2em;
+	margin: 30px 0 10px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.cardnum p {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+}
+@media screen and (min-width: 1199px) {
+	.numeralia {
+		padding: 60px 5% 80px 5%;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.numeralia {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 50px 5% 80px 4%;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.numeralia {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 50px 5% 80px 4%;
+	}
+}
+/***********************/
+.perfilin {
+	width: 100%;
+	background: #ececec;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	border: none;
+}
+.perfilin h3 {
+	float: left;
+	display: block;
+	width: 40%;
+	margin: 0 0 0 0;
+	padding: 40px 45px 40px 45px;
+	color: white;
+	background: #054A2E;
+	font-size: 1.5em;
+	text-align: right;
+}
+.perfilin p {
+	float: left;
+	display: block;
+	width: 60%;
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0;
+	padding: 30px;
+	color: #666;
+}
+.perfilin ul {
+	float: left;
+	display: block;
+	width: 60%;
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 45px 0 45px;
+	color: #666;
+	list-style-position: inside;
+}
+.broch {
+	float: left;
+	display: block;
+	margin: 25px 0 0 0;
+	padding: 10px 35px 10px 35px;
+	background: #054A2E;
+	color: white;
+	text-decoration: none;
+}
+@media screen and (min-width: 1099px) {
+	.perfilin h3 {
+		padding: 50px 45px 50px 45px;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.perfilin {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.perfilin {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 0 0 0 0;
+	}
+}
+/***********************/
+.conttematico {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: white;
+}
+.plandeestudios {
+	float: left;
+	display: block;
+	width: 60%;
+	margin: 0 40% 0 0;
+	padding: 70px 7% 80px 7%;
+	background: white
+}
+.pe1 {
+	float: left;
+	display: block;
+	width: 70%;
+	margin: 0 0 40px 0;
+	padding: 0 0 0 0;
+}
+.pe1 h6 {
+	font-size: 1em;
+	line-height: 1.2em;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+	color: #666;
+}
+.pe1 h2 {
+	font-size: 1.5em;
+	line-height: 1.2em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.pe1 p {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+}
+.contmod {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.acordion {
+	width: 100%;
+	font-size: 0.8em;
+	line-height: 1.4em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+	text-align: left;
+	background: none;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+}
+.acordion span.titmod {
+	font-size: 1.5em;
+}
+.acordion span.iconfont {
+	float: right;
+	display: block;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	font-size: 0.8em;
+	color: #ccc;
+}
+.acordion.active span.iconfont {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.panel {
+	font-size: 0.8em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 15px;
+	color: #666;
+}
+@media screen and (min-width: 1199px) {
+	.plandeestudios {
+		width: 50%;
+		margin: 0 50% 0 0;
+		padding: 70px 7% 80px 7%;
+		background: white
+	}
+}
+@media screen and (min-width: 1365px) {
+	.conttematico {
+		width: 90%;
+		margin: 0 5% 0 5%;
+	}
+	.plandeestudios {
+		width: 40%;
+		margin: 0 60% 0 0;
+		padding: 70px 7% 80px 7%;
+		background: white
+	}
+}
+@media screen and (min-width: 1799px) {
+	.conttematico {
+		width: 70%;
+		margin: 0 15% 0 15%;
+	}
+}
+@media screen and (min-width: 2000px) {
+	
+}
+/***********************/
+.docentes {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 80px 0 80px 0;
+	background: #ececec;
+}
+div.fotodirac {
+	float: left;
+	display: block;
+	width: 20%;
+	margin: 0 5% 30px 10%;
+	padding: 0 0 0 0;
+	clip-path: polygon(10% 0, 100% 0%, 90% 100%, 0% 100%);
+}
+div.fotodirac img {
+	width: 100%;
+}
+div.textodirac {
+	float: left;
+	display: block;
+	width: 55%;
+	margin: 0 10% 0 0 ;
+	padding: 0 0 0 0;
+}
+.textodirac h6 {
+	font-size: 1em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+}
+.textodirac h5 {
+	font-size: 1.4em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.textodirac p {
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.5em;
+	color: #666;
+}
+@media screen and (min-width: 1365px) {
+	.docentes {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 80px 0 80px 0;
+	}
+	div.fotodirac {
+		width: 15%;
+		margin: 0 5% 30px 10%;
+		padding: 0 0 0 0;
+	}
+	div.textodirac {
+		width: 60%;
+		margin: 0 10% 0 0 ;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.docentes {
+		width: 70%;
+		margin: 0 15% 0 15%;
+	}
+}
+/***********************/
+.calltoa {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 50px 10% 60px 10%;
+	background: #fff;
+}
+.textcta {
+	float: left;
+	display: block;
+	width: 40%;
+	margin: 8px 5% 0 5%;
+	padding: 0 0 0 0;
+	text-align: right;
+}
+.textcta p.rc700 {
+	font-size: 1.5em;
+	line-height: 1.2em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.textcta p.r400 {
+	font-size: 0.9em;
+	line-height: 1.2em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+}
+.botoncta {
+	float: left;
+	display: block;
+	width: 35%;
+	margin: 20px 0 0 0;
+	padding: 0 0 0 0;
+	text-align: center;
+}
+.botoncta a {
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 10px 0 10px 0;
+	border: 1px solid #36945F;
+	color: #36945F;
+	text-decoration: none;
+	font-size: 0.9em;
+}
+a.agenda {
+	float: left;
+	display: block;
+	background: #36945F;
+	color: white !important;
+	margin: 8px 0 0 0;
+	padding: 10px 0 10px 0;
+	font-size: 0.9em;
+}
+@media screen and (min-width: 1365px) {
+	.calltoa {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 50px 10% 50px 10%;
+	}
+	.textcta {
+		width: 50%;
+		margin: 8px 5% 0 5%;
+		padding: 0 0 0 0;
+		text-align: right;
+	}
+	.botoncta {
+		width: 25%;
+		margin: 20px 0 0 0;
+		padding: 0 0 0 0;
+		text-align: center;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.calltoa {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 50px 10% 50px 10%;
+	}
+}
+
+/***********************/
+.modeduyuic {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #054A2E;
+}
+.containermodelo {
+	float: left;
+	display: block;
+	position: relative;
+	width: 80%;
+	margin: 0 20% 0 0;
+	padding: 80px 0 80px 0;
+	background: #36945F;
+}
+.contmodeloe {
+	float: left;
+	display: block;
+	width: 50%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 10%;
+	position: relative;
+}
+.contmodeloe h4 {
+	font-size: 1.7em;
+	color: #054A2E;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+}
+.uvptext {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 25px 0;
+	padding: 0 0 0 0;
+}
+.uvptext h5 {
+	font-size: 1.1em;
+	color: #fff;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.uvptext p {
+	font-size: 0.9em;
+	color: #fff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.fotomodedos {
+	display: block;
+	position: absolute;
+	width: 341px;
+	right: 0;
+	bottom: 0;
+	margin: 0 30px -5px 0;
+	padding: 0 0 0 0;
+}
+.fotomodedos img {
+	width: 100%;
+}
+.containeruic {
+	float: left;
+	display: block;
+	width: 80%;
+	margin: 0 20% 0 0;
+	padding: 90px 0 90px 0;
+	background: #FFF;
+}
+.uic {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 10% 0 10%;
+	background: #FFF;
+}
+.sobrela {
+	float: left;
+	display: block;
+	width: 80%;
+	margin: 0 0 40px 0;
+	padding: 0 0 0 0;
+}
+.sobrela h3{
+	font-size: 1.7em;
+	color: #054A2E;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrela p {
+	font-size: 0.9em;
+	color: #666;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.sobrelauniv {
+	float: left;
+	display: block;
+	width: 45%;
+	height: 120px;
+	margin: 0 5% 30px 0;
+	padding: 0 0 0 0;
+}
+.sobrelauniv h5 {
+	color: #36945F;
+	font-size: 1em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrelauniv p {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.ctauniv {
+	float: left;
+	display: block;
+	width: 40%;
+	margin: 0 60% 0 0;
+	padding: 10px 0 10px 0;
+	border: 2px solid #36945F;
+	color: #36945F;
+	font-size: 1em;
+	text-decoration: none;
+	line-height: 1.2em;
+	text-align: center;
+}
+@media screen and (min-width: 1365px) {
+	.modeduyuic {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 0 0 0 0;
+	}
+	.containermodelo {
+		width: 70%;
+		margin: 0 30% 0 0;
+		padding: 80px 0 80px 0;
+	}
+	.containeruic {
+		width: 70%;
+		margin: 0 30% 0 0;
+		padding: 90px 0 90px 0;
+	}	
+}
+@media screen and (min-width: 1799px) {
+	.modeduyuic {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 0 0 0 0;
+	}	
+}
+@media screen and (min-width: 2000px) {
+	.contmodeloe h4 {
+		font-size: 2em;
+	}
+	.uvptext h5 {
+		font-size: 1.3em;
+	}
+	.uvptext p {
+		font-size: 1em;
+	}
+	.sobrela h3{
+		font-size: 2em;
+	}
+	.sobrela p {
+		font-size: 1em;
+	}
+	.sobrelauniv h5 {
+		font-size: 1.3em;
+	}
+	.sobrelauniv p {
+		font-size: 1em;
+	}
+	.ctauniv {
+		font-size: 1.1em;
+	}
+}
+/***********************/
+/*.formulario {
+	width: 80%;
+	margin: 0 0 0 0;
+	padding: 40px 8% 40px 8%;
+	background: #ececec;
+}*/
+.formulario {
+	width: 90%;
+	margin: 0 0 0 30px;
+	padding: 40px 9% 40px 9%;
+	background: #ececec;
+}
+.formulario:focus {
+	outline: none;
+	border: none;
+}
+.formulario h5 {
+	color: #36945F;
+	font-size: 1.3em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.formulario h5 span {
+	color: #666;
+	font-size: 0.8em;
+}
+.forma {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 3px 0;
+}
+@media screen and (min-width: 1365px) {
+    .hero-form .formulario {
+		width: 500px;
+	}
+	.formulario {
+		margin: 0 0 0 0;
+		padding: 40px 8% 40px 8%;
+		background: #ececec;
+		float: right;
+		display: block;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.formulario {
+		margin: 0 15% 0 15%;
+		padding: 70px 20% 60px 20%;
+		background: #ececec;
+	}
+
+
+}
+
+
+
+
+
+
+
+
+
+
+

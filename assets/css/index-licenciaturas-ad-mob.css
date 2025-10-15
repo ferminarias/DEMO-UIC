@@ -1,0 +1,456 @@
+.presentacion {
+	width: 100%;
+	height: 620px;
+	margin: 0 0 0 0;
+	padding: 0 12% 0 12%;
+}
+.webp .presentacion {
+	background:linear-gradient( rgba(34,34,34,0.95) 100%, rgba(34,34,34,0.95)100%),url("https://educacionenlinea.uic.mx/assets/images/licenciaturas/licenciaturas-en-linea-uic.webp") no-repeat center center;
+	background-size: cover;
+	height: auto;
+	padding: 50px;
+}
+.no-webp .presentacion {
+	background:linear-gradient( rgba(34,34,34,0.95) 100%, rgba(34,34,34,0.95)100%),url("https://educacionenlinea.uic.mx/assets/images/licenciaturas/licenciaturas-en-linea-uic.jpg") no-repeat center center;
+	background-size: cover;
+}
+.textopres {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 140px 0 0 0;
+	padding: 0 0 0 0;
+}
+.textopres h2 {
+	font-size: 1.7em;
+	color: #36945F;
+	line-height: 1.1em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+
+}
+.textopres h1 {
+	font-size: 1.7em;
+	color: #fff;
+	line-height: 1.1em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+}
+.textopres p {
+	font-size: 1em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+@media screen and (min-width: 767px) {
+	.presentacion {
+		height: 850px;
+		margin: 0 0 0 0;
+		padding: 0 10% 0 10%;
+	}
+	.textopres {
+		width: 100%;
+		margin: 100px 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h2 {
+		font-size: 2em;
+		margin: 0 0 5px 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h1 {
+		font-size: 2em;
+		margin: 0 0 15px 0;
+		padding: 0 0 0 0;
+	}
+	.textopres p {
+		font-size: 1em;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+}
+/************************/
+.estudiad {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.textestudia {
+	float: left;
+	display: block;
+	width: 100%;
+	background: #36945F;
+	margin: 0 0 0 0;
+	padding: 18px 12% 18px 12%;
+	text-align: center;
+}
+.textestudia h6 {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: white;
+	font-size: 0.9em;
+}
+.diferenciadores {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.diferenciador {
+	float: left;
+	display: block;
+	width: 99%;
+	margin: 0.5% 0.5% 0 0.5%;
+	padding: 22px 8% 0 8%;
+	background: #ececec;
+	height: 100px;
+	border: 1px solid #ececec;
+}
+.diferenciador span {
+	float: left;
+	display: block;
+	font-size: 3em;
+	color: #ccc;
+	margin: 6px 15px 30px 0;
+	padding: 0 0 0 0;
+}
+.diferenciador h3 {
+	font-size: 1.1em;
+	color: #36945F;
+	line-height: 1em;
+	margin: 0 0 3px 0;
+	padding: 0 0 0 0;
+}
+.diferenciador p {
+	font-size: 0.9em;
+	color: #666;
+	line-height: 1.3em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	opacity: 0.9;
+}
+@media screen and (min-width: 767px) {
+	.textestudia h6 {
+		font-size: 1.3em;
+	}
+	.diferenciador {
+		width: 49%;
+		margin: 0.5% 0 0 0.5%;
+		padding: 22px 3% 0 3%;
+		height: 110px;
+	}
+}
+@media screen and (min-width: 499px) {
+	.textestudia h6 {
+		font-size: 1em;
+	}
+}
+/************************/
+.lics {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.containerlic {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 15px 0;
+	background: white;
+}
+.conoceoferta {
+	float: left;
+	display: block;
+	width: 100%;
+	background:#36945F ;
+	margin: 0 0 15px 0;
+	padding: 15px;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	font-weight: 400;
+}
+.conoceoferta h3 {
+	font-size: 1em;
+}
+
+.licenciatura {
+	float: left;
+	display: block;
+	width: 96%;
+	height: 180px;
+	margin: 0 2% 2% 2%;
+	padding: 28px 8% 0 8%;
+	background: #fff;
+	position: relative;
+	text-decoration: none;
+	border-right: 3px solid #ececec;
+	border-bottom: 3px solid #ececec;
+}
+.licenciatura h3 {
+	font-size: 1.2em;
+	line-height: 1.2em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.licenciatura span {
+	float: right;
+	display: block;
+	font-size: 1.4em;
+	color: #aaa;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.licenciatura p {
+	font-size: 0.95em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 8px 0;
+	color: #666;
+	background: white;
+}
+@media screen and (min-width: 767px) {
+	.containerlic {
+		padding: 3px 0 35px 0;
+	}
+	.licenciatura {
+		width: 49.5%;
+		height: 210px;
+		margin: 0.5% 0 0 0.5%;
+		padding: 35px 5% 0 5%;
+	}
+}
+/***********************/
+.calltoaction1 {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.ctatxt1 {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding:40px 15% 40px 15%;
+	background: #ececec;
+	text-align: center;
+}
+.ctatxt2 {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding:40px 10% 20px 10%;
+	background: #36945F;
+	text-align: center;
+}
+.ctatxt1 h5 {
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #0A6342;
+	font-size: 1.8em;
+}
+.ctatxt1 p {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+	font-size: 1.2em;
+	line-height: 1.4em;
+} 
+.ctatxt2 p.rc400 {
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #FFF;
+	font-size: 1.8em;
+	line-height: 0.9em;
+}
+.ctatxt2 p.rc400 span {
+	font-size: 0.8em;
+	color: #0A6342;
+}
+.ctatxt2 p.r400 {
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #FFF;
+	font-size: 0.8em;
+	line-height: 1.4em;
+}
+@media screen and (min-width: 767px) {
+	.ctatxt1 {
+		width: 50%;
+		margin: 0 0 0 0;
+		padding:35px 5% 40px 8%;
+		text-align: right;
+	}
+	.ctatxt2 {
+		width: 50%;
+		margin: 0 0 0 0;
+		padding:40px 5% 38px 5%;
+		text-align: left;
+	}
+}
+/***********************/
+.modeduyuic {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #36945F;
+}
+.fotomodedos {
+	display: none;
+}
+.containeruic {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 30px 0 0 0;
+	padding: 80px 0 80px 0;
+	background: #FFF;
+}
+.uic {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 12% 0 12%;
+	background: #FFF;
+}
+.sobrela {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 40px 0;
+	padding: 0 0 0 0;
+}
+.sobrela h3{
+	font-size: 1.7em;
+	color: #0A6342;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrela p {
+	font-size: 0.9em;
+	color: #666;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.sobrelauniv {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+}
+.sobrelauniv h5 {
+	color: #36945F;
+	font-size: 1em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrelauniv p {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.ctauniv {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 20px 0 0 0;
+	padding: 12px 0 12px 0;
+	border: 2px solid #36945F;
+	color: #36945F;
+	font-size: 1em;
+	text-decoration: none;
+	line-height: 1.2em;
+	text-align: center;
+}
+/************************/
+.formulario {
+	width: 100%;
+	margin: -50px 0 0 0;
+	padding: 60px 10% 90px 10%;
+	background: #ececec;
+}
+.formulario h5 {
+	color: #36945F;
+	font-size: 1.3em;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.formulario h5 span {
+	color: #666;
+	font-size: 0.9em;
+}
+.forma {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.forma iframe {
+	width: 100%;
+	height: 400px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	overflow: scroll;
+}
+
+
+/***********************/
+
+/************************/
+.comoestudiar {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	position: relative;
+}
+.bar {
+	float: left;
+	display: block;
+	width: 100%;
+	height: 40px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #36945F;
+	text-align: center;
+}
+.textobar {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 40px 12% 40px 12%;
+	background: #FFF;
+	border: 1px solid #ececec;
+}
+.textobar p {
+	font-size: 0.95em;
+	line-height: 1.4em;
+	color: #666;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

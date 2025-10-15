@@ -1,0 +1,654 @@
+.presentacion {
+	width: 100%;
+	height: 620px;
+	margin: 0 0 0 0;
+	padding: 0 10% 0 10%;
+}
+.textopresent {
+	float: left;
+	display: block;
+	width: 50%;
+	margin: 130px 0 0 0;
+	padding: 0 0 0 0;
+}
+.textopresent-p4 {
+	padding: 0 30px 0 0;
+}
+.textopresent h2 {
+	font-size: 2em;
+	color: #FFF;
+	line-height: 1.5em;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+} 
+.textopresent h1 {
+	font-size: 2em;
+	color: #36945F;
+	line-height: 1.1em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+}
+.textopresent p {
+	font-size: 1.2em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+.textopres_rigth {
+	padding-right: 20px;
+}
+
+.fechaini {
+	float: left;
+	display: block;
+	bottom:  0;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 15px 0 15px 0;
+	background: #0A6342;
+	text-align: center;
+}
+.fechainidesk {
+	/*position: absolute;*/
+	bottom: 0;
+	right: 0;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 10px 0 10px 0;
+	background: #0A6342;
+	text-align: center;
+}
+.fechainidesk p {
+	font-size: 1em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.fechaini p {
+	font-size: 1.2em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+@media screen and (min-width: 1200px) {
+	.textopresent {
+		float: left;
+		display: block;
+		width: 50%;
+		margin: 130px 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.textopresent-p4 {
+		padding: 0 30px 0 0;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.textopresent {
+		width: 50%;
+		margin: 100px 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.fechainidesk {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 10px 0 10px 0;
+		background: #0A6342;
+		text-align: center;
+	}
+	body {
+		background: #222;
+	}
+}
+@media screen and (min-width: 1499px) {
+	.fechainidesk {
+		width: 80%;
+		margin: 0 10% 0 10%;
+		padding: 10px 0 10px 0;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.textopresent {
+		width: 40%;
+		margin: 120px 0 60px 0;
+		padding: 0 0 0 15%;
+	}
+	.fechainidesk {
+		width: 70%;
+		margin: 0 15% 0 15%;
+	}
+}
+/*++++++++++++++++++++++++++*/
+.contprog {
+	float: left;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.estudiaadistancia {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 15px 0 15px 0;
+	background: #36945F;
+	text-align: center;
+}
+.estudiaadistancia p {
+	font-size: 1em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+} 
+.caracteristica {
+	float: left;
+	display: block;
+	width: 49.6%;
+	margin: 0.3% 0 0 0.3%;
+	padding: 22px 4% 0 4%;
+	background: #ececec;
+	height: 110px;
+}
+.caracteristica span {
+	float: left;
+	display: block;
+	font-size: 3em;
+	color: #ccc;
+	margin: 8px 15px 28px 0;
+	padding: 0 0 0 0;
+}
+.caracteristica h3 {
+	color: #36945F;
+	font-size: 1.1em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.caracteristica p {
+	color: #666;
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+@media screen and (min-width: 1200px) {
+	.caracteristica {
+		width: 24.7%;
+		margin: 0.2% 0 0 0.2%;
+		padding: 18px 1.5% 0 2%;
+		height: 110px;
+	}
+	.caracteristica span {
+		float: left;
+		display: block;
+		font-size: 2.5em;
+		color: #ccc;
+		margin: 10px 15px 28px 0;
+		padding: 0 0 0 0;
+	}
+	.caracteristica h3 {
+		font-size: 1em;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.caracteristica p {
+		font-size: 0.85em;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.contprog {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 0 0 0 0;
+		background: white;
+	}
+}
+@media screen and (min-width: 1499px) {
+	.contprog {
+		width: 80%;
+		margin: 0 10% 0 10%;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.contprog {
+		width: 70%;
+		margin: 0 15% 0 15%;
+	}
+}
+/*++++++++++++++++++++++++++*/
+.porqueestudiar {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	overflow: hidden;
+	position: relative;
+}
+.textopor {
+	float: left;
+	display: block;
+	width: 70%;
+	margin: 0 0 0 0;
+	padding: 70px 0 90px 10%;
+}
+.textopor h4 {
+	color: #666;
+	font-size: 1.1em;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.textopor h2 {
+	color: #36945F;
+	font-size: 1.4em;
+	margin: 0 0 25px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.textopor p {
+	color: #666;
+	font-size: 0.95em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.5em;
+} 
+.textopor p span {
+	color: #36945F;
+}
+.imagenpor {
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	width: 35%;
+	margin: 0 -40px 77px 0;
+	padding: 0 0 0 0;
+}
+.imagenpor img {
+	width: 100%;
+} 
+.becas {
+	float: left;
+	display: block;
+	width: 100%;
+	background: #f5ab40;
+	margin: -4px 0 0 0;
+	padding: 18px 0 18px 0;
+	text-align: center;
+} 
+.becas p {
+	color: #fff;
+	font-size: 1.2em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.5em;
+}
+.becas p.peq {
+	font-size: 0.7em;
+	opacity: 0.7;
+}
+@media screen and (min-width: 1200px) {
+	.imagenpor {
+		position: absolute;
+		right: 0;
+		bottom: 0;
+		width: 30%;
+		margin: 0 -20px 77px 0;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 1365px) {
+	.porqueestudiar {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 0 0 0 0;
+		background: white;
+	}
+	.imagenpor {
+		width: 30%;
+		margin: 0 -10px 77px 0;
+		padding: 0 0 0 0;
+	}
+}
+@media screen and (min-width: 1499px) {
+	.porqueestudiar {
+		width: 80%;
+		margin: 0 10% 0 10%;
+		padding: 0 0 0 0;
+		background: white;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.porqueestudiar {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 0 0 0 0;
+		background: white;
+	}
+}
+/*++++++++++++++++++++++++++*/
+.plane {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 10% 40px 10%;
+}
+.textoplan {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 50px 0 30px 0;
+	padding: 0 1% 0 1%;
+}
+.textoplan p {
+	color: #666;
+	font-size: 1em;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.textoplan h2 {
+	color: #36945F;
+	font-size: 1.6em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.textoplan p.r400 {
+	color: #aaa;
+	font-size: 0.8em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.cuadrotema {
+	float: left;
+	display: block;
+	width: 48.5%;
+	margin: 1% 0 0 1%;
+	padding: 40px 6% 40px 6%;
+	background: #ececec;
+	height: 260px;
+}
+.cuadrotema ul {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+} 
+.descargabroch {
+	float: left;
+	display: block;
+	width: 98%;
+	margin: 10px 1% 0 1%;
+	padding: 15px 0 15px 0;
+	background: #f5ab40;
+	color: white;
+	font-size: 1em;
+	text-decoration: none;
+	text-align: center;
+	border-bottom: 2px solid #AE6A08;
+}
+@media screen and (min-width: 1365px) {
+	.plane {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 0 8% 80px 8%;
+		background: white;
+	}
+}
+@media screen and (min-width: 1499px) {
+	.plane {
+		width: 80%;
+		margin: 0 10% 0 10%;
+		padding: 0 8% 80px 8%;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.plane {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 0 8% 80px 8%;
+	}
+}
+/*++++++++++++++++++++++++++*/
+.revalida {
+	width: 100%;
+	margin: 40px 0 0 0;
+	padding: 60px 12% 60px 12%;
+	background: #ececec;
+}
+.revalida h4 {
+	color: #36945F;
+	font-size: 1.5em;
+	margin: 0 0 25px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+} 
+.revalida p {
+	color: #666;
+	font-size: 1em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+} 
+.revalida p span {
+	color: #36945F;
+}
+@media screen and (min-width: 1365px) {
+	.revalida {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 60px 12% 60px 12%;
+		background: #ececec;
+	}
+}
+@media screen and (min-width: 1499px) {
+	.revalida {
+		width: 80%;
+		margin: 0 10% 0 10%;
+		padding: 60px 12% 60px 12%;
+		background: #ececec;
+	}
+}
+@media screen and (min-width: 1799px) {
+	.revalida {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 60px 12% 60px 12%;
+		background: #ececec;
+	}
+}
+/*++++++++++++++++++++++++++*/
+.lauic {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 70px 10% 60px 10%;
+}
+.lauic-down {
+	background: #222;
+}
+.sobrela {
+	float: left;
+	display: block;
+	width: 80%;
+	margin: 0 0 20px 0;
+	padding: 0 0 0 0;
+}
+.sobrela h3 {
+	color: #0A6342;
+	font-size: 1.6em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.sobrela p {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.sobrelauniv {
+	float: left;
+	display: block;
+	width: 43%;
+	margin: 20px 4% 0 0;
+	padding: 0 0 0 0;
+	height: 120px;
+}
+.sobrelauniv h5 {
+	color: #36945F;
+	font-size: 1.1em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.sobrelauniv p {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.fotomodedos {
+	display: none;
+}
+@media screen and (min-width: 1365px) {
+	.lauic {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 70px 8% 60px 8%;
+		background: white;
+	}
+	.lauic-down {
+		width: 90%;
+		margin: 0 5% 0 5%;
+		padding: 70px 8% 60px 8%;
+		background: #222;
+	}
+}
+@media screen and (min-width: 1499px) {
+	.lauic {
+		width: 80%;
+		margin: 0 10% 0 10%;
+		padding: 70px 8% 60px 8%;
+		/*background: white;*/
+	}
+	
+}
+@media screen and (min-width: 1799px) {
+	.lauic {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 70px 8% 60px 8%;
+		background: white;
+	}
+}
+/*++++++++++++++++++++++++++*/
+.contforma {
+	width: 500px;
+	margin: auto;
+	padding: 40px 9% 40px 9%;
+	background: #ececec;
+}  
+.contforma h5 {
+	color: #36945F;
+	font-size: 1.3em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.contforma h5 span {
+	color: #666;
+	font-size: 0.8em;
+}
+.forma {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 3px 0;
+}
+.disclaimer {
+	font-size: 0.7em;
+	color: #999;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.disclaimer a {
+	color: #36945F;
+}
+@media screen and (min-width: 1365px) {
+	.contforma {
+		width: 500px;
+		margin: 0 0 0 0;
+		padding: 40px 8% 40px 8%;
+		background: #ececec;
+		float: right;
+		display: block;
+	}  
+	.contforma-down {
+		width: 500px;
+		float: none;
+		margin: auto;
+	}
+}
+@media screen and (min-width: 1499px) {
+	.contforma {
+		width: 500px;
+		margin: auto;
+		padding: 40px 8% 40px 8%;
+		background: #ececec;
+		display: block;
+	}  
+}
+@media screen and (min-width: 1799px) {
+	.contforma {
+		width: 70%;
+		margin: 0 15% 0 15%;
+		padding: 70px 10% 60px 10%;
+		background: #ececec;
+	}
+    
+    .hero-form .contforma {
+        width: 500px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

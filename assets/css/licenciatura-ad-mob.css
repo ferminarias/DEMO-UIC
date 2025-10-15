@@ -1,0 +1,444 @@
+.presentacion {
+	width: 100%;
+	height: 670px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.textopresent {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 50px 0 0 0;
+	padding: 0 12% 0 12%;
+}
+.textopresent h2 {
+	font-size: 2em;
+	color: #FFF;
+	line-height: 1.5em;
+	margin: 0 0 8px 0;
+	padding: 0 0 0 0;
+} 
+.textopresent h1 {
+	font-size: 2em;
+	color: #36945F;
+	line-height: 1.1em;
+	margin: 0 0 8px 0;
+	padding: 0 0 0 0;
+}
+.textopresent p {
+	font-size: 0.9em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+
+.fechaini {
+	float: left;
+	display: block;
+	bottom:  0;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 15px 0 15px 0;
+	background: #0A6342;
+	text-align: center;
+}
+.fechainidesk {
+	display: none;
+} 
+.fechaini p {
+	font-size: 1em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+} 
+@media screen and (min-width: 767px) {
+	.presentacion {
+		height: 950px;
+		margin: 0 0 0 0;
+		padding: 0 10% 0 10%;
+	}
+	.textopresent {
+		width: 100%;
+		margin: 50px 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.textopresent h2 {
+		font-size: 2em;
+	} 
+	.textopresent h1 {
+		font-size: 2em;
+	}
+	.textopresent p {
+		font-size: 1.2em;
+	}
+}
+/*++++++++++++++++++++++++++*/
+.contprog {
+	float: left;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.estudiaadistancia {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 15px 0 15px 0;
+	background: #36945F;
+	text-align: center;
+}
+.estudiaadistancia p {
+	font-size: 1em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+} 
+.caracteristica {
+	float: left;
+	display: block;
+	width: 98%;
+	margin: 1% 1% 0 1%;
+	padding: 22px 6% 0 6%;
+	background: #ececec;
+	height: 130px;
+}
+.caracteristica span {
+	float: left;
+	display: block;
+	font-size: 3em;
+	color: #ccc;
+	margin: 8px 15px 28px 0;
+	padding: 0 0 0 0;
+}
+.caracteristica h3 {
+	color: #36945F;
+	font-size: 1.1em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.caracteristica p {
+	color: #666;
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+@media screen and (min-width: 767px) {
+	.caracteristica {
+		width: 49.5%;
+		margin: 0.5% 0 0 0.5%;
+		padding: 22px 3% 0 3%;
+		background: #ececec;
+		height: 110px;
+	}
+}
+/*++++++++++++++++++++++++++*/
+.porqueestudiar {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	overflow: hidden;
+}
+.textopor {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 60px 12% 60px 12%;
+}
+.textopor h4 {
+	color: #666;
+	font-size: 1.1em;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.textopor h2 {
+	color: #36945F;
+	font-size: 1.4em;
+	margin: 0 0 25px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.textopor p {
+	color: #666;
+	font-size: 1em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.5em;
+} 
+.textopor p span {
+	color: #36945F;
+}
+.imagenpor {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: -40px 0 0 0;
+	padding: 0 0 0 0;
+	overflow: hidden;
+}
+.imagenpor img {
+	width: 100%;
+} 
+.becas {
+	float: left;
+	display: block;
+	width: 100%;
+	background: #f5ab40;
+	margin: -4px 0 0 0;
+	padding: 20px 0 20px 0;
+	text-align: center;
+} 
+.becas p {
+	color: #fff;
+	font-size: 1.2em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.5em;
+}
+.becas p.peq {
+	font-size: 0.7em;
+	opacity: 0.7;
+}
+@media screen and (min-width: 768px) {
+	.imagenpor {
+		margin: 0 0 0 20%;
+		padding: 0 0 0 0;
+	}
+	.imagenpor img {
+		width: 55%;
+	}
+	.becas p {
+		font-size: 1.3em;
+	}
+}
+/*++++++++++++++++++++++++++*/
+.plane {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.textoplan {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 50px 0 40px 0;
+	padding: 0 12% 0 12%;
+}
+.textoplan p {
+	color: #666;
+	font-size: 1.1em;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.textoplan h2 {
+	color: #36945F;
+	font-size: 1.4em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.textoplan p.r400 {
+	color: #aaa;
+	font-size: 0.7em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.cuadrotema {
+	float: left;
+	display: block;
+	width: 98%;
+	margin: 2% 2% 0 2%;
+	padding: 40px 12% 40px 12%;
+	background: #ececec;
+}
+.cuadrotema ul {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+} 
+.descargabroch {
+	float: left;
+	display: block;
+	width: 96%;
+	margin: 10px 2% 0 2%;
+	padding: 15px 0 15px 0;
+	background: #f5ab40;
+	color: white;
+	font-size: 1em;
+	text-decoration: none;
+	text-align: center;
+	border-bottom: 2px solid #AE6A08;
+}
+@media screen and (min-width: 768px) {
+	.descargabroch {
+		width: 60%;
+		margin: 30px 20% 0 20%;
+		padding: 15px 0 15px 0;
+	}
+	.cuadrotema {
+		width: 47%;
+		margin: 2% 0 0 2%;
+		padding: 40px 6% 40px 6%;
+		background: #ececec;
+		height: 280px;
+	}
+}
+/*++++++++++++++++++++++++++*/
+.revalida {
+	width: 100%;
+	margin: 40px 0 0 0;
+	padding: 60px 12% 60px 12%;
+	background: #ececec;
+}
+.revalida h4 {
+	color: #36945F;
+	font-size: 1.4em;
+	margin: 0 0 25px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+} 
+.revalida p {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+} 
+.revalida p span {
+	color: #36945F;
+}
+/*++++++++++++++++++++++++++*/
+.lauic {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 60px 12% 80px 12%;
+}
+.lauic-down {
+	background: #222 !important;
+}
+.sobrela {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.sobrela h3 {
+	color: #0A6342;
+	font-size: 1.6em;
+	margin: 0 0 25px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.sobrela p {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.sobrelauniv {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 30px 0 0 0;
+	padding: 0 0 0 0;
+}
+.sobrelauniv h5 {
+	color: #36945F;
+	font-size: 1.1em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.sobrelauniv p {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.fotomodedos {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+.contforma {
+	width: 100%;
+	margin: auto;
+	padding: 50px 12% 70px 12%;
+	background: #ececec;
+}  
+.contforma h5 {
+	color: #36945F;
+	font-size: 1.3em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.contforma h5 span {
+	color: #666;
+	font-size: 0.8em;
+}
+.forma {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 3px 0;
+}
+.disclaimer {
+	font-size: 0.7em;
+	color: #999;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.disclaimer a {
+	color: #36945F;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

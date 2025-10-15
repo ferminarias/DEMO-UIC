@@ -1,0 +1,672 @@
+
+.presentacion {
+	width: 100%;
+	height: 620px;
+	margin: 0 0 0 0;
+	padding: 0 12% 0 12%;
+}
+.webp .presentacion {
+	background:linear-gradient( rgba(34,34,34,0.90) 100%, rgba(34,34,34,0.90)100%),url("https://educacionenlinea.uic.mx/assets/images/diplomados-home/diplomados-en-linea-universidad-intercontinental.webp") no-repeat top center;
+	background-size: cover;
+	height: auto;
+	padding-bottom: 50px;
+}
+.no-webp .presentacion {
+	background:linear-gradient( rgba(34,34,34,0.90) 100%, rgba(34,34,34,0.90)100%),url("https://educacionenlinea.uic.mx/assets/images/diplomados-home/diplomados-en-linea-universidad-intercontinental.jpg") no-repeat top center;
+	background-size: cover;
+	height: auto;
+	padding-bottom: 50px;
+}
+.textopres {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 110px 0 0 0;
+	padding: 0 0 0 0;
+}
+.textopres h2 {
+	font-size: 1.7em;
+	color: #36945F;
+	line-height: 1.1em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+}
+.textopres h1 {
+	font-size: 1.7em;
+	color: #fff;
+	line-height: 1.1em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+}
+.textopres p {
+	font-size: 0.9em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.textopres a {
+	float: left;
+	display: block;
+	text-align: center;
+	width: 80%;
+	font-size: 0.9em;
+	color: white;
+	text-decoration: none;
+	background: #36945F;
+	margin: 30px 0 0 0;
+	padding: 15px 0px 15px 0px;
+}
+.textemp {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 25px 7% 30px 7%;
+	background: white;
+	text-align: center;
+	font-size: 18px;
+}
+.textemp h5 {
+	font-size: 1.1em;
+	line-height: 1.2em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.textemp p {
+	font-size: 0.90em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+}
+.ctaemp {
+	margin: 0 0 0 0;
+	width:100%;
+	float: left;
+	display: block;
+	height: 100%;
+	color: white;
+	font-size:28px;
+	text-align: center;
+	background: #333;
+    
+}
+.ctaemp a {
+	font-size: 1em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	text-decoration: none;
+}
+@media screen and (min-width: 767px) {
+	.presentacion {
+		height: 950px;
+		margin: 0 0 0 0;
+		padding: 0 10% 0 10%;
+	}
+	.textopres {
+		width: 100%;
+		margin: 100px 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h2 {
+		font-size: 2em;
+		margin: 0 0 5px 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h1 {
+		font-size: 2em;
+		margin: 0 0 15px 0;
+		padding: 0 0 0 0;
+	}
+	.textopres p {
+		font-size: 1em;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+}
+/************************/
+.comoestudiar {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	position: relative;
+}
+.bar {
+	float: left;
+	display: block;
+	width: 100%;
+	height: 40px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #36945F;
+	text-align: center;
+}
+.textobar {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 35px 12% 35px 12%;
+	background: #FFF;
+	border: 1px solid #ececec;
+}
+.textobar p {
+	font-size: 0.95em;
+	line-height: 1.4em;
+	color: #666;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.formulario {
+	width: 100%;
+	margin: -50px 0 0 0;
+	padding: 60px 10% 90px 10%;
+	background: #ececec;
+}
+.formulario h5 {
+	color: #36945F;
+	font-size: 1.3em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.formulario h5 span {
+	color: #666;
+	font-size: 0.9em;
+}
+.forma {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.forma iframe {
+	width: 100%;
+	height: 400px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	overflow: scroll;
+}
+@media screen and (min-width: 767px) {
+	.textobar {
+		padding: 35px 10% 35px 10%;
+	}
+	.textopres h2 .break {
+		display: none;
+	}
+}
+/********************/
+.filtro {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.barbusq {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 20px 7% 20px 7%;
+	background: #054A2E;
+	text-align: center;
+}
+.barbusq p {
+	font-size: 1.3em;
+	line-height: 1.2em;
+	color: white;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	text-align: left;
+}
+.barbusq p span {
+	float: right;
+	display: block;
+}
+.controls {
+	float: left;
+	display: block;
+	width: 100%;
+	background: #36945F;
+	margin: 0 0 0 0;
+	padding: 20px 7% 20px 7%;
+}
+.controls button {
+	float: left;
+	display: block;
+	width: 48%;
+	border: none;
+	outline: none;
+	color: #054A2E;
+	background: rgba(255,255,255,0.3);
+	font-size: 1em;
+	margin: 3px 2% 3px 0;
+	padding: 4px 10px 4px 10px;
+	text-align: left;
+	border-left: 5px solid #054A2E;
+}
+.mixitup-control-active {
+	background: rgba(255,255,255,0.8) !important;
+}
+@media screen and (min-width: 767px) {
+	.barbusq {
+		padding: 20px 5% 20px 5%;
+	}
+	.controls {
+		padding: 30px 5% 30px 5%;
+		margin: 0 0 0 0;
+	}
+	.controls button {
+		float: left;
+		display: block;
+		width: 32.33333%;
+		font-size: 0.9em;
+		margin: 3px 1% 3px 0;
+		padding: 4px 12px 4px 12px;
+	}
+	.controls button.all {
+		width: 99%;
+		padding: 10px 12px 10px 12px;
+		margin: 0 0 3px 0;
+	}
+}
+/***********************/
+.diplo {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.containerdip {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 10px 0 30px 0;
+	background: white;
+}
+.diplomado {
+	float: left;
+	display: block;
+	width: 98%;
+	height: 230px;
+	margin: 1%;
+	padding: 35px 0 0 0;
+	border: 1px solid #ececec;
+	position: relative;
+	text-decoration: none;
+}
+.diplomado h3 {
+	font-size: 0.95em;
+	line-height: 1.2em;
+	margin: 0 0 10px 0;
+	padding: 0 10% 0 10%;
+	color: #36945F;
+}
+.diplomado p {
+	font-size: 0.90em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 10% 25px 10%;
+	color: #666;
+}
+.fechaydur {
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 10px 10% 10px 10%;
+	background: #ececec;
+	position: absolute;
+	bottom: 0;
+}
+.fechaydur p {
+	font-size: 0.75em;
+	display: inline;
+	color: #333;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.fechaydur p span {
+	color: #36945F;
+}
+@media screen and (min-width: 767px) {
+	.containerdip {
+		padding: 30px 3% 30px 3%;
+	}
+	.diplomado {
+		width: 48%;
+		height: 230px;
+		margin: 1%;
+		padding: 35px 0 0 0;
+		border: 1px solid #ececec;
+	}
+}
+/***********************/
+.modeduyuic {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #004A2E;
+}
+.containermodelo {
+	float: left;
+	display: block;
+	position: relative;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 80px 0 80px 0;
+	background: #36945F;
+}
+.contmodeloe {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 12% 0 12%;
+	position: relative;
+}
+.contmodeloe h4 {
+	font-size: 1.7em;
+	color: #054A2E;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+}
+.uvptext {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 25px 0;
+	padding: 0 0 0 0;
+}
+.uvptext h5 {
+	font-size: 1.1em;
+	color: #fff;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.uvptext p {
+	font-size: 0.9em;
+	color: #fff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.fotomodedos {
+	display: none;
+}
+.fotomodedos img {
+	width: 100%;
+}
+.containeruic {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 30px 0 0 0;
+	padding: 80px 0 80px 0;
+	background: #FFF;
+}
+.uic {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 12% 0 12%;
+	background: #FFF;
+}
+.sobrela {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 40px 0;
+	padding: 0 0 0 0;
+}
+.sobrela h3{
+	font-size: 1.7em;
+	color: #0A6342;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrela p {
+	font-size: 0.9em;
+	color: #666;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.sobrelauniv {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+}
+.sobrelauniv h5 {
+	color: #36945F;
+	font-size: 1em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrelauniv p {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.ctauniv {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 20px 0 0 0;
+	padding: 12px 0 12px 0;
+	border: 2px solid #36945F;
+	color: #36945F;
+	font-size: 1em;
+	text-decoration: none;
+	line-height: 1.2em;
+	text-align: center;
+}
+
+@media screen and (min-width: 767px) {
+	.containermodelo {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.contmodeloe {
+		width: 50%;
+		margin: 0 0 0 0;
+		padding: 80px 0 70px 10%;
+		background: #36945F;
+	}
+	.fotomodedos {
+		display: block;
+		position: absolute;
+		width: 44%;
+		right: 0;
+		bottom: 0;
+		margin: 0 0 -5px 0;
+		padding: 0 0 0 0;
+	}
+	.containeruic {
+		margin: 40px 0 0 0;
+		padding: 80px 0 80px 0;
+		background: #FFF;
+	}
+	.uic {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 0 10% 0 10%;
+	}
+	.sobrela {
+		width: 80%;
+		margin: 0 20% 40px 0;
+		padding: 0 0 0 0;
+	}
+	.sobrelauniv {
+		width: 45%;
+		margin: 0 5% 0 0;
+		padding: 0 0 0 0;
+		height: 160px;
+	}
+	.ctauniv {
+		width: 50%;
+		margin: 0 50% 0 0;
+		padding: 15px 0 15px 0;
+	}
+}
+/*********SECCIÓN EMPRESAS**************/
+.empresas {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.espacioverde {
+	display: none;
+}
+.contempresas {
+	float: left;
+	display: block;
+	width: 100%;
+	background: white;
+	margin: 0 0 0 0;
+	padding: 30px 0 0 0;
+	border: 1px solid #ececec;
+}
+.textemp h5 {
+	font-size: 1.1em;
+	line-height: 1.2em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.textemp {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 5px 0;
+	padding: 0 10% 0 10%;
+}
+.textemp p {
+	font-size: 0.90em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+}
+.ctaemp {
+	/*float: left;
+	display: block;
+	width: 100%;
+	background: #36945F;
+	text-align: center;
+	margin: 25px 0 0 0;
+	padding: 12px 0 12px 0;*/
+
+	margin: 0 0 0 0;
+	width:100%;
+	float: left;
+	display: block;
+	height: 100%;
+	color: #36945F;
+	font-size:28px;
+	text-align: center;
+
+}
+.ctaemp a {
+	font-size: 1em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	text-decoration: none;
+	color: white;
+}
+@media screen and (min-width: 767px) {
+	.contempresas {
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		background: #36945F;
+		border: none;
+		border-bottom: 1px solid rgba(236, 236, 236, 0.3);
+	}
+	.textemp {
+		float: left;
+		display: block;
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 25px 5% 25px 5%;
+		background: white;
+	}
+	.ctaemp {
+		margin: 0 0 0 0;
+		width:100%;
+		float: left;
+		display: block;
+		height: 100%;
+		color: white;
+		font-size:28px;
+		text-align: center;
+		background: #333;
+		
+	}
+	.ctaemp a {
+		font-size: 1em;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		text-decoration: none;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

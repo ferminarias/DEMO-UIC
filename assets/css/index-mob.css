@@ -1,0 +1,342 @@
+
+.presentacion {
+	width: 100%;
+	height: 620px;
+	margin: 0 0 0 0;
+	padding: 0 12% 0 12%;
+}
+.webp .presentacion {
+	background:linear-gradient( rgba(34,34,34,0.90) 100%, rgba(34,34,34,0.90)100%),url("../images/home/programas-en-linea-universidad-intercontinental.webp") no-repeat top center;
+	background-size: cover;
+}
+.no-webp .presentacion {
+	background:linear-gradient( rgba(34,34,34,0.90) 100%, rgba(34,34,34,0.90)100%),url("../images/home/programas-en-linea-universidad-intercontinental.jpg") no-repeat top center;
+	background-size: cover;
+}
+.textopres {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 160px 0 0 0;
+	padding: 0 0 0 0;
+}
+.textopres h2 {
+	font-size: 1.7em;
+	color: #36945F;
+	line-height: 1.1em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+}
+.textopres h1 {
+	font-size: 1.7em;
+	color: #fff;
+	line-height: 1.1em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+}
+.textopres p {
+	font-size: 0.9em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+@media screen and (min-width: 767px) {
+	.presentacion {
+		height: 950px;
+		margin: 0 0 0 0;
+		padding: 0 10% 0 10%;
+	}
+	.textopres {
+		width: 80%;
+		margin: 450px 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h2 {
+		font-size: 1.9em;
+		margin: 0 0 5px 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h1 {
+		font-size: 1.9em;
+		margin: 0 0 15px 0;
+		padding: 0 0 0 0;
+	}
+	.textopres p {
+		font-size: 1em;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.break {
+		display: none;
+	}
+}
+/************************/
+.ofertaedu {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+div.bar {
+	float: left;
+	display: block;
+	width: 100%;
+	height: 40px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #36945F;
+}
+.cuadrooferta {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 30px 10% 30px 10%;
+	background: white;
+	height: 170px;
+	text-decoration: none;
+	border: 1px solid rgba(0,0,0,0.1);
+}
+.cuadrooferta h3 {
+	font-size: 1.3em;
+	color: #36945F;
+	margin: 0 0 8px 0;
+	padding: 0 0 0 0;
+}
+.cuadrooferta p {
+	font-size: 0.9em;
+	color: #666;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+@media screen and (min-width: 767px) {
+	.cuadrooferta {
+		width: 33.333333%;
+		margin: 0 0 0 0;
+		padding: 30px 3.5% 30px 3.5%;
+		height: 160px;
+	}
+	.cuadrooferta h3 {
+		font-size: 1em;
+		margin: 0 0 8px 0;
+	}
+	.cuadrooferta h3 span {
+		font-size: 0.8em;
+	}
+	.cuadrooferta p {
+		font-size: 0.8em;
+	}
+}
+/************************/
+.modeloe {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #36945F;
+	position: relative;
+	overflow: hidden;
+}
+.verdemod {
+	float: left;
+	display: block;
+	width: 100%;
+	height: 40px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #004A2E;
+}
+.contmodeloe {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 60px 12% 60px 12%;
+}
+.modeloe h4 {
+	font-size: 1.7em;
+	color: #054A2E;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+}
+.uvptext {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 25px 0;
+	padding: 0 0 0 0;
+}
+.uvptext h5 {
+	font-size: 1.1em;
+	color: #fff;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.uvptext p {
+	font-size: 0.9em;
+	color: #fff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.fotomodedos {
+	display: none;
+}
+.fotomodedos img {
+	width: 100%;
+}
+@media screen and (min-width: 767px) {
+	.contmodeloe {
+		width: 55%;
+		margin: 0 0 0 0;
+		padding: 60px 0 60px 10%;
+		background: #36945F;
+	}
+	.fotomodedos {
+		display: block;
+		position: absolute;
+		width: 41%;
+		right: 0;
+		bottom: 0;
+		margin: 0 0 -5px 0;
+		padding: 0 0 0 0;
+	}
+	
+}
+/************************/
+.formayuic {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #ececec;
+}
+.formulario {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 60px 12% 60px 12%;
+}
+.formulario h5 {
+	color: #36945F;
+	font-size: 1.3em;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.formulario h5 span {
+	color: #666;
+	font-size: 0.9em;
+}
+.forma {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.uic {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 80px 12% 120px 12%;
+	background: #FFF;
+}
+.sobrela {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 40px 0;
+	padding: 0 0 0 0;
+}
+.sobrela h3{
+	font-size: 1.7em;
+	color: #0A6342;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrela p {
+	font-size: 0.9em;
+	color: #666;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.sobrelauniv {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+}
+.sobrelauniv h5 {
+	color: #36945F;
+	font-size: 1em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrelauniv p {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.ctauniv {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 15px 0 0 0;
+	padding: 15px 0 15px 0;
+	border: 2px solid #36945F;
+	color: #36945F;
+	font-size: 1em;
+	text-decoration: none;
+	line-height: 1.2em;
+	text-align: center;
+}
+@media screen and (min-width: 767px) {
+	.formulario {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 60px 10% 80px 10%;
+	}
+	.uic {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 90px 10% 100px 10%;
+	}
+	.sobrela {
+		width: 80%;
+		margin: 0 20% 40px 0;
+		padding: 0 0 0 0;
+	}
+	.sobrelauniv {
+		width: 45%;
+		margin: 0 5% 0 0;
+		padding: 0 0 0 0;
+		height: 160px;
+	}
+	.ctauniv {
+		width: 45%;
+		margin: 0 65% 0 0;
+		padding: 15px 0 15px 0;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+

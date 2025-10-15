@@ -1,0 +1,806 @@
+
+.presentacion {
+	width: 100%;
+	height: 620px;
+	margin: 0 0 0 0;
+	padding: 0 12% 0 12%;
+}
+.textopres {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 160px 0 0 0;
+	padding: 0 0 0 0;
+}
+.textopres h2 {
+	font-size: 1.7em;
+	color: #36945F;
+	line-height: 1.1em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+}
+.textopres h1 {
+	font-size: 1.7em;
+	color: #fff;
+	line-height: 1.1em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+}
+.textopres p {
+	font-size: 0.9em;
+	color: #fff;
+	line-height: 1.5em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+@media screen and (min-width: 767px) {
+	.presentacion {
+		height: 950px;
+		margin: 0 0 0 0;
+		padding: 0 10% 0 10%;
+	}
+	.textopres {
+		width: 80%;
+		margin: 450px 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h2 {
+		font-size: 2em;
+		margin: 0 0 5px 0;
+		padding: 0 0 0 0;
+	}
+	.textopres h1 {
+		font-size: 2em;
+		margin: 0 0 15px 0;
+		padding: 0 0 0 0;
+	}
+	.textopres p {
+		font-size: 1em;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+}
+/************************/
+.contrprog {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.containerpaso1 {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.verdeclaro {
+	float: left;
+	display: block;
+	width: 100%;
+	height: 40px;
+	background: #36945F;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.contcaract {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.caracteristica {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 30px 12% 30px 12%;
+	border: 1px solid #ececec;
+}
+.caracteristica h3 {
+	font-size: 1.2em;
+	line-height: 1.3em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.caracteristica p {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0 ;
+	padding: 0 0 0 0 ;
+	color: #666;
+}
+.formulario {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 60px 12% 60px 12%;
+	background: #ececec;
+}
+.formulario:focus {
+	outline: none;
+	border: none;
+}
+.formulario h5 {
+	color: #36945F;
+	font-size: 1.3em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.formulario h5 span {
+	color: #666;
+	font-size: 0.9em;
+}
+.forma {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 3px 0;
+}
+.containerpaso2 {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.verdefuerte {
+	float: left;
+	display: block;
+	width: 100%;
+	height: 40px;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #054A2E;
+}
+.objetivo {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 40px 12% 40px 12%;
+	background: #36945F;
+}
+.objetivo h4 {
+	font-size: 1.3em;
+	line-height: 1.2em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #fff;
+}
+.objetivo p {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #fff;
+}
+@media screen and (min-width: 768px) {
+	.formulario {
+		margin: 0 0 0 0;
+		padding: 60px 10% 60px 10%;
+	}
+	.caracteristica {
+		width: 50%;
+		height: 150px;
+		margin: 0 0 0 0;
+		padding: 30px 5% 30px 5%;
+	}
+	.objetivo {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 40px 10% 40px 10%;
+	}
+}
+/***********************/
+.numeralia {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 30px 0 80px 0;
+}
+.cardnum {
+	float: left;
+	display: block;
+	width: 76%;
+	margin: 0 12% 0 12%;
+	padding: 35px 0 40px 0;
+	border-bottom: 1px solid #ccc;
+}
+.cardnum h5 {
+	font-size: 1.5em;
+	line-height: 1.2em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.cardnum p {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+}
+@media screen and (min-width: 767px) {
+	.numeralia {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 80px 10% 70px 10%;
+	}
+	.cardnum {
+		width: 70%;
+		margin: 0 0 50px 0;
+		padding: 0 5% 0 5%;
+		border-left: 1px solid #ccc;
+		border-bottom: none;
+	}
+}
+/***********************/
+.perfilin {
+	width: 100%;
+	background: #ececec;
+	margin: 0 0 0 0;
+	padding: 40px 12% 40px 12%;
+}
+.perfilin h3 {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: -70px 0 35px 0;
+	padding: 25px 25px 25px 25px;
+	color: white;
+	background: #054A2E;
+	font-size: 1.3em;
+	text-align: center;
+}
+.perfilin p {
+	float: left;
+	display: block;
+	width: 100%;
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+}
+@media screen and (min-width: 767px) {
+	.perfilin {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 40px 10% 40px 10%;
+	}
+	.perfilin h3 {
+		width: 45%;
+		margin: -70px 55% 35px 0;
+		padding: 20px 25px 20px 25px;
+	}
+}
+/***********************/
+.conttematico {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.plandeestudios {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 80px 12% 80px 12%;
+	background: white;
+}
+.pe1 {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 40px 0;
+	padding: 0 0 0 0;
+}
+.pe1 h6 {
+	font-size: 1em;
+	line-height: 1.2em;
+	margin: 0 0 5px 0;
+	padding: 0 0 0 0;
+	color: #666;
+}
+.pe1 h2 {
+	font-size: 1.5em;
+	line-height: 1.2em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.pe1 p {
+	font-size: 0.9em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+}
+.contmod {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.acordion {
+	width: 100%;
+	font-size: 0.8em;
+	line-height: 1.4em;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+	text-align: left;
+	background: none;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+}
+.acordion span.titmod {
+	font-size: 1.5em;
+}
+.acordion span.iconfont {
+	float: right;
+	display: block;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	font-size: 0.8em;
+	color: #ccc;
+}
+.acordion.active span.iconfont {
+	-webkit-transform: rotate(90deg);
+	-moz-transform: rotate(90deg);
+	-ms-transform: rotate(90deg);
+	-o-transform: rotate(90deg);
+	transform: rotate(90deg);
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-ms-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+.panel {
+	font-size: 0.8em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 15px;
+	color: #666;
+}
+@media screen and (min-width: 767px) {
+	.conttematico {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.plandeestudios {
+		width: 60%;
+		margin: 0 0 0 0;
+		padding: 70px 8% 80px 8%;
+		background: white;
+	}
+}
+/***********************/
+.calltoa {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 60px 12% 60px 12%;
+	background: #ececec;
+}
+.textcta {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+	text-align: center;
+}
+.textcta p.rc700 {
+	font-size: 1.5em;
+	line-height: 1.2em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.textcta p.r400 {
+	font-size: 0.9em;
+	line-height: 1.2em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+}
+.botoncta {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	text-align: center;
+}
+.botoncta a {
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 15px 0 15px 0;
+	border: 1px solid #36945F;
+	color: #36945F;
+	text-decoration: none;
+}
+a.agenda {
+	float: left;
+	display: block;
+	background: #054A2E;
+	color: white !important;
+	border: none !important;
+	margin: 10px 0 0 0;
+	padding: 15px 0 15px 0;
+}
+@media screen and (min-width: 768px) {
+	.calltoa {
+		margin: 0 0 0 0;
+		padding: 50px 10% 50px 10%;
+		background: #ececec;
+	}
+	.textcta {
+		width: 45%;
+		margin: 12px 0 0 0;
+		padding: 0 0 0 0;
+		text-align: right;
+	}
+	.botoncta {
+		width: 50%;
+		margin: 0 0 0 5%;
+		padding: 0 0 0 0;
+		text-align: center;
+	}
+	.botoncta a {
+		margin: 0 0 0 0;
+		padding: 10px 0 10px 0;
+	}
+	a.agenda {
+		margin: 10px 0 0 0;
+		padding: 10px 0 10px 0;
+	}
+}
+/***********************/
+.modeduyuic {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	background: #004A2E;
+}
+.containermodelo {
+	float: left;
+	display: block;
+	position: relative;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 80px 0 80px 0;
+	background: #36945F;
+}
+.contmodeloe {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 12% 0 12%;
+	position: relative;
+}
+.contmodeloe h4 {
+	font-size: 1.7em;
+	color: #054A2E;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+}
+.uvptext {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 25px 0;
+	padding: 0 0 0 0;
+}
+.uvptext h5 {
+	font-size: 1.1em;
+	color: #fff;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.uvptext p {
+	font-size: 0.9em;
+	color: #fff;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.fotomodedos {
+	display: none;
+}
+.fotomodedos img {
+	width: 100%;
+}
+.containeruic {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 30px 0 0 0;
+	padding: 80px 0 80px 0;
+	background: #FFF;
+}
+.uic {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 12% 0 12%;
+	background: #FFF;
+}
+.sobrela {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 40px 0;
+	padding: 0 0 0 0;
+}
+.sobrela h3{
+	font-size: 1.7em;
+	color: #0A6342;
+	margin: 0 0 15px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrela p {
+	font-size: 0.9em;
+	color: #666;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.sobrelauniv {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 30px 0;
+	padding: 0 0 0 0;
+}
+.sobrelauniv h5 {
+	color: #36945F;
+	font-size: 1em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	line-height: 1.2em;
+}
+.sobrelauniv p {
+	color: #666;
+	font-size: 0.9em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.4em;
+}
+.ctauniv {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 20px 0 0 0;
+	padding: 10px 0 10px 0;
+	border: 2px solid #36945F;
+	color: #36945F;
+	font-size: 1em;
+	text-decoration: none;
+	line-height: 1.2em;
+	text-align: center;
+}
+
+@media screen and (min-width: 767px) {
+	.containermodelo {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+	}
+	.contmodeloe {
+		width: 50%;
+		margin: 0 0 0 0;
+		padding: 80px 0 70px 10%;
+		background: #36945F;
+	}
+	.fotomodedos {
+		display: block;
+		position: absolute;
+		width: 44%;
+		right: 0;
+		bottom: 0;
+		margin: 0 0 -5px 0;
+		padding: 0 0 0 0;
+	}
+	.containeruic {
+		margin: 40px 0 0 0;
+		padding: 80px 0 80px 0;
+		background: #FFF;
+	}
+	.uic {
+		width: 100%;
+		margin: 0 0 0 0;
+		padding: 0 10% 0 10%;
+	}
+	.sobrela {
+		width: 80%;
+		margin: 0 20% 40px 0;
+		padding: 0 0 0 0;
+	}
+	.sobrelauniv {
+		width: 45%;
+		margin: 0 5% 0 0;
+		padding: 0 0 0 0;
+		height: 160px;
+	}
+	.ctauniv {
+		width: 50%;
+		margin: 0 50% 0 0;
+		padding: 15px 0 15px 0;
+	}
+}
+/*********SECCIÓN EMPRESAS**************/
+.empresas {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+}
+.espacioverde {
+	display: none;
+}
+.contempresas {
+	float: left;
+	display: block;
+	width: 100%;
+	background: white;
+	margin: 0 0 0 0;
+	padding: 30px 0 0 0;
+	border: 1px solid #ececec;
+}
+.textemp h5 {
+	font-size: 1.1em;
+	line-height: 1.2em;
+	margin: 0 0 10px 0;
+	padding: 0 0 0 0;
+	color: #36945F;
+}
+.textemp {
+	float: left;
+	display: block;
+	width: 100%;
+	margin: 0 0 5px 0;
+	padding: 0 10% 0 10%;
+}
+.textemp p {
+	font-size: 0.90em;
+	line-height: 1.4em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	color: #666;
+}
+.ctaemp {
+	float: left;
+	display: block;
+	width: 100%;
+	background: #36945F;
+	text-align: center;
+	margin: 25px 0 0 0;
+	padding: 12px 0 12px 0;
+}
+.ctaemp a {
+	font-size: 1em;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	text-decoration: none;
+	color: white;
+}
+@media screen and (min-width: 767px) {
+	.contempresas {
+		margin: 0 0 0 0;
+		padding: 0 0 0 0;
+		background: #36945F;
+		border: none;
+		border-bottom: 1px solid rgba(236, 236, 236, 0.3);
+	}
+	.textemp {
+		float: left;
+		display: block;
+		width: 80%;
+		margin: 0 0 0 0;
+		padding: 25px 5% 25px 5%;
+		background: white;
+	}
+	.ctaemp {
+		width: 20%;
+		background: #36945F;
+		text-align: center;
+		margin: 60px 0 0 0;
+		padding: 0 0 0 0;
+	}
+}
+/***********************/
+.dif1 {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 35px 12% 35px 12%;
+	background: #36945F;
+}
+.dif1 h3 {
+	color: white;
+	margin: 0 0 8px 0;
+	padding: 0 0 0 0;
+	font-size: 1.3em;
+	line-height: 1.3em;
+}
+.dif1 p {
+	color: white;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	font-size: 0.9em;
+	line-height: 1.4em;
+}
+@media screen and (min-width:  768px) {
+	.dif1 {
+		margin: 0 0 0 0;
+		padding: 45px 10% 45px 10%;
+	}
+	.dif1 p {
+		font-size: 1em;
+	}
+}
+/***********************/
+.precio {
+	width: 100%;
+	margin: 0 0 0 0;
+	padding: 25px 10% 25px 10%;
+	background: #f5ab40;
+	text-align: center;
+}
+.contpreciodesk {
+	display: none;
+}
+.contprecio h6 {
+	font-size: 1.3em;
+	color: white;
+	margin: 0 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.1em;
+}
+.contprecio h6 span {
+	font-size: 0.8em;
+}
+.contprecio p {
+	font-size: 0.8em;
+	color: white;
+	margin: 5px 0 0 0;
+	padding: 0 0 0 0;
+	line-height: 1.3em;
+} 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
