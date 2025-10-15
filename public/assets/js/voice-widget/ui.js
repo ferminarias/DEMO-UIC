@@ -35,27 +35,35 @@ class VoiceWidgetUI {
 
             <div id="voice-widget-messages" class="voice-widget-messages"></div>
 
+            <!-- Input de texto para conversación -->
             <div id="voice-widget-text-input" class="voice-widget-text-input voice-widget-hidden">
-              <input type="text" id="voice-widget-text-field" placeholder="Escribe tu mensaje..." class="voice-widget-input" />
-              <button id="voice-widget-send-btn" class="voice-widget-send-btn">Enviar</button>
+              <div class="voice-widget-input-container">
+                <input
+                  type="text"
+                  id="voice-widget-input-field"
+                  placeholder="Escribe tu mensaje..."
+                  class="voice-widget-input"
+                />
+                <button id="voice-widget-send-btn" class="voice-widget-send-btn" disabled>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/>
+                  </svg>
+                </button>
+              </div>
             </div>
 
             <div class="voice-widget-controls">
               <div class="voice-widget-controls-card">
                 <div class="voice-widget-controls-content">
-                  <div class="voice-widget-controls-info">
+                  <button id="voice-widget-mic-btn" class="voice-widget-control-btn voice-widget-mic-btn">
                     <svg id="voice-widget-mic-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                       <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
                       <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>
                       <line x1="12" x2="12" y1="19" y2="22"></line>
                     </svg>
-                    <div>
-                      <p class="voice-widget-controls-title">Conversación por voz</p>
-                      <p class="voice-widget-controls-subtitle">Habla directamente con el asistente IA</p>
-                    </div>
-                  </div>
-                  <div class="voice-widget-controls-buttons">
-                    <button id="voice-widget-mute-btn" class="voice-widget-mute-btn voice-widget-hidden">
+                  </button>
+                  <p class="voice-widget-controls-title">Conversación por voz</p>
+                  <p class="voice-widget-controls-subtitle">Habla directamente con el asistente IA</p>
                       <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
                         <path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path>
                         <path d="M19 10v2a7 7 0 0 1-14 0v-2"></path>

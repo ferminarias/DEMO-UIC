@@ -1,0 +1,423 @@
+/* ===========================================
+   EFECTOS SUTILES Y PROFESIONALES PARA DEMO-UIC
+   Animaciones modernas y elegantes
+   =========================================== */
+
+/* Variables globales para animaciones */
+:root {
+  --animation-duration: 0.3s;
+  --animation-timing: cubic-bezier(0.4, 0, 0.2, 1);
+  --fade-in-delay: 0.1s;
+}
+
+/* Loading states */
+body.loading {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+body.loaded {
+  opacity: 1;
+}
+
+/* Validación de formularios */
+.form__group.focused {
+  transform: translateY(-2px);
+}
+
+.form__group input.valid {
+  border-color: #10b981;
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.form__group input.invalid {
+  border-color: #ef4444;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.1);
+}
+
+/* Efecto ripple para botones */
+.ripple-effect {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.6);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* Animación de fade-in para elementos */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Efectos sutiles para elementos principales */
+.presentacion {
+  animation: fadeIn 1s ease-out;
+}
+
+.presentacion .textopres h2 {
+  animation: fadeInUp 1s ease-out 0.2s both;
+}
+
+.presentacion .textopres h1 {
+  animation: fadeInUp 1s ease-out 0.4s both;
+}
+
+.presentacion .textopres p {
+  animation: fadeInUp 1s ease-out 0.6s both;
+}
+
+/* Efectos para oferta educativa */
+.ofertaedu {
+  animation: fadeIn 1s ease-out 0.8s both;
+}
+
+.cuadrooferta {
+  transition: all var(--animation-duration) var(--animation-timing);
+  transform: translateY(0);
+}
+
+.cuadrooferta:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(54, 148, 95, 0.15);
+}
+
+.cuadrooferta:nth-child(1) { animation: slideInLeft 1s ease-out 1s both; }
+.cuadrooferta:nth-child(2) { animation: fadeInUp 1s ease-out 1.2s both; }
+.cuadrooferta:nth-child(3) { animation: slideInRight 1s ease-out 1.4s both; }
+
+/* Modelo educativo con parallax sutil */
+.modeloe {
+  position: relative;
+  overflow: hidden;
+}
+
+.modeloe::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(54, 148, 95, 0.03) 0%, rgba(246, 160, 78, 0.03) 100%);
+  pointer-events: none;
+}
+
+.contmodeloe {
+  animation: fadeIn 1s ease-out 1.6s both;
+}
+
+.uvptext {
+  transition: transform var(--animation-duration) var(--animation-timing);
+}
+
+.uvptext:hover {
+  transform: translateX(5px);
+}
+
+.uvptext:nth-child(1) { animation: slideInLeft 1s ease-out 1.8s both; }
+.uvptext:nth-child(2) { animation: fadeInUp 1s ease-out 2s both; }
+.uvptext:nth-child(3) { animation: slideInRight 1s ease-out 2.2s both; }
+
+/* Formulario con efectos sutiles */
+.formulario {
+  animation: fadeIn 1s ease-out 2.4s both;
+}
+
+.form__group input,
+.form__group select {
+  transition: all var(--animation-duration) var(--animation-timing);
+  border: 2px solid #e5e7eb;
+}
+
+.form__group input:focus,
+.form__group select:focus {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(54, 148, 95, 0.15);
+  border-color: #36945F;
+}
+
+.form__group input:hover,
+.form__group select:hover {
+  border-color: #36945F;
+}
+
+/* Botones con ripple effect */
+input.button,
+a.button,
+button[type="submit"] {
+  position: relative;
+  overflow: hidden;
+  transition: all var(--animation-duration) var(--animation-timing);
+}
+
+input.button::before,
+a.button::before,
+button[type="submit"]::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.3);
+  transition: width 0.6s, height 0.6s;
+  transform: translate(-50%, -50%);
+}
+
+input.button:hover::before,
+a.button:hover::before,
+button[type="submit"]::before {
+  width: 300px;
+  height: 300px;
+}
+
+/* Header con blur effect al scroll */
+header {
+  transition: all 0.3s ease;
+  backdrop-filter: blur(0px);
+}
+
+header.scrolled {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Navegación móvil con animaciones */
+.menumobile .menuitem {
+  transition: all var(--animation-duration) var(--animation-timing);
+  transform: translateX(0);
+}
+
+.menumobile .menuitem:hover {
+  transform: translateX(10px);
+  background: rgba(54, 148, 95, 0.05);
+}
+
+/* Efectos en imágenes */
+picture img {
+  transition: transform var(--animation-duration) var(--animation-timing);
+}
+
+picture:hover img {
+  transform: scale(1.02);
+}
+
+/* Loading states sutiles */
+.formulario {
+  position: relative;
+}
+
+.formulario.submitting::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  backdrop-filter: blur(2px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.formulario.submitting::before {
+  content: '';
+  width: 24px;
+  height: 24px;
+  border: 2px solid #36945F;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Animación de carga */
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Efectos de scroll reveal */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.scroll-reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Efectos en enlaces */
+a {
+  transition: color var(--animation-duration) var(--animation-timing);
+}
+
+a:hover {
+  color: #36945F !important;
+}
+
+/* Efectos en títulos */
+h1, h2, h3, h4, h5, h6 {
+  transition: color var(--animation-duration) var(--animation-timing);
+}
+
+h1:hover, h2:hover, h3:hover {
+  color: #36945F;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Efectos de profundidad */
+.formayuic {
+  position: relative;
+}
+
+.formayuic::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  right: -20px;
+  bottom: -20px;
+  background: linear-gradient(135deg, rgba(54, 148, 95, 0.05) 0%, rgba(246, 160, 78, 0.05) 100%);
+  border-radius: 20px;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.formayuic:hover::before {
+  opacity: 1;
+}
+
+/* Micro-interacciones */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+select,
+textarea {
+  transition: all var(--animation-duration) var(--animation-timing);
+}
+
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+select:focus,
+textarea:focus {
+  transform: translateY(-1px);
+}
+
+/* Efectos en elementos de la universidad */
+.sobrelauniv h5 {
+  transition: all var(--animation-duration) var(--animation-timing);
+}
+
+.sobrelauniv h5:hover {
+  transform: translateY(-2px);
+  color: #36945F;
+}
+
+/* Animación de entrada para secciones */
+section {
+  animation: fadeIn 1s ease-out both;
+}
+
+section:nth-child(1) { animation-delay: 0.1s; }
+section:nth-child(2) { animation-delay: 0.3s; }
+section:nth-child(3) { animation-delay: 0.5s; }
+section:nth-child(4) { animation-delay: 0.7s; }
+
+/* Efectos de hover en cards */
+.cuadrooferta,
+.uvptext,
+.formulario {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.cuadrooferta:hover h3,
+.uvptext:hover h5 {
+  transform: translateY(-2px);
+}
+
+/* Responsive: reducir animaciones en móvil */
+@media (max-width: 768px) {
+  .cuadrooferta:hover,
+  .uvptext:hover,
+  picture:hover img,
+  .formayuic:hover::before {
+    transform: none;
+  }
+
+  .cuadrooferta:hover {
+    box-shadow: 0 5px 15px rgba(54, 148, 95, 0.1);
+  }
+
+  /* Desactivar algunas animaciones pesadas en móvil */
+  .formulario.submitting::after {
+    backdrop-filter: none;
+    background: rgba(255, 255, 255, 0.9);
+  }
+}
+
+/* Performance: reducir animaciones para usuarios que prefieren menos movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

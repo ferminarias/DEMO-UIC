@@ -56,6 +56,46 @@ class VoiceWidget {
   }
 
   attachEventListeners() {
+    // Event listeners para input de texto
+    const textInput = document.getElementById('voice-widget-input-field');
+    const sendBtn = document.getElementById('voice-widget-send-btn');
+
+    if (textInput && sendBtn) {
+      // Habilitar/deshabilitar botón de enviar
+      textInput.addEventListener('input', (e) => {
+        sendBtn.disabled = !e.target.value.trim();
+      });
+
+      // Enviar mensaje al presionar Enter
+      textInput.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' && !e.shiftKey && textInput.value.trim()) {
+          e.preventDefault();
+          this.core.sendTextMessage(textInput.value.trim());
+          textInput.value = '';
+          sendBtn.disabled = true;
+        }
+      });
+
+      // Enviar mensaje al hacer click en el botón
+      sendBtn.addEventListener('click', () => {
+        if (textInput.value.trim()) {
+          this.core.sendTextMessage(textInput.value.trim());
+          textInput.value = '';
+          sendBtn.disabled = true;
+        }
+      });
+    }
+
+    // Event listener para botón de mute
+    const micBtn = document.getElementById('voice-widget-mic-btn');
+    if (micBtn) {
+      micBtn.addEventListener('click', () => {
+        this.core.toggleMute();
+        // Actualizar apariencia visual del botón
+        micBtn.classList.toggle('muted', this.core.refs.isMuted);
+      });
+    }
+
     this.ui.elements.fab.addEventListener('click', () => {
       this.core.state.isOpen = !this.core.state.isOpen;
       this.ui.togglePanel(this.core.state.isOpen);

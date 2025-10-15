@@ -525,3 +525,76 @@
 .voice-widget-messages::-webkit-scrollbar-thumb:hover {
   background: var(--voice-widget-gray-600);
 }
+
+/* Input de texto para conversación */
+.voice-widget-text-input {
+  padding: 16px;
+  border-top: 1px solid #e5e7eb;
+  background: white;
+}
+
+.voice-widget-input-container {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+}
+
+.voice-widget-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #e5e7eb;
+  border-radius: 24px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  background: white;
+  color: #374151;
+}
+
+.voice-widget-input:focus {
+  border-color: var(--voice-widget-primary);
+  box-shadow: 0 0 0 3px rgba(54, 148, 95, 0.1);
+}
+
+.voice-widget-send-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 50%;
+  background: var(--voice-widget-primary);
+  color: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.voice-widget-send-btn:not(:disabled) {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.voice-widget-send-btn:not(:disabled):hover {
+  background: var(--voice-widget-primary-hover);
+  transform: scale(1.05);
+}
+
+.voice-widget-send-btn:not(:disabled):active {
+  transform: scale(0.95);
+}
+
+/* Botón de mute */
+.voice-widget-mic-btn.muted {
+  opacity: 0.6;
+}
+
+.voice-widget-mic-btn.muted svg {
+  color: #ef4444;
+}
+
+.voice-widget-mic-btn:not(.muted) svg {
+  color: var(--voice-widget-primary);
+}

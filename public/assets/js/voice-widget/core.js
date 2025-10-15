@@ -20,7 +20,8 @@ class VoiceWidgetCore {
       mediaStream: null,
       sessionActive: false,
       transcriptionTimeout: null,
-      simulationTimeouts: []
+      simulationTimeouts: [],
+      isMuted: false
     };
   }
 
@@ -309,14 +310,69 @@ class VoiceWidgetCore {
     this.addMessage('¡Hola! Soy tu asistente de UIC. ¿En qué puedo ayudarte hoy?', 'assistant');
   }
 
-  addMessage(text, type = 'assistant') {
-    this.state.messages.push({
-      text,
-      timestamp: Date.now(),
-      type
-    });
-    if (this.onMessagesChangeCallback) {
-      this.onMessagesChangeCallback(this.state.messages);
+  async sendTextMessage(text) {
+    if (!text || !text.trim()) return;
+
+    const messageText = text.trim();
+    console.log('[VoiceWidget] Sending text message:', messageText);
+
+    // Add user message to chat
+    this.addMessage(messageText, 'user');
+
+    // Try to send via ElevenLabs session first
+    if (this.refs.session?.conversation && typeof this.refs.session.conversation.sendUserMessage === 'function') {
+      try {
+        // Notify activity while typing
+        if (this.refs.session.conversation.sendUserActivity) {
+          this.refs.session.conversation.sendUserActivity();
+        }
+        this.refs.session.conversation.sendUserMessage(messageText);
+        console.log('[VoiceWidget] Text sent via ElevenLabs session');
+        return;
+      } catch (error) {
+        console.error('[VoiceWidget] Error sending via ElevenLabs:', error);
+      }
+    }
+
+    // Fallback to backend
+    try {
+      const response = await fetch('https://web-production-91918.up.railway.app/chat', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          message: messageText,
+          source: 'website-widget'
+        })
+      });
+
+      if (response.ok) {
+        const data = await response.json();
+        this.addMessage(data.response || 'Gracias por tu mensaje. Te responderemos pronto.', 'assistant');
+      } else {
+        throw new Error('Backend response not ok');
+      }
+    } catch (error) {
+      console.error('[VoiceWidget] Backend error:', error);
+      this.addMessage('Error al enviar el mensaje. Por favor, intenta nuevamente.', 'assistant');
+    }
+  }
+
+  toggleMute() {
+    if (!this.refs.session?.conversation) {
+      console.warn('[VoiceWidget] toggleMute called without active conversation');
+      return;
+    }
+
+    try {
+      this.refs.isMuted = !this.refs.isMuted;
+      if (typeof this.refs.session.conversation.setMicMuted === 'function') {
+        this.refs.session.conversation.setMicMuted(this.refs.isMuted);
+        console.log('[VoiceWidget] Microphone', this.refs.isMuted ? 'muted' : 'unmuted');
+      }
+    } catch (error) {
+      console.error('[VoiceWidget] Error toggling mute:', error);
     }
   }
 
@@ -324,6 +380,16 @@ class VoiceWidgetCore {
     this.state.voiceStatus = status;
     if (this.onStatusChangeCallback) {
       this.onStatusChangeCallback(status);
+    }
+
+    // Mostrar/ocultar input de texto basado en el estado
+    const textInput = document.getElementById('voice-widget-text-input');
+    if (textInput) {
+      if (status === 'connected') {
+        textInput.classList.remove('voice-widget-hidden');
+      } else {
+        textInput.classList.add('voice-widget-hidden');
+      }
     }
   }
 

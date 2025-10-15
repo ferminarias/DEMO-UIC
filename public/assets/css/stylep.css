@@ -1,27 +1,50 @@
 a.adm.rc400:hover {
-    background-color: #373737;
+    background-color: #36945F;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(54, 148, 95, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 a.ctauniv.rc400:hover {
-    background-color: #373737;
+    background-color: #36945F;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(54, 148, 95, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 input.button:hover {
     background-color: #0A6342;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(10, 99, 66, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-a.rc400.conoceoferta:hover {
-    background-color: #0A6342;
+a.conoceoferta:hover {
+    background-color: #36945F;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(54, 148, 95, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 a.ctaescudo.rc400:hover {
-    background-color: #0A6342;
+    background-color: #36945F;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(54, 148, 95, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 a.rc400:hover {
-    background-color: #373737;
+    background-color: #f6a04e;
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(246, 160, 78, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 a.rc700:hover {
-    background-color: #373737;
+    background-color: #f6a04e;
+    color: #fff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(246, 160, 78, 0.3);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
