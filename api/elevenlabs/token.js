@@ -11,42 +11,6 @@ export default async function handler(req, res) {
   }
 
   try {
-    // Get client IP for basic tracking
-    const forwarded = req.headers['x-forwarded-for'];
-    const realIp = req.headers['x-real-ip'];
-    const clientIp = forwarded?.split(',')[0] || realIp || 'unknown';
-    
-    // Validación de origen
-    const origin = req.headers.origin || req.headers.referer || '';
-    const userAgent = req.headers['user-agent'] || '';
-    
-    // Lista de dominios autorizados
-    const allowedDomains = process.env.ALLOWED_EMBED_DOMAINS?.split(',') || [
-      'localhost',
-      '127.0.0.1',
-      'educacionenlinea.uic.mx',
-      'uic.mx',
-    ];
-    
-    // Validar si está siendo usado desde dominio no autorizado
-    const isAuthorized = allowedDomains.some(domain => 
-      origin.includes(domain) || 
-      origin.includes('localhost') ||
-      !origin // Permitir requests directos para compatibilidad
-    );
-    
-    // Log sospechoso para monitoreo
-    if (!isAuthorized && origin) {
-      console.warn(`[SECURITY] Token request from unauthorized origin: ${origin}, IP: ${clientIp}, UA: ${userAgent}`);
-      console.warn(`[DEBUG] Allowed domains: ${allowedDomains.join(', ')}`);
-      console.warn(`[DEBUG] Current origin: ${origin}`);
-      
-      return res.status(403).json({
-        error: 'Acceso denegado desde este dominio',
-        configured: false,
-      });
-    }
-
     const elevenLabsApiKey = process.env.ELEVENLABS_API_KEY;
     const agentId = process.env.ELEVENLABS_AGENT_ID;
 
@@ -89,7 +53,6 @@ export default async function handler(req, res) {
         agentId: agentId,
         configured: true,
         tokenGenerated: true,
-        clientIp: clientIp,
       });
     } catch (tokenError) {
       console.error('Token generation error:', tokenError);

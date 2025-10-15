@@ -4,8 +4,6 @@
  * Recibe eventos de ElevenLabs via webhook
  */
 
-import crypto from 'crypto';
-
 export default async function handler(req, res) {
   // Solo permitir método POST
   if (req.method !== 'POST') {
@@ -13,23 +11,7 @@ export default async function handler(req, res) {
   }
 
   try {
-    const body = typeof req.body === 'string' ? req.body : JSON.stringify(req.body);
-    const signature = req.headers['elevenlabs-signature'];
-
-    const webhookSecret = process.env.ELEVENLABS_WEBHOOK_SECRET;
-    if (webhookSecret && signature) {
-      const expectedSignature = crypto
-        .createHmac('sha256', webhookSecret)
-        .update(body)
-        .digest('hex');
-
-      if (signature !== expectedSignature) {
-        console.error('[VoiceWidget] Invalid webhook signature');
-        return res.status(401).json({ error: 'Invalid signature' });
-      }
-    }
-
-    const event = typeof req.body === 'string' ? JSON.parse(body) : req.body;
+    const event = req.body;
     console.log('[VoiceWidget] ElevenLabs webhook event:', event.type, event.data);
 
     switch (event.type) {
