@@ -6,10 +6,10 @@ Esta guía te muestra cómo desplegar DEMO-UIC con el Voice Widget en Vercel.
 
 1. Cuenta en Vercel (https://vercel.com)
 2. Cuenta en ElevenLabs con:
-   - API Key
+   - API Keydd
    - Agent ID configurado
-3. Repositorio Git (GitHub, GitLab, o Bitbucket)
-
+3. Repositorio Git (GitHub, GitLab, o Bitbuckesdsdt)
+sds
 ## 🔧 Estructura del Proyecto
 
 El proyecto está configurado para funcionar directamente con **Vercel Serverless Functions**:
