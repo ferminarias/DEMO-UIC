@@ -97,8 +97,16 @@
 
 .voice-widget-header-content {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
+  gap: 1rem;
+}
+
+.voice-widget-header-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
 .voice-widget-header-text h3 {
@@ -126,12 +134,13 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background: var(--voice-widget-blue-400);
+  background: #6b7280;
+  flex-shrink: 0;
 }
 
 .voice-widget-status-text {
-  font-size: 0.875rem;
-  color: white;
+  font-size: 0.8125rem;
+  color: rgba(255, 255, 255, 0.9);
 }
 
 .voice-widget-close-btn {

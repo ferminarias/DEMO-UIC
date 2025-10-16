@@ -23,13 +23,15 @@ class VoiceWidgetUI {
         <div id="voice-widget-panel" class="voice-widget-panel voice-widget-hidden">
           <div class="voice-widget-header">
             <div class="voice-widget-header-content">
-              <div class="voice-widget-header-text">
-                <h3>Asistente UIC</h3>
-                <p>Elige como quieres comunicarte</p>
-              </div>
-              <div class="voice-widget-status">
-                <div class="voice-widget-status-dot"></div>
-                <span class="voice-widget-status-text">Listo para conversar</span>
+              <div class="voice-widget-header-left">
+                <div class="voice-widget-header-text">
+                  <h3>Asistente UIC</h3>
+                  <p>Elige como quieres comunicarte</p>
+                </div>
+                <div class="voice-widget-status">
+                  <div class="voice-widget-status-dot"></div>
+                  <span class="voice-widget-status-text">Listo para conversar</span>
+                </div>
               </div>
               <button id="voice-widget-close" class="voice-widget-close-btn" aria-label="Cerrar">×</button>
             </div>
