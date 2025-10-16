@@ -40,6 +40,7 @@ class VoiceWidgetUI {
           <div id="voice-widget-messages" class="voice-widget-messages"></div>
 
           <!-- Input de texto para conversacion -->
+          <div id="voice-widget-text-input" class="voice-widget-text-input voice-widget-hidden">
             <div class="voice-widget-input-container">
               <input
                 type="text"
@@ -66,6 +67,7 @@ class VoiceWidgetUI {
                   </svg>
                   <div>
                     <p class="voice-widget-controls-title">Conversacion por voz</p>
+                    <p class="voice-widget-controls-subtitle">Habla directamente con el asistente IA</p>
                   </div>
                 </div>
                 <div class="voice-widget-controls-buttons">
