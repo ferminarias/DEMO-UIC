@@ -12,6 +12,7 @@ const VoiceWidgetConfig = {
   
   // Chat backend fallback
   chatApiUrl: 'https://web-production-91918.up.railway.app',
+  chatEndpoint: '/chat',
   
   // ElevenLabs SDK URL
   elevenLabsSDKUrl: 'https://cdn.jsdelivr.net/npm/@elevenlabs/client@latest/dist/index.umd.js',

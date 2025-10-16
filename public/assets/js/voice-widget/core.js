@@ -243,64 +243,24 @@ class VoiceWidgetCore {
   }
 
   toggleMute() {
-    if (!this.refs.session?.conversation) return;
+    if (!this.refs.session?.conversation) {
+      console.warn('[VoiceWidget] toggleMute called without active conversation');
+      return;
+    }
 
     try {
-      this.state.isMuted = !this.state.isMuted;
-      this.refs.session.conversation.setMicMuted(this.state.isMuted);
-      if (this.onMuteChangeCallback) this.onMuteChangeCallback(this.state.isMuted);
+      this.refs.isMuted = !this.refs.isMuted;
+      this.state.isMuted = this.refs.isMuted;
+
+      if (typeof this.refs.session.conversation.setMicMuted === 'function') {
+        this.refs.session.conversation.setMicMuted(this.refs.isMuted);
+      }
+
+      if (this.onMuteChangeCallback) {
+        this.onMuteChangeCallback(this.refs.isMuted);
+      }
     } catch (error) {
       console.error('[VoiceWidget] Error toggling mute:', error);
-    }
-  }
-
-  sendTextMessage(text) {
-    if (!text.trim()) return;
-
-    this.addMessage(text, 'user');
-
-    if (this.refs.session?.conversation?.sendUserMessage) {
-      try {
-        this.refs.session.conversation.sendUserActivity?.();
-        this.refs.session.conversation.sendUserMessage(text);
-        return;
-      } catch (error) {
-        console.error('[VoiceWidget] Error sending via ElevenLabs:', error);
-      }
-    }
-
-    this.sendMessageToBackend(text);
-  }
-
-  async sendMessageToBackend(message) {
-    try {
-      this.state.isTyping = true;
-      if (this.onTypingChangeCallback) this.onTypingChangeCallback(true);
-
-      const response = await fetch(`${this.config.chatApiUrl}/api/chat/send`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          message,
-          sessionId: `web-session-${Date.now()}`,
-          userId: `web-user-${Date.now()}`,
-          source: 'website-widget',
-        }),
-      });
-
-      if (!response.ok) throw new Error(`Backend error: ${response.status}`);
-
-      const data = await response.json();
-      const responseText = data.response || data.message || 'Gracias por tu mensaje.';
-      
-      this.state.isTyping = false;
-      if (this.onTypingChangeCallback) this.onTypingChangeCallback(false);
-      this.addMessage(responseText, 'assistant');
-    } catch (error) {
-      console.error('[VoiceWidget] Backend error:', error);
-      this.state.isTyping = false;
-      if (this.onTypingChangeCallback) this.onTypingChangeCallback(false);
-      this.addMessage('Error al enviar el mensaje. Por favor, intenta nuevamente.', 'assistant');
     }
   }
 
@@ -336,47 +296,39 @@ class VoiceWidgetCore {
 
     // Fallback to backend
     try {
-      const response = await fetch('https://web-production-91918.up.railway.app/chat', {
+      this.state.isTyping = true;
+      if (this.onTypingChangeCallback) this.onTypingChangeCallback(true);
+
+      const baseUrl = this.config.chatApiUrl?.replace(/\/$/, '') || 'https://web-production-91918.up.railway.app';
+      const path = this.config.chatEndpoint || '/chat';
+      const endpoint = `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}`;
+
+      const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           message: messageText,
+          sessionId: `web-session-${Date.now()}`,
+          userId: `web-user-${Date.now()}`,
           source: 'website-widget'
         })
       });
 
       if (response.ok) {
         const data = await response.json();
-        this.addMessage(data.response || 'Gracias por tu mensaje. Te responderemos pronto.', 'assistant');
+        const reply = data.response || data.message || 'Gracias por tu mensaje. Te responderemos pronto.';
+        this.addMessage(reply, 'assistant');
       } else {
-        throw new Error('Backend response not ok');
+        throw new Error(`Backend response not ok (${response.status})`);
       }
     } catch (error) {
       console.error('[VoiceWidget] Backend error:', error);
       this.addMessage('Error al enviar el mensaje. Por favor, intenta nuevamente.', 'assistant');
-    }
-  }
-
-  toggleMute() {
-    if (!this.refs.session?.conversation) {
-      console.warn('[VoiceWidget] toggleMute called without active conversation');
-      return;
-    }
-
-    try {
-      this.refs.isMuted = !this.refs.isMuted;
-      if (typeof this.refs.session.conversation.setMicMuted === 'function') {
-        this.refs.session.conversation.setMicMuted(this.refs.isMuted);
-        console.log('[VoiceWidget] Microphone', this.refs.isMuted ? 'muted' : 'unmuted');
-      }
-      // Notificar a la UI sobre el cambio
-      if (this.onMuteChangeCallback) {
-        this.onMuteChangeCallback(this.refs.isMuted);
-      }
-    } catch (error) {
-      console.error('[VoiceWidget] Error toggling mute:', error);
+    } finally {
+      this.state.isTyping = false;
+      if (this.onTypingChangeCallback) this.onTypingChangeCallback(false);
     }
   }
 
