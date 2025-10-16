@@ -299,9 +299,14 @@ class VoiceWidgetCore {
       this.state.isTyping = true;
       if (this.onTypingChangeCallback) this.onTypingChangeCallback(true);
 
-      const baseUrl = this.config.chatApiUrl?.replace(/\/$/, '') || 'https://web-production-91918.up.railway.app';
-      const path = this.config.chatEndpoint || '/chat';
-      const endpoint = `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}`;
+      let baseUrl = '';
+      if (typeof this.config.chatApiUrl === 'string') {
+        baseUrl = this.config.chatApiUrl.trim().replace(/\/$/, '');
+      }
+      const path = this.config.chatEndpoint || '/api/chat/send';
+      const endpoint = baseUrl
+        ? `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}`
+        : path;
 
       const response = await fetch(endpoint, {
         method: 'POST',
