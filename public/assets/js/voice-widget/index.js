@@ -39,7 +39,7 @@ class VoiceWidget {
     this.core.onStopCallback = () => {
       this.ui.updateMessages([], false);
       this.ui.showTextInput(false);
-      this.ui.showToast('Llamada finalizada', 'La conversacion por voz se cerro correctamente.');
+      this.ui.showToast('Llamada finalizada', 'La conversacion por voz se cerro correctamente.', 2600);
     };
 
     this.core.onMuteChangeCallback = (isMuted) => {
@@ -50,8 +50,8 @@ class VoiceWidget {
       this.ui.updateMessages(this.core.state.messages, isTyping);
     };
 
-    this.core.onShowToastCallback = (title, message) => {
-      this.ui.showToast(title, message);
+    this.core.onShowToastCallback = (title, message, duration) => {
+      this.ui.showToast(title, message, duration);
     };
   }
 

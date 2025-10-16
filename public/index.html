@@ -36,6 +36,7 @@
 		<link href="../assets/fontawesome/css/solid.css" rel="stylesheet" />
 
 		<link href="https://fonts.googleapis.com/css2?family=Roboto&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet">
+		<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-3fabVDY3FJ5g3MG0YefRGI7OZ3k7h3BMlbMQzXNt/9o=" crossorigin="anonymous"></script>
 		<style>
 			/* Estilos personalizados eliminados - reCAPTCHA removido completamente */
 		</style>
@@ -608,7 +609,7 @@
                         <input name="url_result" id="url_result" type="hidden">
                     
                         <!-- OTROS DATOS -->
-                        <input type="hidden" name="recaptcha_response" id="recaptchaResponse">
+                        <!-- Recaptcha eliminado -->
                         <input type="hidden" name="programa" id="programa" value="Derecho en línea">
                     
                         <!-- UTMs -->
@@ -759,11 +760,9 @@
 			<a href="https://wa.me/5215588392911" target="_blank" title="Contáctanos por Whats App" class="iconfont">&#xea93;</a>
 		</div>
 		<!-- -->
-		<script src="https://code.jquery.com/jquery-3.7.1.min.js" crossorigin="anonymous"></script>
-        <script src='https://www.google.com/recaptcha/api.js?render=6Lc93usqAAAAAI4dIHq6Sh99bUIHaPHivEmA0jon'> </script>
 		<script src="./assets/javascript/modernizer.js"></script>
 		<script src="./assets/javascript/general.js"></script>
-    <!-- <script src="../assets/javascript/utmTracker.js"></script> -->
+    <script src="./assets/javascript/utmTracker.js"></script>
     <script src="./assets/javascript/usources-new.js"></script>
         <script src="./assets/javascript/countryHandle.js"></script>
         <script src="./assets/javascript/phoneHandle.js"></script>
@@ -786,12 +785,17 @@
 
         document.querySelectorAll('#WebToLeadForm').forEach(form => {
             form.addEventListener("submit", function(event) {
-                event.preventDefault();
-                const currentForm = event.target;
-                grecaptcha.execute('6Lc93usqAAAAAI4dIHq6Sh99bUIHaPHivEmA0jon', {action: 'formulario'}).then(function(token) {
-                    currentForm.querySelector("#recaptchaResponse").value = token;
-                    currentForm.submit();
-                });
+                if (window.grecaptcha?.execute) {
+                    event.preventDefault();
+                    const currentForm = event.target;
+                    grecaptcha.execute('6Lc93usqAAAAAI4dIHq6Sh99bUIHaPHivEmA0jon', {action: 'formulario'})
+                        .then(function() {
+                            currentForm.submit();
+                        })
+                        .catch(function() {
+                            currentForm.submit();
+                        });
+                }
             }, false);
         });
 

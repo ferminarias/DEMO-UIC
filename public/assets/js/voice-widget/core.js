@@ -414,6 +414,21 @@ class VoiceWidgetCore {
       );
     }
   }
+
+  addMessage(text, type = 'assistant') {
+    if (!text) return;
+
+    const message = {
+      text,
+      type,
+      timestamp: Date.now(),
+    };
+
+    this.state.messages = [...this.state.messages, message].slice(-100);
+    if (this.onMessagesChangeCallback) {
+      this.onMessagesChangeCallback(this.state.messages);
+    }
+  }
 }
 
 
