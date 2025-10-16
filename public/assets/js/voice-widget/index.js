@@ -39,7 +39,7 @@ class VoiceWidget {
     this.core.onStopCallback = () => {
       this.ui.updateMessages([], false);
       this.ui.showTextInput(false);
-      this.ui.showToast('Llamada finalizada', 'La conversación por voz se cerró correctamente.');
+      this.ui.showToast('Llamada finalizada', 'La conversacion por voz se cerro correctamente.');
     };
 
     this.core.onMuteChangeCallback = (isMuted) => {
@@ -61,7 +61,7 @@ class VoiceWidget {
     const sendBtn = document.getElementById('voice-widget-send-btn');
 
     if (textInput && sendBtn) {
-      // Habilitar/deshabilitar botón de enviar
+      // Habilitar/deshabilitar boton de enviar
       textInput.addEventListener('input', (e) => {
         sendBtn.disabled = !e.target.value.trim();
       });
@@ -76,7 +76,7 @@ class VoiceWidget {
         }
       });
 
-      // Enviar mensaje al hacer click en el botón
+      // Enviar mensaje al hacer click en el boton
       sendBtn.addEventListener('click', () => {
         if (textInput.value.trim()) {
           this.core.sendTextMessage(textInput.value.trim());
@@ -86,7 +86,7 @@ class VoiceWidget {
       });
     }
 
-    // Event listener para botón de llamada
+    // Event listener para boton de llamada
     const callBtn = document.getElementById('voice-widget-call-btn');
     if (callBtn) {
       callBtn.addEventListener('click', () => {
@@ -98,12 +98,12 @@ class VoiceWidget {
       });
     }
 
-    // Event listener para botón de mute
+    // Event listener para boton de mute
     const micBtn = document.getElementById('voice-widget-mic-btn');
     if (micBtn) {
       micBtn.addEventListener('click', () => {
         this.core.toggleMute();
-        // Actualizar apariencia visual del botón
+        // Actualizar apariencia visual del boton
         micBtn.classList.toggle('muted', this.core.refs.isMuted);
       });
     }
@@ -124,7 +124,7 @@ class VoiceWidget {
   }
 }
 
-// Auto-inicialización cuando el DOM esté listo
+// Auto-inicializacion cuando el DOM esta listo
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
     window.voiceWidget = new VoiceWidget();
@@ -134,3 +134,4 @@ if (document.readyState === 'loading') {
   window.voiceWidget = new VoiceWidget();
   window.voiceWidget.init();
 }
+

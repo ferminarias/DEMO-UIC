@@ -8,7 +8,7 @@ const VoiceWidgetConfig = {
   
   // WhatsApp configuration
   whatsappNumber: '5255960232001',
-  whatsappMessage: '¡Hola! Me interesa conocer más sobre los programas de UIC.',
+  whatsappMessage: 'Hola! Me interesa conocer mas sobre los programas de UIC.',
   
   // Chat backend fallback
   chatApiUrl: 'https://web-production-91918.up.railway.app',

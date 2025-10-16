@@ -33,14 +33,13 @@ class VoiceWidgetUI {
                   <span class="voice-widget-status-text">Listo para conversar</span>
                 </div>
               </div>
-              <button id="voice-widget-close" class="voice-widget-close-btn" aria-label="Cerrar">×</button>
+              <button id="voice-widget-close" class="voice-widget-close-btn" aria-label="Cerrar">&times;</button>
             </div>
           </div>
 
           <div id="voice-widget-messages" class="voice-widget-messages"></div>
 
-          <!-- Input de texto para conversación -->
-          <div id="voice-widget-text-input" class="voice-widget-text-input voice-widget-hidden">
+          <!-- Input de texto para conversacion -->
             <div class="voice-widget-input-container">
               <input
                 type="text"
@@ -66,8 +65,7 @@ class VoiceWidgetUI {
                     <line x1="12" x2="12" y1="19" y2="22"></line>
                   </svg>
                   <div>
-                    <p class="voice-widget-controls-title">Conversación por voz</p>
-                    <p class="voice-widget-controls-subtitle">Habla directamente con el asistente IA</p>
+                    <p class="voice-widget-controls-title">Conversacion por voz</p>
                   </div>
                 </div>
                 <div class="voice-widget-controls-buttons">
@@ -89,7 +87,7 @@ class VoiceWidgetUI {
             </div>
           </div>
           <div id="voice-widget-no-config-msg" class="voice-widget-no-config voice-widget-hidden">
-            El asistente de voz estará disponible en breve. Mientras tanto puedes usar el chat de texto, WhatsApp o el formulario de contacto.
+            El asistente de voz estara disponible en breve. Mientras tanto puedes usar el chat de texto, WhatsApp o el formulario de contacto.
           </div>
         </div>
 
@@ -183,8 +181,8 @@ class VoiceWidgetUI {
     if (statusDot && statusText) {
       switch (status) {
         case 'connected':
-          statusDot.style.background = '#10b981'; // verde
-          statusText.textContent = 'Conversación activa';
+          statusDot.style.background = 'var(--voice-widget-success)';
+          statusText.textContent = 'Conversacion activa';
           if (callBtn) {
             callBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>Terminar</span>';
             callBtn.classList.add('voice-widget-call-btn-active');
@@ -193,7 +191,7 @@ class VoiceWidgetUI {
           break;
         case 'connecting':
         case 'getting-token':
-          statusDot.style.background = '#f59e0b'; // amarillo
+          statusDot.style.background = 'var(--voice-widget-warning)';
           statusText.textContent = status === 'connecting' ? 'Conectando...' : 'Obteniendo token...';
           if (callBtn) {
             callBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>Conectando...</span>';
@@ -202,8 +200,8 @@ class VoiceWidgetUI {
           if (micBtn) micBtn.style.display = 'none';
           break;
         case 'error':
-          statusDot.style.background = '#ef4444'; // rojo
-          statusText.textContent = 'Error de conexión';
+          statusDot.style.background = 'var(--voice-widget-danger)';
+          statusText.textContent = 'Error de conexion';
           if (callBtn) {
             callBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>Iniciar llamada</span>';
             callBtn.classList.remove('voice-widget-call-btn-active');
@@ -211,8 +209,8 @@ class VoiceWidgetUI {
           if (micBtn) micBtn.style.display = 'none';
           break;
         default:
-          statusDot.style.background = '#6b7280'; // gris
-          statusText.textContent = hasConfig ? 'Listo para conversar' : 'Configuración pendiente';
+          statusDot.style.background = 'rgba(255, 255, 255, 0.7)';
+          statusText.textContent = hasConfig ? 'Listo para conversar' : 'Configuracion pendiente';
           if (callBtn) {
             callBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg><span>Iniciar llamada</span>';
             callBtn.classList.remove('voice-widget-call-btn-active');
@@ -221,7 +219,6 @@ class VoiceWidgetUI {
       }
     }
 
-    // Mostrar/ocultar mensaje de no configuración
     if (noConfigMsg) {
       if (!hasConfig && status !== 'connected') {
         noConfigMsg.classList.remove('voice-widget-hidden');
@@ -230,7 +227,6 @@ class VoiceWidgetUI {
       }
     }
   }
-
   updateMuteButton(isMuted) {
     const micBtn = document.getElementById('voice-widget-mic-btn');
     if (micBtn) {

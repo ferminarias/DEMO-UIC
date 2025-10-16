@@ -1,6 +1,6 @@
 /**
  * Voice Widget Core Logic
- * Manejo de estado y lógica principal
+ * Manejo de estado y logica principal
  */
 
 class VoiceWidgetCore {
@@ -69,7 +69,7 @@ class VoiceWidgetCore {
     } catch (error) {
       console.error('[VoiceWidget] Voice call error:', error);
       this.updateVoiceStatus('error');
-      this.addMessage('Lo siento, no pude establecer la conexión de voz. Por favor, intenta usar WhatsApp o el formulario de contacto.', 'assistant');
+      this.addMessage('Lo siento, no pude establecer la conexion de voz. Por favor, intenta usar WhatsApp o el formulario de contacto.', 'assistant');
     }
   }
 
@@ -97,7 +97,7 @@ class VoiceWidgetCore {
     } catch (error) {
       console.error('[VoiceWidget] Microphone access denied:', error);
       this.updateVoiceStatus('error');
-      this.addMessage('Necesito acceso al micrófono para poder conversar contigo. Por favor, permite el acceso y vuelve a intentar.', 'assistant');
+      this.addMessage('Necesito acceso al microfono para poder conversar contigo. Por favor, permite el acceso y vuelve a intentar.', 'assistant');
       return null;
     }
   }
@@ -207,7 +207,7 @@ class VoiceWidgetCore {
       this.refs.mediaStream = null;
     }
     this.updateVoiceStatus('error');
-    this.addMessage('Error de conexión. La llamada se terminó. Puedes volver a intentar o usar WhatsApp.', 'assistant');
+    this.addMessage('Error de conexion. La llamada se termino. Puedes volver a intentar o usar WhatsApp.', 'assistant');
   }
 
   stopVoiceCall() {
@@ -307,7 +307,7 @@ class VoiceWidgetCore {
   simulateVoiceConversation() {
     this.clearSimulationTimers();
     this.updateVoiceStatus('connected');
-    this.addMessage('¡Hola! Soy tu asistente de UIC. ¿En qué puedo ayudarte hoy?', 'assistant');
+    this.addMessage('Hola! Soy tu asistente de UIC. En que puedo ayudarte hoy?', 'assistant');
   }
 
   async sendTextMessage(text) {
@@ -410,8 +410,10 @@ class VoiceWidgetCore {
     if (this.onShowToastCallback) {
       this.onShowToastCallback(
         'Asistente de voz no disponible',
-        'Usa el chat de texto, WhatsApp o el formulario de contacto mientras terminamos la configuración.'
+        'Usa el chat de texto, WhatsApp o el formulario de contacto mientras terminamos la configuracion.'
       );
     }
   }
 }
+
+
