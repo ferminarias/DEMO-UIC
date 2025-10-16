@@ -103,8 +103,11 @@
 
 .voice-widget-header-text h3 {
   font-size: 1.125rem;
-  font-weight: 600;
+  font-weight: 700;
   margin: 0 0 0.25rem 0;
+  color: #10b981;
+  text-shadow: 0 2px 4px rgba(16, 185, 129, 0.3);
+  letter-spacing: 0.025em;
 }
 
 .voice-widget-header-text p {
