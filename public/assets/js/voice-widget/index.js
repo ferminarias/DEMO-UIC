@@ -16,6 +16,7 @@ class VoiceWidget {
     await this.core.checkElevenLabsConfig();
     this.ui.render();
     this.attachEventListeners();
+    this.ui.updateMuteButton(this.core.state.isMuted);
     this.ui.updateStatus(this.core.state.voiceStatus, this.core.state.hasElevenLabsConfig);
   }
 
@@ -103,8 +104,6 @@ class VoiceWidget {
     if (micBtn) {
       micBtn.addEventListener('click', () => {
         this.core.toggleMute();
-        // Actualizar apariencia visual del boton
-        micBtn.classList.toggle('muted', this.core.refs.isMuted);
       });
     }
 

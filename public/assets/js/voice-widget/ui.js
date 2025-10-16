@@ -232,11 +232,19 @@ class VoiceWidgetUI {
   updateMuteButton(isMuted) {
     const micBtn = document.getElementById('voice-widget-mic-btn');
     if (micBtn) {
+      const unmutedIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="M19 10v2a7 7 0 0 1-14 0v-2"></path><line x1="12" x2="12" y1="19" y2="22"></line></svg>`;
+      const mutedIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M9 9v3a3 3 0 0 0 5.12 2.12"></path><path d="M15 9.34V5a3 3 0 0 0-5.11-2.12"></path><path d="M19 10v2a7 7 0 0 1-10.59 5.8"></path><path d="M5 10v2a7 7 0 0 0 7 7"></path><line x1="1" y1="1" x2="23" y2="23"></line></svg>`;
+
       if (isMuted) {
         micBtn.classList.add('muted');
+        micBtn.innerHTML = mutedIcon;
+        micBtn.setAttribute('aria-label', 'Activar microfono');
       } else {
         micBtn.classList.remove('muted');
+        micBtn.innerHTML = unmutedIcon;
+        micBtn.setAttribute('aria-label', 'Silenciar microfono');
       }
+      micBtn.setAttribute('aria-pressed', String(isMuted));
     }
   }
 

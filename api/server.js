@@ -6,6 +6,7 @@
 const express = require('express');
 const cors = require('cors');
 const crypto = require('crypto');
+const fetchFn = (...args) => (global.fetch ? global.fetch(...args) : import('node-fetch').then(({ default: fetch }) => fetch(...args)));
 require('dotenv').config();
 
 const app = express();
@@ -20,6 +21,7 @@ app.use(express.text());
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
 const ELEVENLABS_AGENT_ID = process.env.ELEVENLABS_AGENT_ID;
 const ELEVENLABS_WEBHOOK_SECRET = process.env.ELEVENLABS_WEBHOOK_SECRET;
+const CHAT_BACKEND_URL = process.env.CHAT_BACKEND_URL || 'https://web-production-91918.up.railway.app/api/chat/send';
 
 // Dominios permitidos para seguridad
 const ALLOWED_DOMAINS = process.env.ALLOWED_EMBED_DOMAINS?.split(',') || [
@@ -90,7 +92,7 @@ app.get('/api/elevenlabs/token', validateOrigin, async (req, res) => {
     }
 
     try {
-      const tokenResponse = await fetch(
+      const tokenResponse = await fetchFn(
         `https://api.elevenlabs.io/v1/convai/conversation/token?agent_id=${ELEVENLABS_AGENT_ID}`,
         {
           method: 'GET',
@@ -138,6 +140,61 @@ app.get('/api/elevenlabs/token', validateOrigin, async (req, res) => {
     res.status(500).json({
       error: 'Error interno del servidor',
       configured: false,
+    });
+  }
+});
+
+/**
+ * POST /api/chat/send
+ * Proxy para el backend de chat (evita problemas de CORS en el cliente)
+ */
+app.post('/api/chat/send', validateOrigin, async (req, res) => {
+  try {
+    const { message, sessionId, userId, source } = typeof req.body === 'string' ? JSON.parse(req.body || '{}') : (req.body || {});
+
+    if (!message || typeof message !== 'string') {
+      return res.status(400).json({ error: 'El campo "message" es obligatorio.' });
+    }
+
+    const payload = {
+      message,
+      sessionId: sessionId || `web-session-${Date.now()}`,
+      userId: userId || `web-user-${Date.now()}`,
+      source: source || 'website-widget',
+    };
+
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
+
+    const upstreamResponse = await fetchFn(CHAT_BACKEND_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+      },
+      body: JSON.stringify(payload),
+      signal: controller.signal,
+    });
+
+    clearTimeout(timeoutId);
+
+    const responseText = await upstreamResponse.text();
+
+    // Reenviamos los encabezados y el status original
+    res
+      .status(upstreamResponse.status)
+      .type(upstreamResponse.headers.get('content-type') || 'application/json')
+      .send(responseText);
+  } catch (error) {
+    if (error?.name === 'AbortError') {
+      return res.status(504).json({
+        error: 'El backend de chat tardA3 demasiado tiempo en responder. Intenta nuevamente.',
+      });
+    }
+
+    console.error('[Chat Proxy] Error forwarding message:', error);
+    return res.status(502).json({
+      error: 'No se pudo conectar con el servicio de chat. Usa WhatsApp o el formulario de contacto como alternativa.',
     });
   }
 });

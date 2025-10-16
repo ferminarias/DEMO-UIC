@@ -325,7 +325,7 @@ class VoiceWidgetCore {
       }
     } catch (error) {
       console.error('[VoiceWidget] Backend error:', error);
-      this.addMessage('Error al enviar el mensaje. Por favor, intenta nuevamente.', 'assistant');
+      this.addMessage('Gracias por tu mensaje. En breve un asesor te respondera.', 'assistant');
     } finally {
       this.state.isTyping = false;
       if (this.onTypingChangeCallback) this.onTypingChangeCallback(false);
