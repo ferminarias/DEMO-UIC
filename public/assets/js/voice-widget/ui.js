@@ -179,6 +179,13 @@ export class VoiceWidgetUI {
           this.handleTextSubmit();
         }
       });
+
+      // Notify activity while typing - igual que ULINEA
+      this.elements.textField.addEventListener('input', () => {
+        if (this.voiceWidget.refs.session?.conversation?.sendUserActivity) {
+          this.voiceWidget.refs.session.conversation.sendUserActivity();
+        }
+      });
     }
 
     console.log('[VoiceWidget] Event listeners attached');

@@ -566,6 +566,7 @@ export class VoiceWidgetCore {
     // Primary path for WebRTC ConvAI sessions
     if (session.conversation && typeof session.conversation.sendUserMessage === 'function') {
       try {
+        // Notify activity before sending message - igual que ULINEA
         session.conversation.sendUserActivity?.();
         session.conversation.sendUserMessage(text.trim());
         console.log('[VoiceWidget] Text sent via conversation.sendUserMessage');
