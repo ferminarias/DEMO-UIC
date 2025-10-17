@@ -1,3 +1,21 @@
 {
-  "outputDirectory": "public"
+  "buildCommand": "npm run build:vercel",
+  "outputDirectory": "public",
+  "installCommand": "npm install",
+  "framework": null,
+  "functions": {
+    "api/**/*.js": {
+      "runtime": "nodejs18.x"
+    }
+  },
+  "rewrites": [
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }

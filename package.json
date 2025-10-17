@@ -2,11 +2,15 @@
   "name": "demo-uic-voice-widget",
   "version": "1.0.0",
   "description": "DEMO-UIC con Voice Widget integrado (ElevenLabs)",
+  "type": "module",
   "main": "index.html",
   "scripts": {
-    "dev": "vercel dev",
-    "build": "echo 'No build required for static site'",
-    "deploy": "vercel --prod"
+    "dev": "vite",
+    "build": "vite build",
+    "build:vercel": "vite build --config vite.config.simple.js && node scripts/copy-build.js",
+    "preview": "vite preview",
+    "vercel-dev": "vercel dev",
+    "deploy": "npm run build:vercel && vercel --prod"
   },
   "keywords": [
     "voice",
@@ -21,7 +25,9 @@
     "@elevenlabs/client": "latest"
   },
   "devDependencies": {
-    "vercel": "^33.0.0"
+    "terser": "^5.44.0",
+    "vercel": "^33.0.0",
+    "vite": "^5.0.0"
   },
   "engines": {
     "node": ">=18.0.0"

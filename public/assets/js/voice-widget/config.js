@@ -1,8 +1,9 @@
 /**
  * Voice Widget Configuration
+ * ES6 Module version
  */
 
-const VoiceWidgetConfig = {
+export const VoiceWidgetConfig = {
   // API endpoints
   apiBaseUrl: '/api',
   
@@ -22,6 +23,4 @@ const VoiceWidgetConfig = {
   autoCloseToastDelay: 3000,
 };
 
-if (typeof module !== 'undefined' && module.exports) {
-  module.exports = VoiceWidgetConfig;
-}
+// ES6 module export - no need for CommonJS fallback

@@ -1,11 +1,12 @@
 /**
  * Voice Widget UI Manager
- * Manejo de la interfaz de usuario del widget
+ * ES6 Module version for Vite bundler
  */
 
-class VoiceWidgetUI {
-  constructor(containerId = 'voice-widget-root') {
-    this.containerId = containerId;
+export class VoiceWidgetUI {
+  constructor(voiceWidgetCore) {
+    this.voiceWidget = voiceWidgetCore;
+    this.containerId = 'voice-widget-root';
     this.elements = {};
   }
 

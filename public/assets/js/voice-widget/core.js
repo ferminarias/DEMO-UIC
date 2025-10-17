@@ -1,9 +1,9 @@
 /**
  * Voice Widget Core Logic
- * Manejo de estado y logica principal
+ * ES6 Module version with Vite bundler
  */
 
-class VoiceWidgetCore {
+export class VoiceWidgetCore {
   constructor(config) {
     this.config = config;
     this.state = {
@@ -113,8 +113,9 @@ class VoiceWidgetCore {
 
   async startElevenLabsSession(tokenData) {
     try {
-      // Importar directamente como ULINEA - usando npm module
+      // Importar directamente como ULINEA - ahora funciona con Vite bundler
       const { Conversation } = await import("@elevenlabs/client");
+      console.log('[VoiceWidget] ElevenLabs SDK loaded via Vite bundler');
       
       // Start WebRTC conversation - igual que ULINEA
       const conversation = await Conversation.startSession({
