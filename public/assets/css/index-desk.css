@@ -5,12 +5,16 @@
 	padding: 0 10% 0 10%;
 }
 .webp .presentacion {
-	background:linear-gradient( rgba(34,34,34,0.90) 100%, rgba(34,34,34,0.90)100%),url("../images/home/programas-en-linea-universidad-intercontinental.webp") no-repeat top center;
+	background: linear-gradient(135deg, rgba(10, 99, 66, 0.92) 0%, rgba(54, 148, 95, 0.85) 100%), url("../images/home/programas-en-linea-universidad-intercontinental.webp") no-repeat center center;
 	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
 }
 .no-webp .presentacion {
-	background:linear-gradient( rgba(34,34,34,0.90) 100%, rgba(34,34,34,0.90)100%),url("../images/home/programas-en-linea-universidad-intercontinental.jpg") no-repeat top center;
+	background: linear-gradient(135deg, rgba(10, 99, 66, 0.92) 0%, rgba(54, 148, 95, 0.85) 100%), url("../images/home/programas-en-linea-universidad-intercontinental.jpg") no-repeat center center;
 	background-size: cover;
+	background-attachment: fixed;
+	position: relative;
 }
 .textopres {
 	float: left;
@@ -20,28 +24,93 @@
 	padding: 0 0 0 0;
 }
 .textopres h2 {
-	font-size: 2em;
-	color: #36945F;
+	font-size: 2.5em;
+	color: #fff;
 	line-height: 1.1em;
-	margin: 0 0 5px 0;
+	margin: 0 0 10px 0;
 	padding: 0 0 0 0;
+	text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.3);
+	animation: fadeInUp 0.8s ease-out;
 }
 .textopres h1 {
-	font-size: 2em;
+	font-size: 3em;
 	color: #fff;
 	line-height: 1.1em;
 	margin: 0 0 15px 0;
 	padding: 0 0 0 0;
+	text-shadow: 2px 4px 12px rgba(0, 0, 0, 0.4);
+	animation: fadeInUp 1s ease-out 0.2s backwards;
 }
 .textopres p {
-	font-size: 1em;
+	font-size: 1.1em;
 	color: #fff;
-	line-height: 1.5em;
-	margin: 0 0 0 0;
+	line-height: 1.7em;
+	margin: 0 0 25px 0;
 	padding: 0 0 0 0;
+	text-shadow: 1px 2px 8px rgba(0, 0, 0, 0.4);
+	animation: fadeInUp 1.2s ease-out 0.4s backwards;
 }
 .break {
 	display: none;
+}
+
+/* Hero CTAs */
+.hero-ctas {
+	margin-top: 30px;
+	display: flex;
+	gap: 15px;
+	animation: fadeInUp 1.4s ease-out 0.6s backwards;
+}
+
+.btn-primary-hero {
+	background: #fff;
+	color: #0a6342;
+	padding: 15px 35px;
+	border-radius: 50px;
+	text-decoration: none;
+	font-weight: 700;
+	font-size: 1.05em;
+	box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+	transition: all 0.3s ease;
+	display: inline-block;
+}
+
+.btn-primary-hero:hover {
+	transform: translateY(-3px);
+	box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+	background: #f0f9ff;
+}
+
+.btn-secondary-hero {
+	background: rgba(255, 255, 255, 0.15);
+	color: #fff;
+	padding: 15px 35px;
+	border-radius: 50px;
+	text-decoration: none;
+	font-weight: 600;
+	font-size: 1.05em;
+	border: 2px solid rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(10px);
+	transition: all 0.3s ease;
+	display: inline-block;
+}
+
+.btn-secondary-hero:hover {
+	background: rgba(255, 255, 255, 0.25);
+	border-color: #fff;
+	transform: translateY(-3px);
+}
+
+/* Animación fadeInUp */
+@keyframes fadeInUp {
+	from {
+		opacity: 0;
+		transform: translateY(30px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
 }
 @media screen and (min-width: 1365px) {
 	.textopres {
@@ -86,8 +155,8 @@
 .ofertaedu {
 	width: 100%;
 	margin: 0 0 0 0;
-	padding: 0 0 0 0;
-	background: #36945F;
+	padding: 60px 0;
+	background: linear-gradient(180deg, #36945F 0%, #2b7a4d 100%);
 }
 div.bar {
 	float: left;
@@ -105,20 +174,63 @@ div.bar {
 	background: white;
 	height: 170px;
 	text-decoration: none;
-	border: 1px solid rgba(0,0,0,0.1);
+	border: none;
+	border-radius: 16px;
+	box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+	transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	position: relative;
+	overflow: hidden;
+}
+
+.cuadrooferta::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 5px;
+	background: linear-gradient(90deg, #36945F, #0a6342);
+	transform: scaleX(0);
+	transform-origin: left;
+	transition: transform 0.4s ease;
+}
+
+.cuadrooferta:hover {
+	transform: translateY(-8px);
+	box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+	border: 1px solid #36945F;
+}
+
+.cuadrooferta:hover::before {
+	transform: scaleX(1);
 }
 .cuadrooferta h3 {
-	font-size: 1.2em;
-	color: #36945F;
-	margin: 0 0 8px 0;
+	font-size: 1.3em;
+	color: #0a6342;
+	margin: 0 0 12px 0;
 	padding: 0 0 0 0;
+	font-weight: 700;
+	transition: color 0.3s ease;
+}
+
+.cuadrooferta:hover h3 {
+	color: #36945F;
+}
+
+.cuadrooferta h3 .iconfont {
+	display: inline-block;
+	transition: transform 0.3s ease;
+}
+
+.cuadrooferta:hover h3 .iconfont {
+	transform: scale(1.15) rotate(-5deg);
 }
 .cuadrooferta p {
-	font-size: 0.85em;
-	color: #666;
+	font-size: 0.95em;
+	color: #555;
 	margin: 0 0 0 0;
 	padding: 0 0 0 0;
-	line-height: 1.4em;
+	line-height: 1.6em;
 }
 @media screen and (min-width: 1199px) {
 	div.bar {
