@@ -113,11 +113,8 @@ class VoiceWidgetCore {
 
   async startElevenLabsSession(tokenData) {
     try {
-      if (!window.ElevenLabs) {
-        await this.loadElevenLabsSDK();
-      }
-
-      const { Conversation } = window.ElevenLabs;
+      // Importar directamente como ULINEA - sin CDN
+      const { Conversation } = await import("@elevenlabs/client");
       
       // Start WebRTC conversation - igual que ULINEA
       const conversation = await Conversation.startSession({
@@ -214,6 +211,7 @@ class VoiceWidgetCore {
       console.log('[VoiceWidget] Session started successfully');
     } catch (error) {
       console.error('[VoiceWidget] ElevenLabs SDK error:', error);
+      console.log('[VoiceWidget] Falling back to simulation mode');
       this.simulateVoiceConversation();
     }
   }
@@ -226,7 +224,15 @@ class VoiceWidgetCore {
         return;
       }
 
-      console.log('[VoiceWidget] Loading ElevenLabs SDK from:', this.config.elevenLabsSDKUrl);
+      // URLs alternativas para el SDK
+      const sdkUrls = [
+        this.config.elevenLabsSDKUrl,
+        'https://unpkg.com/@elevenlabs/client@latest/dist/index.umd.js',
+        'https://cdn.skypack.dev/@elevenlabs/client',
+        'https://esm.sh/@elevenlabs/client'
+      ];
+
+      console.log('[VoiceWidget] Trying to load ElevenLabs SDK...');
 
       // Limpiar SDK anterior si existe
       const existingScript = document.querySelector('script[src*="@elevenlabs/client"]');
@@ -235,33 +241,48 @@ class VoiceWidgetCore {
         existingScript.remove();
       }
 
-      const script = document.createElement('script');
-      script.src = this.config.elevenLabsSDKUrl;
-      script.crossOrigin = 'anonymous';
-      
-      script.onload = () => {
-        console.log('[VoiceWidget] ElevenLabs SDK script loaded');
-        console.log('[VoiceWidget] window.ElevenLabs:', window.ElevenLabs);
-        console.log('[VoiceWidget] window.ElevenLabs.Conversation:', window.ElevenLabs?.Conversation);
-        
-        // Verificar que el SDK esté disponible
-        if (window.ElevenLabs && window.ElevenLabs.Conversation) {
-          console.log('[VoiceWidget] ElevenLabs SDK loaded successfully');
-          resolve();
-        } else {
-          console.error('[VoiceWidget] ElevenLabs SDK loaded but Conversation not available');
-          console.error('[VoiceWidget] Available properties:', Object.keys(window.ElevenLabs || {}));
-          reject(new Error('ElevenLabs SDK loaded but Conversation not available'));
+      const tryLoadSDK = (urlIndex = 0) => {
+        if (urlIndex >= sdkUrls.length) {
+          console.error('[VoiceWidget] All SDK URLs failed to load');
+          reject(new Error('Failed to load ElevenLabs SDK from any source'));
+          return;
         }
+
+        const url = sdkUrls[urlIndex];
+        console.log('[VoiceWidget] Trying SDK URL:', url);
+
+        const script = document.createElement('script');
+        script.src = url;
+        script.crossOrigin = 'anonymous';
+        
+        script.onload = () => {
+          console.log('[VoiceWidget] ElevenLabs SDK script loaded from:', url);
+          console.log('[VoiceWidget] window.ElevenLabs:', window.ElevenLabs);
+          console.log('[VoiceWidget] window.ElevenLabs.Conversation:', window.ElevenLabs?.Conversation);
+          
+          // Verificar que el SDK esté disponible
+          if (window.ElevenLabs && window.ElevenLabs.Conversation) {
+            console.log('[VoiceWidget] ElevenLabs SDK loaded successfully');
+            resolve();
+          } else {
+            console.error('[VoiceWidget] ElevenLabs SDK loaded but Conversation not available');
+            console.error('[VoiceWidget] Available properties:', Object.keys(window.ElevenLabs || {}));
+            // Intentar con la siguiente URL
+            tryLoadSDK(urlIndex + 1);
+          }
+        };
+        
+        script.onerror = (error) => {
+          console.error('[VoiceWidget] Failed to load ElevenLabs SDK from:', url, error);
+          // Intentar con la siguiente URL
+          tryLoadSDK(urlIndex + 1);
+        };
+        
+        document.head.appendChild(script);
+        console.log('[VoiceWidget] SDK script added to document head');
       };
-      
-      script.onerror = (error) => {
-        console.error('[VoiceWidget] Failed to load ElevenLabs SDK:', error);
-        reject(new Error('Failed to load ElevenLabs SDK'));
-      };
-      
-      document.head.appendChild(script);
-      console.log('[VoiceWidget] SDK script added to document head');
+
+      tryLoadSDK();
     });
   }
 

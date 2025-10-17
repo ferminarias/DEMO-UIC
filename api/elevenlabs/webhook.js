@@ -13,7 +13,8 @@ export default async function handler(req, res) {
   }
 
   try {
-    const body = JSON.stringify(req.body);
+    // Obtener el body como texto - igual que ULINEA
+    const body = typeof req.body === 'string' ? req.body : JSON.stringify(req.body);
     const signature = req.headers['elevenlabs-signature'];
 
     // Verificación de firma HMAC si está configurada
@@ -26,7 +27,8 @@ export default async function handler(req, res) {
       }
     }
 
-    const event = req.body;
+    // Parsear el body - igual que ULINEA
+    const event = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
     console.log('[UIC] ElevenLabs webhook event:', event.type, event.data);
 
     switch (event.type) {

@@ -93,6 +93,7 @@ export default async function handler(req, res) {
         agentId: agentId,
         configured: true,
         tokenGenerated: true,
+        clientIp: clientIp, // For debugging purposes - igual que ULINEA
       });
     } catch (tokenError) {
       console.error('Token generation error:', tokenError);
