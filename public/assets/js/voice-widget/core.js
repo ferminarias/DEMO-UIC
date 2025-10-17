@@ -27,12 +27,34 @@ export class VoiceWidgetCore {
 
   async checkElevenLabsConfig() {
     try {
-      const response = await fetch(`${this.config.apiBaseUrl}/elevenlabs/check-config`);
-      const { configured } = await response.json();
+      console.log('[VoiceWidget] Checking ElevenLabs config...');
+      
+      // Crear un timeout de 5 segundos
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 5000);
+      
+      const response = await fetch(`${this.config.apiBaseUrl}/elevenlabs/check-config`, {
+        signal: controller.signal,
+        headers: {
+          'Content-Type': 'application/json',
+        }
+      });
+      
+      clearTimeout(timeoutId);
+      
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+      }
+      
+      const data = await response.json();
+      const configured = data.configured || false;
+      
       this.state.hasElevenLabsConfig = configured;
+      console.log('[VoiceWidget] ElevenLabs config check result:', configured);
+      
       return configured;
     } catch (error) {
-      console.log('[VoiceWidget] ElevenLabs config check failed:', error);
+      console.warn('[VoiceWidget] ElevenLabs config check failed:', error.message || error);
       this.state.hasElevenLabsConfig = false;
       return false;
     }
@@ -597,8 +619,18 @@ export class VoiceWidgetCore {
   async initialize() {
     console.log('[VoiceWidget] Initializing...');
     
-    // Check ElevenLabs configuration
-    await this.checkElevenLabsConfig();
+    try {
+      // Check ElevenLabs configuration with timeout
+      await Promise.race([
+        this.checkElevenLabsConfig(),
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error('Config check timeout')), 10000)
+        )
+      ]);
+    } catch (error) {
+      console.warn('[VoiceWidget] Config check failed or timed out:', error.message);
+      this.state.hasElevenLabsConfig = false;
+    }
     
     console.log('[VoiceWidget] Initialization complete');
   }

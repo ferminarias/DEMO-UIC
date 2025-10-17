@@ -17,8 +17,15 @@ document.addEventListener('DOMContentLoaded', async () => {
     const voiceWidget = new VoiceWidgetCore(VoiceWidgetConfig);
     const voiceWidgetUI = new VoiceWidgetUI(voiceWidget);
     
-    // Initialize core
-    await voiceWidget.initialize();
+    // Initialize core with timeout protection
+    console.log('[VoiceWidget] Starting initialization...');
+    await Promise.race([
+      voiceWidget.initialize(),
+      new Promise((_, reject) => 
+        setTimeout(() => reject(new Error('Initialization timeout')), 15000)
+      )
+    ]);
+    console.log('[VoiceWidget] Core initialization completed');
     
     // Initialize UI
     voiceWidgetUI.render();
