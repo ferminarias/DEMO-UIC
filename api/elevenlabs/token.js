@@ -11,6 +11,46 @@ export default async function handler(req, res) {
   }
 
   try {
+    // Validación de origen para seguridad
+    const origin = req.headers.origin || req.headers.referer || '';
+    const userAgent = req.headers['user-agent'] || '';
+    const forwarded = req.headers['x-forwarded-for'];
+    const realIp = req.headers['x-real-ip'];
+    const clientIp = forwarded?.split(',')[0] || realIp || 'unknown';
+    
+    // Lista de dominios autorizados
+    const allowedDomains = process.env.ALLOWED_EMBED_DOMAINS?.split(',') || [
+      'localhost',
+      '127.0.0.1',
+      'demo-uic.vercel.app', // Tu dominio DEMO-UIC
+      'bot.dominiodepruebas.online',
+      'bot.ddev.site',
+      'wordpress.com',
+      'wordpress.org'
+    ];
+    
+    // Validar si está siendo usado desde dominio autorizado
+    const isAuthorized = allowedDomains.some(domain => 
+      origin.includes(domain) || 
+      origin.includes('localhost') ||
+      !origin // Permitir requests directos para compatibilidad
+    );
+    
+    // Log sospechoso para monitoreo
+    if (!isAuthorized && origin) {
+      console.warn(`[UIC-SECURITY] Token request from unauthorized origin: ${origin}, IP: ${clientIp}, UA: ${userAgent}`);
+      console.warn(`[UIC-DEBUG] Allowed domains: ${allowedDomains.join(', ')}`);
+      console.warn(`[UIC-DEBUG] Current origin: ${origin}`);
+      
+      // Bloquear acceso no autorizado
+      if (!origin.includes('demo-uic.vercel.app') && !origin.includes('localhost')) {
+        return res.status(403).json({
+          error: 'Acceso denegado desde este dominio',
+          configured: false,
+        });
+      }
+    }
+
     const elevenLabsApiKey = process.env.ELEVENLABS_API_KEY;
     const agentId = process.env.ELEVENLABS_AGENT_ID;
 

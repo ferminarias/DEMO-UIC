@@ -141,15 +141,37 @@ class VoiceWidgetCore {
 
   async loadElevenLabsSDK() {
     return new Promise((resolve, reject) => {
-      if (window.ElevenLabs) {
+      if (window.ElevenLabs && window.ElevenLabs.Conversation) {
+        console.log('[VoiceWidget] ElevenLabs SDK already loaded');
         resolve();
         return;
       }
 
+      // Limpiar SDK anterior si existe
+      const existingScript = document.querySelector('script[src*="@elevenlabs/client"]');
+      if (existingScript) {
+        existingScript.remove();
+      }
+
       const script = document.createElement('script');
       script.src = this.config.elevenLabsSDKUrl;
-      script.onload = () => resolve();
-      script.onerror = () => reject(new Error('Failed to load ElevenLabs SDK'));
+      script.crossOrigin = 'anonymous';
+      
+      script.onload = () => {
+        console.log('[VoiceWidget] ElevenLabs SDK loaded successfully');
+        // Verificar que el SDK esté disponible
+        if (window.ElevenLabs && window.ElevenLabs.Conversation) {
+          resolve();
+        } else {
+          reject(new Error('ElevenLabs SDK loaded but Conversation not available'));
+        }
+      };
+      
+      script.onerror = () => {
+        console.error('[VoiceWidget] Failed to load ElevenLabs SDK');
+        reject(new Error('Failed to load ElevenLabs SDK'));
+      };
+      
       document.head.appendChild(script);
     });
   }
@@ -300,7 +322,7 @@ class VoiceWidgetCore {
       if (this.onTypingChangeCallback) this.onTypingChangeCallback(true);
 
       let baseUrl = '';
-      if (typeof this.config.chatApiUrl === 'string') {
+      if (typeof this.config.chatApiUrl === 'string' && this.config.chatApiUrl.trim()) {
         baseUrl = this.config.chatApiUrl.trim().replace(/\/$/, '');
       }
       const path = this.config.chatEndpoint || '/api/chat/send';
@@ -308,29 +330,47 @@ class VoiceWidgetCore {
         ? `${baseUrl}${path.startsWith('/') ? '' : '/'}${path}`
         : path;
 
+      console.log('[VoiceWidget] Sending to backend:', endpoint);
+
+      const controller = new AbortController();
+      const timeoutId = setTimeout(() => controller.abort(), 10000);
+
       const response = await fetch(endpoint, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
         body: JSON.stringify({
           message: messageText,
           sessionId: `web-session-${Date.now()}`,
           userId: `web-user-${Date.now()}`,
           source: 'website-widget'
-        })
+        }),
+        signal: controller.signal
       });
+
+      clearTimeout(timeoutId);
 
       if (response.ok) {
         const data = await response.json();
         const reply = data.response || data.message || 'Gracias por tu mensaje. Te responderemos pronto.';
         this.addMessage(reply, 'assistant');
       } else {
-        throw new Error(`Backend response not ok (${response.status})`);
+        const errorText = await response.text();
+        throw new Error(`Backend response not ok (${response.status}): ${errorText}`);
       }
     } catch (error) {
       console.error('[VoiceWidget] Backend error:', error);
-      this.addMessage('Gracias por tu mensaje. En breve un asesor te respondera.', 'assistant');
+      
+      // Manejar diferentes tipos de errores
+      if (error.name === 'AbortError') {
+        this.addMessage('La conexión tardó demasiado tiempo. Por favor, intenta nuevamente.', 'assistant');
+      } else if (error.message.includes('Failed to fetch')) {
+        this.addMessage('No se pudo conectar con el servidor. Verifica tu conexión a internet e intenta nuevamente.', 'assistant');
+      } else {
+        this.addMessage('Gracias por tu mensaje. En breve un asesor te responderá.', 'assistant');
+      }
     } finally {
       this.state.isTyping = false;
       if (this.onTypingChangeCallback) this.onTypingChangeCallback(false);

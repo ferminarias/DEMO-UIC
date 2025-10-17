@@ -21,7 +21,8 @@ app.use(express.text());
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
 const ELEVENLABS_AGENT_ID = process.env.ELEVENLABS_AGENT_ID;
 const ELEVENLABS_WEBHOOK_SECRET = process.env.ELEVENLABS_WEBHOOK_SECRET;
-const CHAT_BACKEND_URL = process.env.CHAT_BACKEND_URL || 'https://web-production-91918.up.railway.app/api/chat/send';
+// Ya no necesitamos backend externo - seremos independientes
+// const CHAT_BACKEND_URL = process.env.CHAT_BACKEND_URL || 'https://web-production-91918.up.railway.app/api/chat/send';
 
 // Dominios permitidos para seguridad
 const ALLOWED_DOMAINS = process.env.ALLOWED_EMBED_DOMAINS?.split(',') || [
@@ -146,7 +147,7 @@ app.get('/api/elevenlabs/token', validateOrigin, async (req, res) => {
 
 /**
  * POST /api/chat/send
- * Proxy para el backend de chat (evita problemas de CORS en el cliente)
+ * Backend propio de UIC para manejar mensajes del chat
  */
 app.post('/api/chat/send', validateOrigin, async (req, res) => {
   try {
@@ -156,45 +157,53 @@ app.post('/api/chat/send', validateOrigin, async (req, res) => {
       return res.status(400).json({ error: 'El campo "message" es obligatorio.' });
     }
 
-    const payload = {
-      message,
-      sessionId: sessionId || `web-session-${Date.now()}`,
-      userId: userId || `web-user-${Date.now()}`,
-      source: source || 'website-widget',
-    };
+    console.log('[UIC Chat] Received message:', message, 'from:', source);
 
-    const controller = new AbortController();
-    const timeoutId = setTimeout(() => controller.abort(), 10000);
+    // Respuestas inteligentes basadas en palabras clave para UIC
+    const lowerMessage = message.toLowerCase();
+    let response = '';
 
-    const upstreamResponse = await fetchFn(CHAT_BACKEND_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(payload),
-      signal: controller.signal,
-    });
-
-    clearTimeout(timeoutId);
-
-    const responseText = await upstreamResponse.text();
-
-    // Reenviamos los encabezados y el status original
-    res
-      .status(upstreamResponse.status)
-      .type(upstreamResponse.headers.get('content-type') || 'application/json')
-      .send(responseText);
-  } catch (error) {
-    if (error?.name === 'AbortError') {
-      return res.status(504).json({
-        error: 'El backend de chat tardA3 demasiado tiempo en responder. Intenta nuevamente.',
-      });
+    // Detectar intención del mensaje
+    if (lowerMessage.includes('hola') || lowerMessage.includes('buenos días') || lowerMessage.includes('buenas tardes')) {
+      response = '¡Hola! Me da mucho gusto saludarte. Soy el asistente virtual de la Universidad Intercontinental (UIC). ¿En qué puedo ayudarte hoy?';
+    } else if (lowerMessage.includes('programa') || lowerMessage.includes('carrera') || lowerMessage.includes('licenciatura')) {
+      response = 'En UIC ofrecemos diversos programas de alta calidad. Tenemos licenciaturas en Derecho, Psicología, Administración y más. ¿Te interesa algún programa específico?';
+    } else if (lowerMessage.includes('derecho')) {
+      response = 'La Licenciatura en Derecho de UIC es un programa integral que te prepara para ejercer la profesión legal con excelencia. ¿Te gustaría conocer más detalles sobre el plan de estudios?';
+    } else if (lowerMessage.includes('psicología')) {
+      response = 'Nuestra Licenciatura en Psicología combina teoría y práctica para formar profesionales competentes. ¿Quieres información sobre las áreas de especialización?';
+    } else if (lowerMessage.includes('costo') || lowerMessage.includes('precio') || lowerMessage.includes('cuánto')) {
+      response = 'Los costos varían según el programa. Te recomiendo contactar a un asesor académico para información detallada sobre inversión y opciones de financiamiento.';
+    } else if (lowerMessage.includes('inscripción') || lowerMessage.includes('inscribir') || lowerMessage.includes('proceso')) {
+      response = 'El proceso de inscripción es sencillo. Necesitas documentos básicos como acta de nacimiento, certificado de bachillerato y CURP. ¿Te gustaría que te conecte con un asesor?';
+    } else if (lowerMessage.includes('modalidad') || lowerMessage.includes('online') || lowerMessage.includes('presencial')) {
+      response = 'UIC ofrece modalidades presencial y en línea para adaptarse a tus necesidades. ¿Prefieres estudiar de manera presencial o en línea?';
+    } else if (lowerMessage.includes('contacto') || lowerMessage.includes('asesor') || lowerMessage.includes('información')) {
+      response = 'Puedo conectarte con un asesor académico especializado. También puedes contactarnos por WhatsApp al +52 55 9602 32001 o visitar nuestro campus.';
+    } else if (lowerMessage.includes('gracias') || lowerMessage.includes('muchas gracias')) {
+      response = '¡De nada! Es un placer ayudarte. Si tienes más preguntas sobre UIC, no dudes en consultarme.';
+    } else {
+      // Respuesta genérica para mensajes no reconocidos
+      response = 'Gracias por tu mensaje. Soy el asistente de UIC y estoy aquí para ayudarte con información sobre nuestros programas, procesos de admisión y más. ¿En qué puedo asistirte específicamente?';
     }
 
-    console.error('[Chat Proxy] Error forwarding message:', error);
-    return res.status(502).json({
-      error: 'No se pudo conectar con el servicio de chat. Usa WhatsApp o el formulario de contacto como alternativa.',
+    // Simular tiempo de procesamiento
+    await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
+
+    console.log('[UIC Chat] Sending response:', response);
+
+    return res.json({
+      response: response,
+      message: response,
+      sessionId: sessionId || `web-session-${Date.now()}`,
+      timestamp: new Date().toISOString()
+    });
+
+  } catch (error) {
+    console.error('[UIC Chat] Error processing message:', error);
+    return res.status(500).json({
+      error: 'Error interno del servidor. Por favor, intenta nuevamente o contacta a un asesor.',
+      response: 'Lo siento, hubo un error procesando tu mensaje. Por favor, intenta nuevamente o contacta a un asesor académico.'
     });
   }
 });
@@ -230,18 +239,66 @@ app.post('/api/elevenlabs/webhook', async (req, res) => {
         break;
 
       case 'transcription_completed':
-        console.log('[Webhook] Transcription completed:', event.data?.transcription || event.data?.text);
-        // Aquí puedes procesar la transcripción si lo necesitas
+        console.log('[UIC Webhook] Transcription completed:', event.data?.transcription || event.data?.text);
+
+        // Streaming de transcripción si hay controlador activo
+        if (global.transcriptionController) {
+          const encoder = new TextEncoder();
+          const transcriptionText = event.data?.transcription || event.data?.text;
+          if (transcriptionText) {
+            const data = encoder.encode(
+              `data: ${JSON.stringify({
+                type: 'transcription',
+                text: transcriptionText,
+                timestamp: Date.now(),
+                source: event.data?.source || 'assistant',
+              })}\n\n`
+            );
+            global.transcriptionController.enqueue(data);
+          }
+        }
         break;
 
       case 'conversation_message':
-        console.log('[Webhook] Conversation message:', event.data?.message || event.data?.text);
-        // Aquí puedes procesar mensajes de la conversación
+        console.log('[UIC Webhook] Conversation message:', event.data?.message || event.data?.text);
+
+        // Streaming de mensajes de conversación
+        if (global.transcriptionController) {
+          const encoder = new TextEncoder();
+          const messageText = event.data?.message || event.data?.text;
+          if (messageText) {
+            const data = encoder.encode(
+              `data: ${JSON.stringify({
+                type: 'message',
+                text: messageText,
+                timestamp: Date.now(),
+                source: event.data?.source || 'assistant',
+              })}\n\n`
+            );
+            global.transcriptionController.enqueue(data);
+          }
+        }
         break;
 
       case 'agent_response':
-        console.log('[Webhook] Agent response:', event.data?.response || event.data?.text);
-        // Aquí puedes procesar respuestas del agente
+        console.log('[UIC Webhook] Agent response:', event.data?.response || event.data?.text);
+
+        // Streaming de respuestas del agente
+        if (global.transcriptionController) {
+          const encoder = new TextEncoder();
+          const responseText = event.data?.response || event.data?.text;
+          if (responseText) {
+            const data = encoder.encode(
+              `data: ${JSON.stringify({
+                type: 'response',
+                text: responseText,
+                timestamp: Date.now(),
+                source: 'assistant',
+              })}\n\n`
+            );
+            global.transcriptionController.enqueue(data);
+          }
+        }
         break;
 
       default:

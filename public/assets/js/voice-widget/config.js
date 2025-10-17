@@ -10,8 +10,8 @@ const VoiceWidgetConfig = {
   whatsappNumber: '5255960232001',
   whatsappMessage: 'Hola! Me interesa conocer mas sobre los programas de UIC.',
   
-  // Chat backend fallback
-  chatApiUrl: '',
+  // Chat backend fallback - Backend propio de UIC
+  chatApiUrl: '', // Usar endpoints locales del propio servidor
   chatEndpoint: '/api/chat/send',
   
   // ElevenLabs SDK URL

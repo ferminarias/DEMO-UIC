@@ -5,7 +5,7 @@ VARIABLES DE ENTORNO PARA VERCEL - VOICE WIDGET DEMO-UIC
 Copia estas variables en Vercel → Project Settings → Environment Variables
 
 ================================================================================
-SOLO 2 VARIABLES OBLIGATORIAS
+VARIABLES OBLIGATORIAS PARA FUNCIONAMIENTO COMPLETO
 ================================================================================
 
 1. ELEVENLABS_API_KEY
@@ -18,7 +18,15 @@ SOLO 2 VARIABLES OBLIGATORIAS
    Valor: tu_agent_id_de_elevenlabs
    Obtener en: https://elevenlabs.io/app/conversational-ai
 
-¡Eso es todo! Solo necesitas estas 2 variables.
+3. ELEVENLABS_WEBHOOK_SECRET (RECOMENDADO)
+   Tipo: Secret
+   Valor: tu_webhook_secret_de_elevenlabs
+   Obtener en: https://elevenlabs.io/app/conversational-ai → Webhooks
+
+4. ALLOWED_EMBED_DOMAINS (OPCIONAL)
+   Tipo: Plain Text
+   Valor: demo-uic.vercel.app,tu-dominio-wordpress.com,localhost
+   Para seguridad: dominios autorizados para usar el widget
 
 
 ================================================================================
@@ -33,6 +41,18 @@ Environments: ✓ Production ✓ Preview ✓ Development
 
 Key: ELEVENLABS_AGENT_ID
 Value: [PEGA_TU_AGENT_ID_AQUI]
+Environments: ✓ Production ✓ Preview ✓ Development
+
+---
+
+Key: ELEVENLABS_WEBHOOK_SECRET
+Value: [PEGA_TU_WEBHOOK_SECRET_AQUI]
+Environments: ✓ Production ✓ Preview ✓ Development
+
+---
+
+Key: ALLOWED_EMBED_DOMAINS
+Value: demo-uic.vercel.app,tu-dominio-wordpress.com,localhost
 Environments: ✓ Production ✓ Preview ✓ Development
 
 

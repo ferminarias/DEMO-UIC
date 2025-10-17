@@ -1,8 +1,10 @@
 /**
  * Vercel Serverless Function
  * POST /api/elevenlabs/webhook
- * Recibe eventos de ElevenLabs via webhook
+ * Recibe eventos de ElevenLabs via webhook con streaming completo
  */
+
+import crypto from 'crypto';
 
 export default async function handler(req, res) {
   // Solo permitir método POST
@@ -11,58 +13,98 @@ export default async function handler(req, res) {
   }
 
   try {
+    const body = JSON.stringify(req.body);
+    const signature = req.headers['elevenlabs-signature'];
+
+    // Verificación de firma HMAC si está configurada
+    const webhookSecret = process.env.ELEVENLABS_WEBHOOK_SECRET;
+    if (webhookSecret && signature) {
+      const expectedSignature = crypto.createHmac('sha256', webhookSecret).update(body).digest('hex');
+      if (signature !== expectedSignature) {
+        console.error('[UIC] Invalid webhook signature');
+        return res.status(401).json({ error: 'Invalid signature' });
+      }
+    }
+
     const event = req.body;
-    console.log('[VoiceWidget] ElevenLabs webhook event:', event.type, event.data);
+    console.log('[UIC] ElevenLabs webhook event:', event.type, event.data);
 
     switch (event.type) {
       case 'voice_deletion_warning':
-        console.log('[VoiceWidget] Voice deletion warning:', event.data);
+        console.log('[UIC] Voice deletion warning:', event.data);
         break;
 
       case 'transcription_completed':
-        console.log(
-          '[VoiceWidget] Transcription completed - Full data:',
-          JSON.stringify(event.data, null, 2)
-        );
-        console.log(
-          '[VoiceWidget] Transcription text:',
-          event.data?.transcription || event.data?.text || 'No text found'
-        );
+        console.log('[UIC] Transcription completed - Full data:', JSON.stringify(event.data, null, 2));
+        console.log('[UIC] Transcription text:', event.data?.transcription || event.data?.text || 'No text found');
 
-        // Aquí puedes procesar la transcripción si lo necesitas
-        // Por ejemplo, guardar en base de datos
+        // Streaming de transcripción si hay controlador activo
+        if (global.transcriptionController) {
+          const encoder = new TextEncoder();
+          const transcriptionText = event.data?.transcription || event.data?.text;
+          if (transcriptionText) {
+            const data = encoder.encode(
+              `data: ${JSON.stringify({
+                type: 'transcription',
+                text: transcriptionText,
+                timestamp: Date.now(),
+                source: event.data?.source || 'assistant',
+              })}\n\n`
+            );
+            global.transcriptionController.enqueue(data);
+          }
+        }
         break;
 
       case 'conversation_message':
-        console.log(
-          '[VoiceWidget] Conversation message:',
-          JSON.stringify(event.data, null, 2)
-        );
+        console.log('[UIC] Conversation message:', JSON.stringify(event.data, null, 2));
 
-        // Aquí puedes procesar mensajes de la conversación
+        // Streaming de mensajes de conversación
+        if (global.transcriptionController) {
+          const encoder = new TextEncoder();
+          const messageText = event.data?.message || event.data?.text;
+          if (messageText) {
+            const data = encoder.encode(
+              `data: ${JSON.stringify({
+                type: 'message',
+                text: messageText,
+                timestamp: Date.now(),
+                source: event.data?.source || 'assistant',
+              })}\n\n`
+            );
+            global.transcriptionController.enqueue(data);
+          }
+        }
         break;
 
       case 'agent_response':
-        console.log(
-          '[VoiceWidget] Agent response:',
-          JSON.stringify(event.data, null, 2)
-        );
+        console.log('[UIC] Agent response:', JSON.stringify(event.data, null, 2));
 
-        // Aquí puedes procesar respuestas del agente
+        // Streaming de respuestas del agente
+        if (global.transcriptionController) {
+          const encoder = new TextEncoder();
+          const responseText = event.data?.response || event.data?.text;
+          if (responseText) {
+            const data = encoder.encode(
+              `data: ${JSON.stringify({
+                type: 'response',
+                text: responseText,
+                timestamp: Date.now(),
+                source: 'assistant',
+              })}\n\n`
+            );
+            global.transcriptionController.enqueue(data);
+          }
+        }
         break;
 
       default:
-        console.log(
-          '[VoiceWidget] Unknown webhook event type:',
-          event.type,
-          'Data:',
-          JSON.stringify(event.data, null, 2)
-        );
+        console.log('[UIC] Unknown webhook event type:', event.type, 'Data:', JSON.stringify(event.data, null, 2));
     }
 
     return res.status(200).json({ received: true });
   } catch (error) {
-    console.error('[VoiceWidget] Webhook error:', error);
+    console.error('[UIC] Webhook error:', error);
     return res.status(500).json({ error: 'Webhook processing failed' });
   }
 }
