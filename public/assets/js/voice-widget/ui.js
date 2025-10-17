@@ -131,6 +131,67 @@ export class VoiceWidgetUI {
     };
   }
 
+  attachEventListeners() {
+    // FAB button - toggle panel
+    if (this.elements.fab) {
+      this.elements.fab.addEventListener('click', () => {
+        this.voiceWidget.toggleWidget();
+      });
+    }
+
+    // Close button
+    if (this.elements.closeBtn) {
+      this.elements.closeBtn.addEventListener('click', () => {
+        this.voiceWidget.toggleWidget();
+      });
+    }
+
+    // Call button - toggle between start/stop
+    if (this.elements.callBtn) {
+      this.elements.callBtn.addEventListener('click', () => {
+        const isConnected = this.voiceWidget.refs.sessionActive;
+        if (isConnected) {
+          this.voiceWidget.stopVoiceCall();
+        } else {
+          this.voiceWidget.startVoiceCall();
+        }
+      });
+    }
+
+    // Mute button
+    if (this.elements.muteBtn) {
+      this.elements.muteBtn.addEventListener('click', () => {
+        this.voiceWidget.toggleMute();
+      });
+    }
+
+    // Send text message
+    if (this.elements.sendBtn) {
+      this.elements.sendBtn.addEventListener('click', () => {
+        this.handleTextSubmit();
+      });
+    }
+
+    // Enter key in text field
+    if (this.elements.textField) {
+      this.elements.textField.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          this.handleTextSubmit();
+        }
+      });
+    }
+
+    console.log('[VoiceWidget] Event listeners attached');
+  }
+
+  handleTextSubmit() {
+    const message = this.elements.textField.value.trim();
+    if (message) {
+      this.voiceWidget.sendTextMessage(message);
+      this.clearTextInput();
+    }
+  }
+
   togglePanel(isOpen) {
     if (isOpen) {
       this.elements.panel.classList.remove('voice-widget-hidden');
@@ -249,14 +310,25 @@ export class VoiceWidgetUI {
     }
   }
 
-  showToast(title, message, duration = 3000) {
-    this.elements.toastTitle.textContent = title;
-    this.elements.toastMessage.textContent = message;
-    this.elements.toast.classList.remove('voice-widget-hidden');
+  showTypingIndicator(isTyping) {
+    // This method is already handled in updateMessages
+    // But we can add additional visual feedback if needed
+    const statusText = this.elements.statusText;
+    if (statusText && isTyping) {
+      statusText.textContent = 'Escribiendo...';
+    }
+  }
 
-    setTimeout(() => {
-      this.elements.toast.classList.add('voice-widget-hidden');
-    }, duration);
+  showToast(title, message, duration = 3000) {
+    if (this.elements.toastTitle && this.elements.toastMessage && this.elements.toast) {
+      this.elements.toastTitle.textContent = title;
+      this.elements.toastMessage.textContent = message;
+      this.elements.toast.classList.remove('voice-widget-hidden');
+
+      setTimeout(() => {
+        this.elements.toast.classList.add('voice-widget-hidden');
+      }, duration);
+    }
   }
 
   clearTextInput() {

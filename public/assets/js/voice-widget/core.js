@@ -583,6 +583,45 @@ export class VoiceWidgetCore {
       this.onMessagesChangeCallback(this.state.messages);
     }
   }
+
+  toggleWidget() {
+    this.state.isOpen = !this.state.isOpen;
+    console.log('[VoiceWidget] Widget toggled:', this.state.isOpen);
+    
+    // Notify UI of state change
+    if (this.onToggleCallback) {
+      this.onToggleCallback(this.state.isOpen);
+    }
+  }
+
+  async initialize() {
+    console.log('[VoiceWidget] Initializing...');
+    
+    // Check ElevenLabs configuration
+    await this.checkElevenLabsConfig();
+    
+    console.log('[VoiceWidget] Initialization complete');
+  }
+
+  stopVoiceCall() {
+    try {
+      this.safeEndSession();
+      if (this.refs.mediaStream) {
+        this.refs.mediaStream.getTracks().forEach(track => track.stop());
+        this.refs.mediaStream = null;
+      }
+    } catch (error) {
+      console.error('[VoiceWidget] Error stopping call:', error);
+    }
+    
+    this.refs.sessionActive = false;
+    this.clearSimulationTimers();
+    this.updateVoiceStatus('idle');
+    this.state.messages = [];
+    this.state.isMuted = false;
+    
+    console.log('[VoiceWidget] Voice call stopped');
+  }
 }
 
 
