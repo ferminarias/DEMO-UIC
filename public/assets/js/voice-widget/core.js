@@ -4,8 +4,9 @@
  */
 
 export class VoiceWidgetCore {
-  constructor(config) {
+  constructor(config, ElevenLabsConversation = null) {
     this.config = config;
+    this.ElevenLabsConversation = ElevenLabsConversation;
     this.state = {
       isOpen: false,
       messages: [],
@@ -135,9 +136,14 @@ export class VoiceWidgetCore {
 
   async startElevenLabsSession(tokenData) {
     try {
-      // Importar directamente como ULINEA - ahora funciona con Vite bundler
-      const { Conversation } = await import("@elevenlabs/client");
-      console.log('[VoiceWidget] ElevenLabs SDK loaded via Vite bundler');
+      // Usar la clase Conversation pasada como parámetro
+      const Conversation = this.ElevenLabsConversation;
+      
+      if (!Conversation) {
+        throw new Error('ElevenLabs Conversation class not available');
+      }
+      
+      console.log('[VoiceWidget] ElevenLabs SDK loaded via static import');
       
       // Start WebRTC conversation - igual que ULINEA
       const conversation = await Conversation.startSession({

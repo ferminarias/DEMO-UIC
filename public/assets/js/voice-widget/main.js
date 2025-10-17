@@ -8,13 +8,16 @@ import { VoiceWidgetConfig } from './config.js';
 import { VoiceWidgetCore } from './core.js';
 import { VoiceWidgetUI } from './ui.js';
 
+// Import ElevenLabs SDK statically - esto es lo que falta
+import { Conversation } from '@elevenlabs/client';
+
 // Initialize Voice Widget when DOM is ready
 document.addEventListener('DOMContentLoaded', async () => {
   console.log('[VoiceWidget] Initializing with Vite bundler...');
   
   try {
-    // Create voice widget instance
-    const voiceWidget = new VoiceWidgetCore(VoiceWidgetConfig);
+    // Create voice widget instance with ElevenLabs SDK
+    const voiceWidget = new VoiceWidgetCore(VoiceWidgetConfig, Conversation);
     const voiceWidgetUI = new VoiceWidgetUI(voiceWidget);
     
     // Initialize core with timeout protection
