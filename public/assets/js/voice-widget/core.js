@@ -113,11 +113,15 @@ class VoiceWidgetCore {
 
   async startElevenLabsSession(tokenData) {
     try {
-      // Importar directamente como ULINEA - sin CDN
-      const { Conversation } = await import("@elevenlabs/client");
+      // Cargar SDK desde CDN - igual que DEMO-UIC original
+      await this.loadElevenLabsSDK();
+      
+      if (!window.ElevenLabs || !window.ElevenLabs.Conversation) {
+        throw new Error('ElevenLabs SDK not available after loading');
+      }
       
       // Start WebRTC conversation - igual que ULINEA
-      const conversation = await Conversation.startSession({
+      const conversation = await window.ElevenLabs.Conversation.startSession({
         agentId: tokenData.agentId,
         conversationToken: tokenData.token,
         connectionType: "webrtc",
