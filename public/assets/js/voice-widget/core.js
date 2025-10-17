@@ -301,7 +301,7 @@ class VoiceWidgetCore {
     // Add user message to chat
     this.addMessage(messageText, 'user');
 
-    // Try to send via ElevenLabs session first
+    // Primary method: Send text to ElevenLabs conversation
     if (this.refs.session?.conversation && typeof this.refs.session.conversation.sendUserMessage === 'function') {
       try {
         // Notify activity while typing
@@ -309,14 +309,24 @@ class VoiceWidgetCore {
           this.refs.session.conversation.sendUserActivity();
         }
         this.refs.session.conversation.sendUserMessage(messageText);
-        console.log('[VoiceWidget] Text sent via ElevenLabs session');
+        console.log('[VoiceWidget] Text sent via conversation.sendUserMessage');
         return;
       } catch (error) {
-        console.error('[VoiceWidget] Error sending via ElevenLabs:', error);
+        console.error('[VoiceWidget] Error with conversation.sendUserMessage:', error);
       }
     }
 
-    // Fallback to backend
+    // Fallback helper for ElevenLabs
+    if (this.refs.session) {
+      const sentViaElevenLabs = this.sendTextToElevenLabs(this.refs.session, messageText);
+      if (sentViaElevenLabs) {
+        console.log('[VoiceWidget] Text sent successfully to ElevenLabs via fallback');
+        return;
+      }
+    }
+
+    // Last resort: Backend fallback
+    console.log('[VoiceWidget] All ElevenLabs methods failed, using backend fallback');
     try {
       this.state.isTyping = true;
       if (this.onTypingChangeCallback) this.onTypingChangeCallback(true);
@@ -410,6 +420,37 @@ class VoiceWidgetCore {
         'Usa el chat de texto, WhatsApp o el formulario de contacto mientras terminamos la configuracion.'
       );
     }
+  }
+
+  sendTextToElevenLabs(session, text) {
+    console.log('[VoiceWidget] Attempting to send text:', text);
+
+    // Primary path for WebRTC ConvAI sessions
+    if (session.conversation && typeof session.conversation.sendUserMessage === 'function') {
+      try {
+        session.conversation.sendUserActivity?.();
+        session.conversation.sendUserMessage(text.trim());
+        console.log('[VoiceWidget] Text sent via conversation.sendUserMessage');
+        return true;
+      } catch (error) {
+        console.error('[VoiceWidget] Error with conversation.sendUserMessage:', error);
+      }
+    }
+
+    // Optional websocket path only if caller opened a WS session explicitly
+    if (session.websocket && session.websocket.readyState === WebSocket.OPEN) {
+      try {
+        const payload = { type: 'user_message', text: text.trim() };
+        session.websocket.send(JSON.stringify(payload));
+        console.log('[VoiceWidget] Text sent via session WebSocket');
+        return true;
+      } catch (error) {
+        console.error('[VoiceWidget] Error sending via session WebSocket:', error);
+      }
+    }
+
+    console.warn('[VoiceWidget] No available method to send text in current session mode');
+    return false;
   }
 
   addMessage(text, type = 'assistant') {

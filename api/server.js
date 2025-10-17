@@ -147,7 +147,7 @@ app.get('/api/elevenlabs/token', validateOrigin, async (req, res) => {
 
 /**
  * POST /api/chat/send
- * Backend propio de UIC para manejar mensajes del chat
+ * Fallback simple cuando ElevenLabs no está disponible
  */
 app.post('/api/chat/send', validateOrigin, async (req, res) => {
   try {
@@ -157,40 +157,15 @@ app.post('/api/chat/send', validateOrigin, async (req, res) => {
       return res.status(400).json({ error: 'El campo "message" es obligatorio.' });
     }
 
-    console.log('[UIC Chat] Received message:', message, 'from:', source);
+    console.log('[UIC Chat Fallback] Received message:', message, 'from:', source);
 
-    // Respuestas inteligentes basadas en palabras clave para UIC
-    const lowerMessage = message.toLowerCase();
-    let response = '';
-
-    // Detectar intención del mensaje
-    if (lowerMessage.includes('hola') || lowerMessage.includes('buenos días') || lowerMessage.includes('buenas tardes')) {
-      response = '¡Hola! Me da mucho gusto saludarte. Soy el asistente virtual de la Universidad Intercontinental (UIC). ¿En qué puedo ayudarte hoy?';
-    } else if (lowerMessage.includes('programa') || lowerMessage.includes('carrera') || lowerMessage.includes('licenciatura')) {
-      response = 'En UIC ofrecemos diversos programas de alta calidad. Tenemos licenciaturas en Derecho, Psicología, Administración y más. ¿Te interesa algún programa específico?';
-    } else if (lowerMessage.includes('derecho')) {
-      response = 'La Licenciatura en Derecho de UIC es un programa integral que te prepara para ejercer la profesión legal con excelencia. ¿Te gustaría conocer más detalles sobre el plan de estudios?';
-    } else if (lowerMessage.includes('psicología')) {
-      response = 'Nuestra Licenciatura en Psicología combina teoría y práctica para formar profesionales competentes. ¿Quieres información sobre las áreas de especialización?';
-    } else if (lowerMessage.includes('costo') || lowerMessage.includes('precio') || lowerMessage.includes('cuánto')) {
-      response = 'Los costos varían según el programa. Te recomiendo contactar a un asesor académico para información detallada sobre inversión y opciones de financiamiento.';
-    } else if (lowerMessage.includes('inscripción') || lowerMessage.includes('inscribir') || lowerMessage.includes('proceso')) {
-      response = 'El proceso de inscripción es sencillo. Necesitas documentos básicos como acta de nacimiento, certificado de bachillerato y CURP. ¿Te gustaría que te conecte con un asesor?';
-    } else if (lowerMessage.includes('modalidad') || lowerMessage.includes('online') || lowerMessage.includes('presencial')) {
-      response = 'UIC ofrece modalidades presencial y en línea para adaptarse a tus necesidades. ¿Prefieres estudiar de manera presencial o en línea?';
-    } else if (lowerMessage.includes('contacto') || lowerMessage.includes('asesor') || lowerMessage.includes('información')) {
-      response = 'Puedo conectarte con un asesor académico especializado. También puedes contactarnos por WhatsApp al +52 55 9602 32001 o visitar nuestro campus.';
-    } else if (lowerMessage.includes('gracias') || lowerMessage.includes('muchas gracias')) {
-      response = '¡De nada! Es un placer ayudarte. Si tienes más preguntas sobre UIC, no dudes en consultarme.';
-    } else {
-      // Respuesta genérica para mensajes no reconocidos
-      response = 'Gracias por tu mensaje. Soy el asistente de UIC y estoy aquí para ayudarte con información sobre nuestros programas, procesos de admisión y más. ¿En qué puedo asistirte específicamente?';
-    }
+    // Respuesta simple de fallback - igual que ULINEA
+    const response = 'Gracias por tu mensaje. Un asesor te contactará pronto.';
 
     // Simular tiempo de procesamiento
-    await new Promise(resolve => setTimeout(resolve, 1000 + Math.random() * 2000));
+    await new Promise(resolve => setTimeout(resolve, 1000));
 
-    console.log('[UIC Chat] Sending response:', response);
+    console.log('[UIC Chat Fallback] Sending response:', response);
 
     return res.json({
       response: response,
@@ -200,10 +175,10 @@ app.post('/api/chat/send', validateOrigin, async (req, res) => {
     });
 
   } catch (error) {
-    console.error('[UIC Chat] Error processing message:', error);
+    console.error('[UIC Chat Fallback] Error processing message:', error);
     return res.status(500).json({
       error: 'Error interno del servidor. Por favor, intenta nuevamente o contacta a un asesor.',
-      response: 'Lo siento, hubo un error procesando tu mensaje. Por favor, intenta nuevamente o contacta a un asesor académico.'
+      response: 'Gracias por tu mensaje. Un asesor te contactará pronto.'
     });
   }
 });
