@@ -17,6 +17,9 @@
   ],
   "author": "UIC",
   "license": "MIT",
+  "dependencies": {
+    "@elevenlabs/client": "latest"
+  },
   "devDependencies": {
     "vercel": "^33.0.0"
   },
