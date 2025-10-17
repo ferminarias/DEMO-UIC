@@ -14,8 +14,8 @@ const VoiceWidgetConfig = {
   chatApiUrl: '', // Usar endpoints locales del propio servidor
   chatEndpoint: '/api/chat/send',
   
-  // ElevenLabs SDK URL - usar URL alternativa que funciona
-  elevenLabsSDKUrl: 'https://unpkg.com/@elevenlabs/client@0.5.0/dist/elevenlabs.min.js',
+  // ElevenLabs SDK URL - usar URL que funciona
+  elevenLabsSDKUrl: 'https://cdn.jsdelivr.net/npm/@elevenlabs/client@0.5.0/dist/index.js',
   
   // UI Configuration
   showTranscriptionBar: false,
