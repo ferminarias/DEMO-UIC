@@ -101,3 +101,4 @@ document.addEventListener('DOMContentLoaded', async () => {
 
 // Export for potential external use
 export { VoiceWidgetConfig, VoiceWidgetCore, VoiceWidgetUI };
+
