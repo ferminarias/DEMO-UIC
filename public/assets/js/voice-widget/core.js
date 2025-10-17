@@ -119,19 +119,98 @@ class VoiceWidgetCore {
 
       const { Conversation } = window.ElevenLabs;
       
+      // Start WebRTC conversation - igual que ULINEA
       const conversation = await Conversation.startSession({
         agentId: tokenData.agentId,
         conversationToken: tokenData.token,
         connectionType: "webrtc",
-        onConnect: () => this.onConnect(),
-        onDisconnect: () => this.onDisconnect(),
-        onMessage: (msg) => this.onMessage(msg),
-        onError: (err) => this.onError(err),
-        onStatusChange: (status) => console.log('[VoiceWidget] Status:', status),
-        onModeChange: (mode) => console.log('[VoiceWidget] Mode:', mode),
+        onConnect: () => {
+          console.log('[VoiceWidget] ElevenLabs WebRTC connected');
+          this.updateVoiceStatus('connected');
+          this.refs.sessionActive = true;
+        },
+        onDisconnect: () => {
+          console.log('[VoiceWidget] ElevenLabs session disconnected');
+          this.refs.sessionActive = false;
+          this.updateVoiceStatus('idle');
+        },
+        onMessage: (message) => {
+          console.log('[VoiceWidget] Received message - Full object:', JSON.stringify(message, null, 2));
+          console.log('[VoiceWidget] Message type:', typeof message);
+          console.log('[VoiceWidget] Message keys:', Object.keys(message));
+
+          if (!this.refs.sessionActive) {
+            console.log('[VoiceWidget] Ignoring message because session is not active');
+            return;
+          }
+
+          let messageText = '';
+          let messageType = 'assistant';
+
+          if (message.message && message.message.trim()) {
+            messageText = message.message;
+            messageType = message.source === 'user' ? 'user' : 'assistant';
+          } else if (message.text && message.text.trim()) {
+            messageText = message.text;
+            messageType = message.type === 'user' ? 'user' : 'assistant';
+          } else if (message.content && message.content.trim()) {
+            messageText = message.content;
+            messageType = message.role === 'user' ? 'user' : 'assistant';
+          } else if (typeof message === 'string' && message.trim()) {
+            messageText = message;
+            messageType = 'assistant';
+          }
+
+          if (messageText) {
+            console.log('[VoiceWidget] Adding message to chat:', messageText, 'Type:', messageType);
+            this.addMessage(messageText, messageType);
+          } else {
+            console.log('[VoiceWidget] No valid message text found in:', message);
+          }
+        },
+        onError: (error) => {
+          console.error('[VoiceWidget] ElevenLabs session error:', error);
+
+          if (error?.message?.includes('WebSocket')) {
+            console.log('[VoiceWidget] WebSocket error, allowing reconnection attempts');
+            this.addMessage('Reconectando... Por favor espera un momento.', 'assistant');
+            return;
+          }
+
+          try {
+            this.refs.sessionActive = false;
+            this.safeEndSession();
+          } catch (e) {
+            console.error('[VoiceWidget] Error while forcing session end after onError:', e);
+          }
+          if (this.refs.mediaStream) {
+            this.refs.mediaStream.getTracks().forEach((track) => track.stop());
+            this.refs.mediaStream = null;
+          }
+          this.updateVoiceStatus('error');
+          this.addMessage('Error de conexión. La llamada se terminó. Puedes volver a intentar o usar WhatsApp.', 'assistant');
+        },
+        onStatusChange: (status) => {
+          console.log('[VoiceWidget] Status changed:', status);
+        },
+        onModeChange: (mode) => {
+          console.log('[VoiceWidget] Mode changed:', mode);
+        },
       });
 
-      this.refs.session = { conversation };
+      // Crear estructura de sesión igual que ULINEA
+      this.refs.session = {
+        conversation,
+        websocket: null,
+        agentId: tokenData.agentId,
+        token: tokenData.token,
+        reconnectAttempts: 0,
+        maxReconnectAttempts: 0,
+        reconnectTimeout: null,
+        isConnected: false,
+        isInitialized: true
+      };
+
       console.log('[VoiceWidget] Session started successfully');
     } catch (error) {
       console.error('[VoiceWidget] ElevenLabs SDK error:', error);
@@ -147,9 +226,12 @@ class VoiceWidgetCore {
         return;
       }
 
+      console.log('[VoiceWidget] Loading ElevenLabs SDK from:', this.config.elevenLabsSDKUrl);
+
       // Limpiar SDK anterior si existe
       const existingScript = document.querySelector('script[src*="@elevenlabs/client"]');
       if (existingScript) {
+        console.log('[VoiceWidget] Removing existing SDK script');
         existingScript.remove();
       }
 
@@ -158,79 +240,32 @@ class VoiceWidgetCore {
       script.crossOrigin = 'anonymous';
       
       script.onload = () => {
-        console.log('[VoiceWidget] ElevenLabs SDK loaded successfully');
+        console.log('[VoiceWidget] ElevenLabs SDK script loaded');
+        console.log('[VoiceWidget] window.ElevenLabs:', window.ElevenLabs);
+        console.log('[VoiceWidget] window.ElevenLabs.Conversation:', window.ElevenLabs?.Conversation);
+        
         // Verificar que el SDK esté disponible
         if (window.ElevenLabs && window.ElevenLabs.Conversation) {
+          console.log('[VoiceWidget] ElevenLabs SDK loaded successfully');
           resolve();
         } else {
+          console.error('[VoiceWidget] ElevenLabs SDK loaded but Conversation not available');
+          console.error('[VoiceWidget] Available properties:', Object.keys(window.ElevenLabs || {}));
           reject(new Error('ElevenLabs SDK loaded but Conversation not available'));
         }
       };
       
-      script.onerror = () => {
-        console.error('[VoiceWidget] Failed to load ElevenLabs SDK');
+      script.onerror = (error) => {
+        console.error('[VoiceWidget] Failed to load ElevenLabs SDK:', error);
         reject(new Error('Failed to load ElevenLabs SDK'));
       };
       
       document.head.appendChild(script);
+      console.log('[VoiceWidget] SDK script added to document head');
     });
   }
 
-  onConnect() {
-    console.log('[VoiceWidget] Connected');
-    this.updateVoiceStatus('connected');
-    this.refs.sessionActive = true;
-    if (this.onConnectCallback) this.onConnectCallback();
-  }
-
-  onDisconnect() {
-    console.log('[VoiceWidget] Disconnected');
-    this.refs.sessionActive = false;
-    this.updateVoiceStatus('idle');
-    if (this.onDisconnectCallback) this.onDisconnectCallback();
-  }
-
-  onMessage(message) {
-    if (!this.refs.sessionActive) return;
-
-    let messageText = '';
-    let messageType = 'assistant';
-
-    if (message.message && message.message.trim()) {
-      messageText = message.message;
-      messageType = message.source === 'user' ? 'user' : 'assistant';
-    } else if (message.text && message.text.trim()) {
-      messageText = message.text;
-      messageType = message.type === 'user' ? 'user' : 'assistant';
-    } else if (message.content && message.content.trim()) {
-      messageText = message.content;
-      messageType = message.role === 'user' ? 'user' : 'assistant';
-    } else if (typeof message === 'string' && message.trim()) {
-      messageText = message;
-    }
-
-    if (messageText) {
-      this.addMessage(messageText, messageType);
-    }
-  }
-
-  onError(error) {
-    console.error('[VoiceWidget] Error:', error);
-
-    if (error?.message?.includes('WebSocket')) {
-      this.addMessage('Reconectando... Por favor espera un momento.', 'assistant');
-      return;
-    }
-
-    this.refs.sessionActive = false;
-    this.safeEndSession();
-    if (this.refs.mediaStream) {
-      this.refs.mediaStream.getTracks().forEach(track => track.stop());
-      this.refs.mediaStream = null;
-    }
-    this.updateVoiceStatus('error');
-    this.addMessage('Error de conexion. La llamada se termino. Puedes volver a intentar o usar WhatsApp.', 'assistant');
-  }
+  // Las funciones onConnect, onDisconnect, onMessage, onError ahora están dentro de startElevenLabsSession
 
   stopVoiceCall() {
     try {
@@ -254,13 +289,33 @@ class VoiceWidgetCore {
 
   safeEndSession() {
     try {
-      if (this.refs.session?.conversation) {
-        this.refs.session.conversation.endSession?.();
-        this.refs.session.conversation.disconnect?.();
-        this.refs.session = null;
+      // Handle new session format - igual que ULINEA
+      if (this.refs.session && typeof this.refs.session === 'object' && 'conversation' in this.refs.session) {
+        // Clear reconnect timeout
+        if (this.refs.session.reconnectTimeout) {
+          clearTimeout(this.refs.session.reconnectTimeout);
+          this.refs.session.reconnectTimeout = null;
+        }
+        
+        // Close WebSocket gracefully
+        if (this.refs.session.websocket) {
+          this.refs.session.websocket.close(1000, "Session ended by user");
+          this.refs.session.websocket = null;
+        }
+        
+        // End conversation session
+        this.refs.session.conversation?.endSession && this.refs.session.conversation.endSession();
+        this.refs.session.conversation?.disconnect && this.refs.session.conversation.disconnect();
+      } 
+      // Handle legacy format (direct conversation object)
+      else {
+        this.refs.session?.endSession && this.refs.session.endSession();
+        this.refs.session?.disconnect && this.refs.session.disconnect();
       }
+      
+      this.refs.session = null;
     } catch (e) {
-      console.error('[VoiceWidget] Error ending session:', e);
+      console.error('[VoiceWidget] Error ending ElevenLabs session:', e);
     }
   }
 
