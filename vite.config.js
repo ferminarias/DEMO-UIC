@@ -1,4 +1,9 @@
 import { defineConfig } from 'vite'
+import { fileURLToPath } from 'url'
+import { dirname, resolve } from 'path'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = dirname(__filename)
 
 export default defineConfig({
   // Configuración para desarrollo
@@ -12,11 +17,11 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     assetsDir: 'assets',
-    sourcemap: false, // Deshabilitado para producción
+    sourcemap: false,
     minify: 'terser',
     rollupOptions: {
       input: {
-        main: './public/index.html'
+        main: resolve(__dirname, 'index.html')
       },
       output: {
         manualChunks: {
@@ -24,8 +29,9 @@ export default defineConfig({
         }
       }
     },
-    // Copiar archivos estáticos que no se pueden procesar
-    copyPublicDir: true
+    copyPublicDir: true,
+    // Aumentar límite de tamaño de chunk para ElevenLabs SDK
+    chunkSizeWarningLimit: 1000
   },
   
   // Configuración base para assets
@@ -34,17 +40,22 @@ export default defineConfig({
   // Configuración de alias para imports más limpios
   resolve: {
     alias: {
-      '@': '/public/assets/js'
+      '@': resolve(__dirname, './src'),
+      '@voice-widget': resolve(__dirname, './src/voice-widget')
     }
   },
   
   // Optimización para el SDK de ElevenLabs
   optimizeDeps: {
-    include: ['@elevenlabs/client']
+    include: ['@elevenlabs/client'],
+    // Forzar pre-bundling del SDK
+    force: true
   },
   
-  // Configuración para Vercel
+  // Configuración para Vercel y variables de entorno
   define: {
-    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production')
+    'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV || 'production'),
+    // Asegurar que global esté definido para el SDK
+    'global': 'globalThis'
   }
 })

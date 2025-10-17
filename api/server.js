@@ -1,6 +1,7 @@
 /**
  * Voice Widget API Server
  * Backend para manejar conexiones con ElevenLabs
+ * Replicado desde UlineaUniversidad Next.js API routes
  */
 
 const express = require('express');
@@ -21,16 +22,17 @@ app.use(express.text());
 const ELEVENLABS_API_KEY = process.env.ELEVENLABS_API_KEY;
 const ELEVENLABS_AGENT_ID = process.env.ELEVENLABS_AGENT_ID;
 const ELEVENLABS_WEBHOOK_SECRET = process.env.ELEVENLABS_WEBHOOK_SECRET;
-// Ya no necesitamos backend externo - seremos independientes
-// const CHAT_BACKEND_URL = process.env.CHAT_BACKEND_URL || 'https://web-production-91918.up.railway.app/api/chat/send';
 
-// Dominios permitidos para seguridad
+// Dominios permitidos para seguridad (igual que UlineaUniversidad)
 const ALLOWED_DOMAINS = process.env.ALLOWED_EMBED_DOMAINS?.split(',') || [
   'localhost',
   '127.0.0.1',
+  'demo-uic.vercel.app',
+  'bot.dominiodepruebas.online',
+  'bot.ddev.site',
 ];
 
-// Validar origen de las peticiones
+// Validar origen de las peticiones (igual que UlineaUniversidad)
 function validateOrigin(req, res, next) {
   const origin = req.headers.origin || req.headers.referer || '';
   const userAgent = req.headers['user-agent'] || '';
@@ -38,11 +40,13 @@ function validateOrigin(req, res, next) {
   const isAuthorized = ALLOWED_DOMAINS.some(domain => 
     origin.includes(domain) || 
     origin.includes('localhost') ||
-    !origin
+    !origin // Permitir requests directos para compatibilidad
   );
   
   if (!isAuthorized && origin) {
-    console.warn(`[SECURITY] Unauthorized origin: ${origin}`);
+    console.warn(`[SECURITY] Token request from unauthorized origin: ${origin}`);
+    console.warn(`[DEBUG] Allowed domains: ${ALLOWED_DOMAINS.join(', ')}`);
+    console.warn(`[DEBUG] Current origin: ${origin}`);
     return res.status(403).json({
       error: 'Acceso denegado desde este dominio',
       configured: false,
@@ -77,16 +81,18 @@ app.get('/api/elevenlabs/check-config', (req, res) => {
 /**
  * GET /api/elevenlabs/token
  * Genera un token de conversación para ElevenLabs
+ * Replicado exactamente desde UlineaUniversidad
  */
 app.get('/api/elevenlabs/token', validateOrigin, async (req, res) => {
   try {
+    // Get client IP for basic tracking (igual que UlineaUniversidad)
     const clientIp = req.headers['x-forwarded-for']?.split(',')[0] || 
                      req.headers['x-real-ip'] || 
                      req.ip || 
                      'unknown';
 
     if (!ELEVENLABS_API_KEY || !ELEVENLABS_AGENT_ID) {
-      return res.json({
+      return res.status(200).json({
         error: 'ElevenLabs no está configurado. El asistente de voz estará disponible una vez completada la configuración.',
         configured: false,
       });
@@ -124,7 +130,7 @@ app.get('/api/elevenlabs/token', validateOrigin, async (req, res) => {
         agentId: ELEVENLABS_AGENT_ID,
         configured: true,
         tokenGenerated: true,
-        clientIp: clientIp,
+        clientIp: clientIp, // For debugging purposes
       });
     } catch (tokenError) {
       console.error('Token generation error:', tokenError);
@@ -186,13 +192,14 @@ app.post('/api/chat/send', validateOrigin, async (req, res) => {
 /**
  * POST /api/elevenlabs/webhook
  * Webhook para recibir eventos de ElevenLabs
+ * Replicado exactamente desde UlineaUniversidad
  */
 app.post('/api/elevenlabs/webhook', async (req, res) => {
   try {
     const body = typeof req.body === 'string' ? req.body : JSON.stringify(req.body);
     const signature = req.headers['elevenlabs-signature'];
 
-    // Verificar firma si está configurado el secret
+    // Verificar firma si está configurado el secret (igual que UlineaUniversidad)
     if (ELEVENLABS_WEBHOOK_SECRET && signature) {
       const expectedSignature = crypto
         .createHmac('sha256', ELEVENLABS_WEBHOOK_SECRET)
@@ -200,21 +207,22 @@ app.post('/api/elevenlabs/webhook', async (req, res) => {
         .digest('hex');
 
       if (signature !== expectedSignature) {
-        console.error('[Webhook] Invalid signature');
+        console.error('[DEMO-UIC] Invalid webhook signature');
         return res.status(401).json({ error: 'Invalid signature' });
       }
     }
 
     const event = typeof req.body === 'string' ? JSON.parse(body) : req.body;
-    console.log('[Webhook] Event:', event.type, event.data);
+    console.log('[DEMO-UIC] ElevenLabs webhook event:', event.type, event.data);
 
     switch (event.type) {
       case 'voice_deletion_warning':
-        console.log('[Webhook] Voice deletion warning:', event.data);
+        console.log('[DEMO-UIC] Voice deletion warning:', event.data);
         break;
 
       case 'transcription_completed':
-        console.log('[UIC Webhook] Transcription completed:', event.data?.transcription || event.data?.text);
+        console.log('[DEMO-UIC] Transcription completed - Full data:', JSON.stringify(event.data, null, 2));
+        console.log('[DEMO-UIC] Transcription text:', event.data?.transcription || event.data?.text || 'No text found');
 
         // Streaming de transcripción si hay controlador activo
         if (global.transcriptionController) {
@@ -235,7 +243,7 @@ app.post('/api/elevenlabs/webhook', async (req, res) => {
         break;
 
       case 'conversation_message':
-        console.log('[UIC Webhook] Conversation message:', event.data?.message || event.data?.text);
+        console.log('[DEMO-UIC] Conversation message:', JSON.stringify(event.data, null, 2));
 
         // Streaming de mensajes de conversación
         if (global.transcriptionController) {
@@ -256,7 +264,7 @@ app.post('/api/elevenlabs/webhook', async (req, res) => {
         break;
 
       case 'agent_response':
-        console.log('[UIC Webhook] Agent response:', event.data?.response || event.data?.text);
+        console.log('[DEMO-UIC] Agent response:', JSON.stringify(event.data, null, 2));
 
         // Streaming de respuestas del agente
         if (global.transcriptionController) {
@@ -277,13 +285,13 @@ app.post('/api/elevenlabs/webhook', async (req, res) => {
         break;
 
       default:
-        console.log('[Webhook] Unknown event type:', event.type);
+        console.log('[DEMO-UIC] Unknown webhook event type:', event.type, 'Data:', JSON.stringify(event.data, null, 2));
     }
 
-    res.json({ received: true });
+    return res.json({ received: true });
   } catch (error) {
-    console.error('[Webhook] Error:', error);
-    res.status(500).json({ error: 'Webhook processing failed' });
+    console.error('[DEMO-UIC] Webhook error:', error);
+    return res.status(500).json({ error: 'Webhook processing failed' });
   }
 });
 
@@ -307,8 +315,9 @@ app.use((err, req, res, next) => {
 
 // Iniciar servidor
 app.listen(PORT, () => {
-  console.log(`Voice Widget API Server running on port ${PORT}`);
-  console.log(`ElevenLabs configured: ${!!(ELEVENLABS_API_KEY && ELEVENLABS_AGENT_ID)}`);
+  console.log(`[DEMO-UIC] Voice Widget API Server running on port ${PORT}`);
+  console.log(`[DEMO-UIC] ElevenLabs configured: ${!!(ELEVENLABS_API_KEY && ELEVENLABS_AGENT_ID)}`);
+  console.log(`[DEMO-UIC] Allowed domains: ${ALLOWED_DOMAINS.join(', ')}`);
 });
 
 module.exports = app;

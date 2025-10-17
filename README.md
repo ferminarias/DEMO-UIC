@@ -2,36 +2,51 @@
 
 Sitio web DEMO de UIC con **Voice Widget integrado** para conversaciones por voz usando ElevenLabs AI.
 
+**Backend replicado desde UlineaUniversidad** - Funcionalidad idéntica con Express.js
+
 ## 🎯 Características
 
-- ✅ **Sitio HTML estático** - No requiere framework
 - ✅ **Voice Widget integrado** - Conversación por voz en tiempo real
-- ✅ **Serverless Functions (Vercel)** - Backend escalable sin servidor
+- ✅ **Backend Express** - Replicado desde UlineaUniversidad (Next.js)
+- ✅ **Vite + ElevenLabs SDK** - Configuración optimizada
 - ✅ **Paleta UIC** - Colores adaptados (#36945F verde, #f6a04e naranja)
 - ✅ **Responsive** - Móvil y desktop
 - ✅ **Listo para Vercel** - Deploy en 1 click
+- ✅ **Documentación completa** - Instrucciones paso a paso
 
-## 🚀 Deploy Rápido en Vercel
+## 🚀 Inicio Rápido
 
-### Paso 1: Fork o clona este repositorio
+### Instalación Local
 
 ```bash
+# 1. Clonar repositorio
 git clone https://github.com/tu-usuario/DEMO-UIC.git
 cd DEMO-UIC
+
+# 2. Instalar dependencias
+npm install
+
+# 3. Configurar variables de entorno
+cp .env.local.example .env
+# Edita .env con tus credenciales de ElevenLabs
+
+# 4. Verificar configuración
+node verificar-setup.js
+
+# 5. Iniciar desarrollo
+npm run dev
 ```
 
-### Paso 2: Despliega en Vercel
+### Deploy en Vercel
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/tu-usuario/DEMO-UIC)
 
-### Paso 3: Configura las 2 variables de entorno en Vercel
-
+**Variables de entorno requeridas:**
 ```
 ELEVENLABS_API_KEY = tu_api_key_aqui
 ELEVENLABS_AGENT_ID = tu_agent_id_aqui
+ALLOWED_EMBED_DOMAINS = tu-dominio.vercel.app,localhost
 ```
-
-### Paso 4: ¡Listo!
 
 Tu sitio estará en: `https://tu-proyecto.vercel.app`
 
@@ -39,31 +54,31 @@ Tu sitio estará en: `https://tu-proyecto.vercel.app`
 
 ```
 DEMO-UIC/
-├── api/                              # Vercel Serverless Functions
-│   └── elevenlabs/
-│       ├── token.js                  # Genera tokens de sesión
-│       ├── webhook.js                # Recibe eventos de ElevenLabs
-│       └── check-config.js           # Verifica configuración
+├── api/
+│   └── server.js                     # Backend Express (replicado de UlineaUniversidad)
+├── src/
+│   └── voice-widget/
+│       ├── config.js                 # Configuración del widget
+│       ├── core.js                   # Lógica principal
+│       ├── main.js                   # Entry point (Vite)
+│       └── ui.js                     # Interfaz de usuario
 ├── assets/
-│   ├── css/
-│   │   └── voice-widget.css          # Estilos del widget (paleta UIC)
-│   └── js/
-│       └── voice-widget/
-│           ├── config.js             # Configuración
-│           ├── core.js               # Lógica de ElevenLabs
-│           ├── ui.js                 # Interfaz de usuario
-│           └── index.js              # Punto de entrada
-├── index.html                        # Página principal con widget
-├── package.json                      # Configuración del proyecto
-├── vercel.json                       # Configuración de Vercel
-└── .env.example                      # Template de variables
+│   └── css/
+│       └── voice-widget.css          # Estilos (paleta UIC)
+├── index.html                        # Página principal
+├── vite.config.js                    # Configuración de Vite (optimizada)
+├── package.json                      # Dependencias
+├── verificar-setup.js                # Script de verificación
+├── .env.local.example                # Template de variables
+├── INSTRUCCIONES-COMPLETAS.md        # Documentación detallada
+└── RESUMEN-CAMBIOS.md                # Resumen de cambios
 ```
 
 ## 🔧 Tecnologías
 
-- **Frontend**: HTML, CSS, JavaScript Vanilla
-- **Backend**: Vercel Serverless Functions
-- **Voice AI**: ElevenLabs Conversational AI
+- **Frontend**: Vite 5 + JavaScript ES6
+- **Backend**: Express.js (replicado de UlineaUniversidad)
+- **Voice AI**: ElevenLabs Conversational AI SDK v0.5.0
 - **Deploy**: Vercel
 - **WebRTC**: Para audio en tiempo real
 
@@ -95,10 +110,10 @@ El Voice Widget usa los colores oficiales de UIC:
 
 ## 📚 Documentación
 
-- **[QUICK-START.md](QUICK-START.md)** - Guía rápida de 5 minutos
-- **[DEPLOY-VERCEL.md](DEPLOY-VERCEL.md)** - Guía completa de deployment
-- **[VARIABLES-VERCEL.txt](VARIABLES-VERCEL.txt)** - Lista de variables de entorno
-- **[VOICE-WIDGET-README.md](VOICE-WIDGET-README.md)** - Documentación técnica completa
+- **[INSTRUCCIONES-COMPLETAS.md](INSTRUCCIONES-COMPLETAS.md)** - Guía completa paso a paso
+- **[RESUMEN-CAMBIOS.md](RESUMEN-CAMBIOS.md)** - Resumen de cambios realizados
+- **[verificar-setup.js](verificar-setup.js)** - Script de verificación automática
+- **[.env.local.example](.env.local.example)** - Template de variables de entorno
 
 ## 🔐 Variables de Entorno
 
@@ -109,22 +124,31 @@ ELEVENLABS_API_KEY=sk_tu_api_key_aqui
 ELEVENLABS_AGENT_ID=agent_tu_agent_id_aqui
 ```
 
-Ver `VARIABLES-VERCEL.txt` o `CONFIGURAR-VARIABLES.md` para detalles completos.
+Ver `INSTRUCCIONES-COMPLETAS.md` para detalles completos.
 
 ## 🧪 Testing Local
 
 ```bash
-# Instalar Vercel CLI
-npm install -g vercel
+# 1. Verificar configuración
+node verificar-setup.js
 
-# Crear archivo .env con tus credenciales
-cp .env.example .env
+# 2. Iniciar desarrollo
+npm run dev
 
-# Iniciar servidor de desarrollo de Vercel
-vercel dev
+# 3. Abrir en navegador
+# http://localhost:3000
 ```
 
-Abre http://localhost:3000
+### Verificar Backend
+
+```bash
+# En otra terminal
+cd api
+node server.js
+
+# Verificar endpoint
+curl http://localhost:3001/api/elevenlabs/check-config
+```
 
 ## 🔧 Personalización
 
@@ -141,11 +165,14 @@ Edita `assets/css/voice-widget.css` (líneas 7-14):
 
 ### Cambiar WhatsApp
 
-Edita `assets/js/voice-widget/config.js`:
+Edita `src/voice-widget/config.js`:
 
 ```javascript
-whatsappNumber: 'TU_NUMERO',
-whatsappMessage: 'TU_MENSAJE',
+export const VoiceWidgetConfig = {
+  whatsappNumber: 'TU_NUMERO',
+  whatsappMessage: 'TU_MENSAJE',
+  // ...
+};
 ```
 
 ### Agregar a otras páginas
@@ -154,10 +181,7 @@ Copia estos scripts antes de `</body>`:
 
 ```html
 <link rel="stylesheet" href="./assets/css/voice-widget.css">
-<script src="./assets/js/voice-widget/config.js"></script>
-<script src="./assets/js/voice-widget/core.js"></script>
-<script src="./assets/js/voice-widget/ui.js"></script>
-<script src="./assets/js/voice-widget/index.js"></script>
+<script type="module" src="./src/voice-widget/main.js"></script>
 ```
 
 ## 📊 Monitoreo
@@ -186,23 +210,41 @@ Respuesta esperada:
 
 ## 🐛 Troubleshooting
 
+### Error: "Cannot import @elevenlabs/client"
+```bash
+# Limpiar cache y reinstalar
+rm -rf node_modules/.vite
+npm install
+npm run dev
+```
+
 ### El widget no aparece
-- ✅ Verifica que los scripts estén en el HTML
-- ✅ Revisa la consola del navegador (F12)
-- ✅ Verifica las rutas de los archivos
+```bash
+# 1. Verificar configuración
+node verificar-setup.js
+
+# 2. Revisar console del navegador (F12)
+# Buscar errores de import o rutas
+```
 
 ### Error: "ElevenLabs not configured"
-- ✅ Configura variables de entorno en Vercel
-- ✅ Redeploy el proyecto
+- ✅ Verifica archivo `.env` con credenciales reales
+- ✅ Reinicia el servidor después de cambiar `.env`
+- ✅ Verifica endpoint: `http://localhost:3001/api/elevenlabs/check-config`
 
 ### Error: "Acceso denegado"
-- ✅ Agrega tu dominio a `ALLOWED_EMBED_DOMAINS`
-- ✅ Redeploy el proyecto
+- ✅ Agrega tu dominio a `ALLOWED_EMBED_DOMAINS` en `.env`
+- ✅ Reinicia el servidor
 
-### No se conecta a ElevenLabs
-- ✅ Verifica que las credenciales sean correctas
-- ✅ Revisa los logs en Vercel → Functions
-- ✅ Verifica que el Agent ID esté activo en ElevenLabs
+### Backend no responde
+```bash
+# Verificar que el puerto 3001 esté libre
+cd api
+node server.js
+# Deberías ver: [DEMO-UIC] Voice Widget API Server running on port 3001
+```
+
+Ver `INSTRUCCIONES-COMPLETAS.md` para más detalles de troubleshooting.
 
 ## 🔒 Seguridad
 
@@ -217,17 +259,26 @@ Respuesta esperada:
 - **ElevenLabs**: https://docs.elevenlabs.io/
 - **Issues**: Abre un issue en GitHub
 
-## ✅ Checklist de Deploy
+## ✅ Checklist de Verificación
 
-- [ ] Fork/clone del repositorio
-- [ ] Proyecto conectado a Vercel
-- [ ] `ELEVENLABS_API_KEY` configurada
-- [ ] `ELEVENLABS_AGENT_ID` configurada
-- [ ] `ALLOWED_EMBED_DOMAINS` configurada
-- [ ] Deploy exitoso
-- [ ] `/api/elevenlabs/check-config` retorna `configured: true`
-- [ ] Widget visible en el sitio
+### Desarrollo Local
+- [ ] `npm install` ejecutado sin errores
+- [ ] Archivo `.env` creado con credenciales reales
+- [ ] `node verificar-setup.js` pasa sin errores
+- [ ] `npm run dev` inicia sin errores
+- [ ] Console del navegador no muestra errores de import
+- [ ] Backend responde en `/api/elevenlabs/check-config`
+- [ ] Widget visible en la página
+- [ ] Click en widget abre el panel
 - [ ] Conversación por voz funciona
+
+### Deploy a Vercel
+- [ ] Repositorio conectado a Vercel
+- [ ] `ELEVENLABS_API_KEY` configurada en Vercel
+- [ ] `ELEVENLABS_AGENT_ID` configurada en Vercel
+- [ ] `ALLOWED_EMBED_DOMAINS` configurada en Vercel
+- [ ] Build exitoso
+- [ ] Widget funciona en producción
 
 ## 📝 Licencia
 
