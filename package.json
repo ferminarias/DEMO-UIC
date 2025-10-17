@@ -10,7 +10,8 @@
     "build:vercel": "vite build --config vite.config.simple.js && node scripts/copy-build.js",
     "preview": "vite preview",
     "vercel-dev": "vercel dev",
-    "deploy": "npm run build:vercel && vercel --prod"
+    "deploy": "npm run build:vercel && vercel --prod",
+    "vercel-build": "npm run build:vercel"
   },
   "keywords": [
     "voice",
