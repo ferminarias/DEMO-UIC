@@ -78,6 +78,38 @@ export class VoiceWidgetCore {
     }
   }
 
+  stopVoiceCall() {
+    console.log('[VoiceWidget Core] Stopping voice call...');
+    try {
+      // Detener sesión activa
+      this.refs.sessionActive = false;
+      
+      // Terminar sesión de ElevenLabs
+      this.safeEndSession();
+      
+      // Detener y liberar el stream de audio
+      if (this.refs.mediaStream) {
+        this.refs.mediaStream.getTracks().forEach(track => {
+          track.stop();
+          console.log('[VoiceWidget Core] Audio track stopped');
+        });
+        this.refs.mediaStream = null;
+      }
+      
+      // Limpiar timers de simulación
+      this.clearSimulationTimers();
+      
+      // Actualizar estado
+      this.updateVoiceStatus('idle');
+      this.addMessage('Llamada finalizada. ¡Gracias por usar el asistente de voz!', 'assistant');
+      
+      console.log('[VoiceWidget Core] Voice call stopped successfully');
+    } catch (error) {
+      console.error('[VoiceWidget Core] Error stopping voice call:', error);
+      this.updateVoiceStatus('idle');
+    }
+  }
+
   async requestMicrophone() {
     try {
       if (this.refs.mediaStream) { this.refs.mediaStream.getTracks().forEach(track => track.stop()); this.refs.mediaStream = null; }
