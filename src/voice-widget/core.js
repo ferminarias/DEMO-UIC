@@ -25,6 +25,19 @@ export class VoiceWidgetCore {
     };
   }
 
+  async initialize() {
+    console.log('[VoiceWidget Core] Initializing...');
+    try {
+      await this.checkElevenLabsConfig();
+      console.log('[VoiceWidget Core] ElevenLabs configured:', this.state.hasElevenLabsConfig);
+      return true;
+    } catch (error) {
+      console.error('[VoiceWidget Core] Initialization error:', error);
+      this.state.hasElevenLabsConfig = false;
+      return false;
+    }
+  }
+
   async checkElevenLabsConfig() {
     try {
       const controller = new AbortController();
